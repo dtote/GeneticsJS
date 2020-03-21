@@ -1,1 +1,1 @@
-export * from './EvolutionaryAlgorithm';
+export { default as EvolutionaryAlgorithm, EvolutionaryAlgorithmParams } from './EvolutionaryAlgorithm';

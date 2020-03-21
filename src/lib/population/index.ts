@@ -1,1 +1,1 @@
-export * from './Population';
+export { default as Population, PopulationItem, PopulationStatistics } from './Population';
