@@ -1,6 +1,6 @@
 {
-  "name": "genetics-js",
-  "version": "0.2.2",
+  "name": "@zfunction/genetics-js",
+  "version": "0.2.3",
   "description": "Genetic and evolutionary algorithms framework for the web",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CristianAbrante/GeneticsJS.git"
+    "url": "git+https://github.com/cruzelante098/GeneticsJS.git"
   },
   "keywords": [
     "genetic algorithms",
@@ -29,12 +29,12 @@
     "optimization",
     "metaheuristic"
   ],
-  "author": "Cristian Abrante",
+  "author": "Francisco Cruz (cloned from CristianAbrante/GeneticsJS)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CristianAbrante/GeneticsJS/issues"
+    "url": "https://github.com/cruzelante098/GeneticsJS/issues"
   },
-  "homepage": "https://github.com/CristianAbrante/GeneticsJS#readme",
+  "homepage": "https://github.com/cruzelante098/GeneticsJS",
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "coveralls": "^3.0.3",
