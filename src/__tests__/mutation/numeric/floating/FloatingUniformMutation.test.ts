@@ -4,9 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../lib/individual/numeric/base';
-import { FloatingIndividual } from '../../../../lib/individual/numeric/floating';
-import { FloatingUniformMutation } from '../../../../lib/mutation/numeric/floating';
+import { NumericRange } from '../../../../individual/numeric/base';
+import { FloatingIndividual } from '../../../../individual/numeric/floating';
+import { FloatingUniformMutation } from '../../../../mutation/numeric/floating';
 
 describe('FloatingUniformMutation tests', () => {
   const mutator = new FloatingUniformMutation();

@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericIndividual } from './../../../../../../lib/individual/numeric/base';
+import { NumericIndividual } from './../../../../../../individual/numeric/base';
 import NumericIndividualMock from './../../../../mocks/individual/numeric/base/NumericIndividualMock';
 
 type CreationCallback<I extends NumericIndividual> = (...args: any[]) => I;

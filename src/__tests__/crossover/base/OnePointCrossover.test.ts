@@ -4,14 +4,14 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { OnePointCrossover } from '../../../lib/crossover/base/OnePointCrossover';
-import { Generator } from '../../../lib/generator/utils';
-import { BaseIndividual } from '../../../lib/individual/base';
-import { BinaryIndividual } from '../../../lib/individual/binary';
+import { OnePointCrossover } from '../../../crossover/base/OnePointCrossover';
+import { Generator } from '../../../generator/utils';
+import { BaseIndividual } from '../../../individual/base';
+import { BinaryIndividual } from '../../../individual/binary';
 import OnePointCrossoverMock from '../../resources/mocks/crossover/base/1-point/OnePointCrossoverMock';
 
 // mocks
-jest.mock('../../../lib/generator/utils/');
+jest.mock('../../../generator/utils/');
 
 // data
 import { Binary } from '../../resources/mocks/crossover/base/1-point/data';

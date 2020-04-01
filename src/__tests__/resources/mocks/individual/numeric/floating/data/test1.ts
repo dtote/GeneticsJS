@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../../../../lib/individual/numeric/base';
+import { NumericRange } from '../../../../../../../individual/numeric/base';
 import FloatingIndividualMock from '../FloatingIndividualMock';
 
 // 3.25 -2e3 4

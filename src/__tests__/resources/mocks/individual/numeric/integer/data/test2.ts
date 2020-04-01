@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../../../../lib/individual/numeric/base';
+import { NumericRange } from '../../../../../../../individual/numeric/base';
 import IntegerIndividualMock from '../IntegerIndividualMock';
 
 const I: IntegerIndividualMock = {

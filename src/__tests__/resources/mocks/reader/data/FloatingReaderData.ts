@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { FloatingIndividual } from '../../../../../lib/individual/numeric/floating';
+import { FloatingIndividual } from '../../../../../individual/numeric/floating';
 import ReaderMock from '../ReaderMock';
 
 const creation: ReaderMock<FloatingIndividual, number>['creation'] = [

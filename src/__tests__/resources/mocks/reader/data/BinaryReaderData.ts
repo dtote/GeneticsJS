@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { BinaryIndividual } from '../../../../../lib/individual/binary/';
+import { BinaryIndividual } from '../../../../../individual/binary/';
 import ReaderMock from '../ReaderMock';
 
 const creation: ReaderMock<BinaryIndividual, boolean>['creation'] = [

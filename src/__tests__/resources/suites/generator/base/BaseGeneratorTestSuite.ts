@@ -4,9 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { BaseGenerator } from '../../../../../lib/generator/base';
-import { GeneratorParams } from '../../../../../lib/generator/base/GeneratorParams';
-import { BaseIndividual } from '../../../../../lib/individual/base/BaseIndividual';
+import { BaseGenerator } from '../../../../../generator/base';
+import { GeneratorParams } from '../../../../../generator/base/GeneratorParams';
+import { BaseIndividual } from '../../../../../individual/base/BaseIndividual';
 
 const generatorTestSuite = <
   G extends BaseGenerator<I, Params, T>,

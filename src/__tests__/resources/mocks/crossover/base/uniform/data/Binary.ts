@@ -5,7 +5,7 @@
  */
 
 import { BinaryIndividual } from '../../../../../../../index';
-import { Generator } from '../../../../../../../lib/generator/utils';
+import { Generator } from '../../../../../../../generator/utils';
 import { UniformCrossoverMock } from '../UniformCrossoverMock';
 
 const mocks: Array<UniformCrossoverMock<BinaryIndividual, boolean>> = [

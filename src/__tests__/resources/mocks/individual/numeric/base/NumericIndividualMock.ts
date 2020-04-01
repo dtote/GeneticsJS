@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericIndividual, NumericRange } from '../../../../../../lib/individual/numeric/base';
+import { NumericIndividual, NumericRange } from '../../../../../../individual/numeric/base';
 import MutableIndividualMock from '../../base/MutableIndividualMock';
 
 interface NumericIndividualMock<I extends NumericIndividual> extends MutableIndividualMock<I, number> {

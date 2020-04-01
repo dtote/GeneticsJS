@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { OnePointCrossoverParams } from '../../../../../../lib/crossover/base';
-import {BaseIndividual} from '../../../../../../lib/individual/base/BaseIndividual';
+import { OnePointCrossoverParams } from '../../../../../../crossover/base';
+import {BaseIndividual} from '../../../../../../individual/base/BaseIndividual';
 
 export interface OnePointCrossoverMock<I extends BaseIndividual<T>, T> {
   params: OnePointCrossoverParams<I, T>;

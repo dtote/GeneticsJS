@@ -4,9 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../../../../lib/individual/numeric/base';
-import { FloatingIndividual } from '../../../../../../../lib/individual/numeric/floating';
-import { IntegerIndividual } from '../../../../../../../lib/individual/numeric/integer';
+import { NumericRange } from '../../../../../../../individual/numeric/base';
+import { FloatingIndividual } from '../../../../../../../individual/numeric/floating';
+import { IntegerIndividual } from '../../../../../../../individual/numeric/integer';
 import IntegerIndividualMock from '../IntegerIndividualMock';
 
 // 2 -3 4 5.25

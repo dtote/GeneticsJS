@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { Generator } from '../../../../../../lib/generator/utils';
-import { FloatingIndividual } from '../../../../../../lib/individual/numeric/floating';
+import { Generator } from '../../../../../../generator/utils';
+import { FloatingIndividual } from '../../../../../../individual/numeric/floating';
 import { FloatingCrossoverMock } from '../FloatingCrossoverMock';
 
 const mock: FloatingCrossoverMock[] = [
