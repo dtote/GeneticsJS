@@ -6,12 +6,12 @@
 
 import { Generator } from '../../generator/utils';
 import { BaseIndividual } from '../../individual/base';
-import Crossover, { CrossoverParams, IndividualConstructor } from './Crossover';
-import NPointsCrossover from './NPointsCrossover';
+import { Crossover, CrossoverParams, IndividualConstructor } from './Crossover';
+import { NPointsCrossover } from './NPointsCrossover';
 
 export interface OnePointCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {}
 
-class OnePointCrossover<I extends BaseIndividual<T>, T> implements Crossover<I, T, OnePointCrossoverParams<I, T>> {
+export class OnePointCrossover<I extends BaseIndividual<T>, T> implements Crossover<I, T, OnePointCrossoverParams<I, T>> {
   public cross(
     firstParent: I,
     secondParent: I,
@@ -30,5 +30,3 @@ class OnePointCrossover<I extends BaseIndividual<T>, T> implements Crossover<I, 
     });
   }
 }
-
-export default OnePointCrossover;

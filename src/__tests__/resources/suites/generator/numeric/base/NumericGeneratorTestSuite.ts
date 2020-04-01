@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import NumericGenerator, { NumericParams } from '../../../../../../lib/generator/numeric/base/NumericGenerator';
-import NumericIndividual from '../../../../../../lib/individual/numeric/base/NumericIndividual';
+import {NumericGenerator, NumericParams } from '../../../../../../lib/generator/numeric/base/NumericGenerator';
+import {NumericIndividual} from '../../../../../../lib/individual/numeric/base/NumericIndividual';
 
 const numericIndividualTestSuite = <
   G extends NumericGenerator<I>,

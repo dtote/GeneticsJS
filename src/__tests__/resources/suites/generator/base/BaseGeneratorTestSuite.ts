@@ -5,8 +5,8 @@
  */
 
 import { BaseGenerator } from '../../../../../lib/generator/base';
-import GeneratorParams from '../../../../../lib/generator/base/GeneratorParams';
-import BaseIndividual from '../../../../../lib/individual/base/BaseIndividual';
+import { GeneratorParams } from '../../../../../lib/generator/base/GeneratorParams';
+import { BaseIndividual } from '../../../../../lib/individual/base/BaseIndividual';
 
 const generatorTestSuite = <
   G extends BaseGenerator<I, Params, T>,

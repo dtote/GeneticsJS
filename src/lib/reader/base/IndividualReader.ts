@@ -32,7 +32,7 @@ export interface IndividualToken<T> {
  * @typeparam I is the type of the generated individual.
  * @typeparam T is the value of the genes of the individual.
  */
-export default interface IndividualReader<I extends BaseIndividual<T>, T> {
+export interface IndividualReader<I extends BaseIndividual<T>, T> {
   /**
    * Array of tokens of the individuals.
    */

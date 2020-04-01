@@ -5,7 +5,7 @@
  */
 
 import { BaseIndividual } from '../../individual/base/';
-import GeneratorParams from './GeneratorParams';
+import { GeneratorParams } from './GeneratorParams';
 
 /**
  * ## Individual generator
@@ -17,7 +17,7 @@ import GeneratorParams from './GeneratorParams';
  * @typeparam Params are the params used for initialize the individual.
  * @typeparam T is the type of the individual that we are generating.
  */
-interface IndividualGenerator<I extends BaseIndividual<T>, Params extends GeneratorParams, T> {
+export interface IndividualGenerator<I extends BaseIndividual<T>, Params extends GeneratorParams, T> {
   /**
    * Construct the individual given a genotype
    * of the specified type and optional params.
@@ -54,5 +54,3 @@ interface IndividualGenerator<I extends BaseIndividual<T>, Params extends Genera
    */
   generateWith(params: Params): I;
 }
-
-export default IndividualGenerator;

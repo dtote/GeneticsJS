@@ -5,12 +5,12 @@
  */
 
 import { Generator } from '../../generator/utils';
-import BaseIndividual from '../../individual/base/BaseIndividual';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
 import { NumericRange } from '../../individual/numeric/base';
-import Population from '../../population/Population';
-import BaseSelection, { BaseSelectionParams as RandomSelectionParams } from './BaseSelection';
+import { Population } from '../../population/Population';
+import { BaseSelection, BaseSelectionParams as RandomSelectionParams } from './BaseSelection';
 
-class RandomSelection<I extends BaseIndividual<T>, T> extends BaseSelection<I, T> {
+export class RandomSelection<I extends BaseIndividual<T>, T> extends BaseSelection<I, T> {
   public selectWith(population: Population<I, T>, params: RandomSelectionParams): I[] {
     this.checkParams(population, params);
     const mattingPool: I[] = [];
@@ -23,4 +23,3 @@ class RandomSelection<I extends BaseIndividual<T>, T> extends BaseSelection<I, T
 }
 
 export { RandomSelectionParams };
-export default RandomSelection;

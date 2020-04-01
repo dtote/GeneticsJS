@@ -14,7 +14,7 @@ import { BaseIndividual } from './index';
  * @typeparam I individual which extends from BaseIndividual.
  * @typeparam T datatype of this individual.
  */
-interface Mutable<I extends BaseIndividual<T>, T> {
+export interface Mutable<I extends BaseIndividual<T>, T> {
   /**
    * Copy other individual into the current.
    * Creates a shallow copy, with the references
@@ -68,5 +68,3 @@ interface Mutable<I extends BaseIndividual<T>, T> {
    */
   reverse(): void;
 }
-
-export default Mutable;

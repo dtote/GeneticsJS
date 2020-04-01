@@ -5,7 +5,7 @@
  */
 
 import { BaseIndividual } from '../../individual/base/';
-import IndividualReader, { IndividualToken } from './IndividualReader';
+import { IndividualReader, IndividualToken } from './IndividualReader';
 
 /**
  * ## Basic individual reader
@@ -15,7 +15,7 @@ import IndividualReader, { IndividualToken } from './IndividualReader';
  * @typeparam I is the type of the generated individual.
  * @typeparam T is the value of the genes of the individual.
  */
-abstract class BaseIndividualReader<I extends BaseIndividual<T>, T> implements IndividualReader<I, T> {
+export abstract class BaseIndividualReader<I extends BaseIndividual<T>, T> implements IndividualReader<I, T> {
   /**
    * Array of tokens of the individuals.
    */
@@ -63,5 +63,3 @@ abstract class BaseIndividualReader<I extends BaseIndividual<T>, T> implements I
 
   public abstract tokenize(definition: string): string[];
 }
-
-export default BaseIndividualReader;

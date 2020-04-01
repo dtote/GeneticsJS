@@ -33,7 +33,7 @@ type geneEvaluationCallback<T> = (gene: T, geneIndex?: number, genotype?: T[]) =
  *
  * @typeparam T is the type of the individual.
  */
-abstract class BaseIndividual<T> implements Iterable<T> {
+export abstract class BaseIndividual<T> implements Iterable<T> {
   /**
    * Genotype array.
    */
@@ -246,5 +246,3 @@ abstract class BaseIndividual<T> implements Iterable<T> {
    */
   protected abstract geneToString(gene: T): string;
 }
-
-export default BaseIndividual;

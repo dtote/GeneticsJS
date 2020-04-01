@@ -5,7 +5,7 @@
  */
 
 import { NumericRange } from '../../../../../../lib/individual/numeric/base';
-import IntegerIndividual from '../../../../../../lib/individual/numeric/integer/IntegerIndividual';
+import { IntegerIndividual } from '../../../../../../lib/individual/numeric/integer/IntegerIndividual';
 import NumericIndividualMock from '../base/NumericIndividualMock';
 
 interface IntegerIndividualMock extends NumericIndividualMock<IntegerIndividual> {

@@ -5,7 +5,7 @@
  */
 
 import { NPointsCrossoverParams } from '../../../../../../lib/crossover/base';
-import BaseIndividual from '../../../../../../lib/individual/base/BaseIndividual';
+import { BaseIndividual } from '../../../../../../lib/individual/base/BaseIndividual';
 
 interface NPointsCrossoverMock<I extends BaseIndividual<T>, T> {
   params: NPointsCrossoverParams<I, T>;

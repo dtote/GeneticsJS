@@ -5,7 +5,7 @@
  */
 
 import { Engine } from 'random-js';
-import BaseIndividual from '../../individual/base/BaseIndividual';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
 
 export type IndividualConstructor<I extends BaseIndividual<T>, T> = new (genotype: T[]) => I;
 
@@ -14,9 +14,7 @@ export interface CrossoverParams<I extends BaseIndividual<T>, T> {
   individualConstructor: IndividualConstructor<I, T>;
 }
 
-interface Crossover<I extends BaseIndividual<T>, T, Params extends CrossoverParams<I, T>> {
+export interface Crossover<I extends BaseIndividual<T>, T, Params extends CrossoverParams<I, T>> {
   cross(firstParent: I, secondParent: I, ...args: any[]): I[];
   crossWith(firstParent: I, secondParent: I, params: Params): I[];
 }
-
-export default Crossover;

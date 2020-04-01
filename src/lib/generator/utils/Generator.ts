@@ -10,7 +10,7 @@ import { Gaussian } from 'ts-gaussian';
 import { NumericRange } from '../../individual/numeric/base';
 import { IntegerNormalizer } from '../../individual/numeric/integer/utils';
 
-class Generator {
+export class Generator {
   public static DEFAULT_ENGINE: Engine = MersenneTwister19937.autoSeed();
 
   public static probabilityIsValid(probability: number) {
@@ -77,5 +77,3 @@ class Generator {
     }
   }
 }
-
-export default Generator;

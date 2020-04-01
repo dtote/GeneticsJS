@@ -5,7 +5,7 @@
  */
 
 import { UniformCrossoverParams } from '../../../../../../lib/crossover/base';
-import BaseIndividual from '../../../../../../lib/individual/base/BaseIndividual';
+import {BaseIndividual} from '../../../../../../lib/individual/base/BaseIndividual';
 
 export interface UniformCrossoverMock<I extends BaseIndividual<T>, T> {
   firstParent: I;

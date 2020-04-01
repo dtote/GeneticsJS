@@ -13,7 +13,7 @@ import { IntegerNormalizer } from './utils';
  * Integer individual is a numeric individual
  * where all the genes in the genotype are integers.
  */
-class IntegerIndividual extends NumericIndividual {
+export class IntegerIndividual extends NumericIndividual {
   /**
    * Constructor of the class.
    * Takes the representation as
@@ -94,5 +94,3 @@ class IntegerIndividual extends NumericIndividual {
     super.set(geneIndex, IntegerNormalizer.normalize(gene));
   }
 }
-
-export default IntegerIndividual;

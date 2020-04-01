@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BinaryReader from '../../reader/binary/BinaryReader';
+import { BinaryReader } from '../../reader/binary/BinaryReader';
 import { MutableIndividual } from '../base/';
 
 const reader = new BinaryReader();
@@ -20,7 +20,7 @@ const reader = new BinaryReader();
  * console.log(ind) // 0 0 1 0 1 0 0
  * ```
  */
-class BinaryIndividual extends MutableIndividual<boolean> {
+export class BinaryIndividual extends MutableIndividual<boolean> {
   /**
    * Constructor of the class, expects an array
    * of boolean values or an string separated by
@@ -69,5 +69,3 @@ class BinaryIndividual extends MutableIndividual<boolean> {
     return gene ? '1' : '0';
   }
 }
-
-export default BinaryIndividual;

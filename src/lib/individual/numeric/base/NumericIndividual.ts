@@ -5,14 +5,14 @@
  */
 
 import { MutableIndividual } from './../../base/';
-import NumericRange from './NumericRange';
+import { NumericRange } from './NumericRange';
 
 /**
  * ## Numeric individual
  * Numeric individual represents an individual
  * with a numeric genotype, situated in a range.
  */
-abstract class NumericIndividual extends MutableIndividual<number> {
+export abstract class NumericIndividual extends MutableIndividual<number> {
   /**
    * range of the individual.
    */
@@ -148,5 +148,3 @@ abstract class NumericIndividual extends MutableIndividual<number> {
     return gene.toString();
   }
 }
-
-export default NumericIndividual;

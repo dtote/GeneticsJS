@@ -4,9 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import NumericRange from '../../base/NumericRange';
+import { NumericRange } from '../../base/NumericRange';
 
-class IntegerNormalizer {
+export class IntegerNormalizer {
   /**
    * Normalize the given gene, rounding it.
    * @param gene that we want to normalize.
@@ -32,5 +32,3 @@ class IntegerNormalizer {
     return new NumericRange(this.normalize(range.lowest), this.normalize(range.highest));
   }
 }
-
-export default IntegerNormalizer;

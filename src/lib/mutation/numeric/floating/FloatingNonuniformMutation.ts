@@ -11,11 +11,11 @@ import {
   NumericNonUniformMutationParams as FloatingNonUniformMutationParams,
 } from '../base/';
 
-class FloatingNonuniformMutation extends NumericNonUniformMutation<FloatingIndividual> {
+export class FloatingNonuniformMutation extends NumericNonUniformMutation<FloatingIndividual> {
   protected getDeltaValue(params: FloatingNonUniformMutationParams): number {
     return Generator.generateNormalDistributionValue(0.0, params.stepSize, params.engine);
   }
 }
 
 export { FloatingNonUniformMutationParams };
-export default FloatingNonuniformMutation;
+

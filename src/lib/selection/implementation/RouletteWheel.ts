@@ -5,11 +5,11 @@
  */
 
 import { Generator } from '../../generator/utils';
-import BaseIndividual from '../../individual/base/BaseIndividual';
-import Population, { PopulationItem } from '../../population/Population';
-import SelectionImplementation, { SelectionImplementationParams } from './SelectionImplementation';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
+import { Population, PopulationItem } from '../../population/Population';
+import { SelectionImplementation, SelectionImplementationParams } from './SelectionImplementation';
 
-class RouletteWheel<I extends BaseIndividual<T>, T> implements SelectionImplementation<I, T> {
+export class RouletteWheel<I extends BaseIndividual<T>, T> implements SelectionImplementation<I, T> {
   public select(
     population: Population<I, T>,
     params: SelectionImplementationParams,
@@ -29,5 +29,3 @@ class RouletteWheel<I extends BaseIndividual<T>, T> implements SelectionImplemen
     return mattingPool;
   }
 }
-
-export default RouletteWheel;

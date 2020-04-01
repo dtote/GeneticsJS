@@ -4,13 +4,12 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseFloatingCrossover, { BaseFloatingCrossoverParams } from './BaseFloatingCrossover';
+import { BaseFloatingCrossover, BaseFloatingCrossoverParams } from './BaseFloatingCrossover';
 
-class SimpleArithmeticRecombination extends BaseFloatingCrossover {
+export class SimpleArithmeticRecombination extends BaseFloatingCrossover {
   protected getRecombinationCondition(index: number): boolean {
     return index >= this.recombinationPoint;
   }
 }
 
 export { BaseFloatingCrossoverParams as SimpleArithmeticRecombinationParams };
-export default SimpleArithmeticRecombination;

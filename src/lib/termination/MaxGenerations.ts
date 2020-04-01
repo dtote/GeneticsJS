@@ -4,11 +4,11 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseIndividual from '../individual/base/BaseIndividual';
-import Population from '../population/Population';
-import TerminationCondition from './TerminationCondition';
+import {BaseIndividual} from '../individual/base/BaseIndividual';
+import {Population} from '../population/Population';
+import {TerminationCondition} from './TerminationCondition';
 
-class MaxGenerations<I extends BaseIndividual<T>, T> implements TerminationCondition<I, T> {
+export class MaxGenerations<I extends BaseIndividual<T>, T> implements TerminationCondition<I, T> {
   private maxGenerations = 0;
 
   constructor(maxGenerations: number) {
@@ -19,5 +19,3 @@ class MaxGenerations<I extends BaseIndividual<T>, T> implements TerminationCondi
     return generations >= this.maxGenerations;
   }
 }
-
-export default MaxGenerations;

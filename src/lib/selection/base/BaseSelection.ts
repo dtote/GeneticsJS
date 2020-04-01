@@ -4,11 +4,11 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseIndividual from '../../individual/base/BaseIndividual';
-import Population from '../../population/Population';
-import IndividualsSelection, { IndividualsSelectionParams as BaseSelectionParams } from './IndividualsSelection';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
+import { Population } from '../../population/Population';
+import { IndividualsSelection, IndividualsSelectionParams as BaseSelectionParams } from './IndividualsSelection';
 
-abstract class BaseSelection<I extends BaseIndividual<T>, T>
+export abstract class BaseSelection<I extends BaseIndividual<T>, T>
   implements IndividualsSelection<I, T, BaseSelectionParams> {
   public abstract selectWith(population: Population<I, T>, params: BaseSelectionParams): I[];
 
@@ -23,4 +23,3 @@ abstract class BaseSelection<I extends BaseIndividual<T>, T>
 }
 
 export { BaseSelectionParams };
-export default BaseSelection;

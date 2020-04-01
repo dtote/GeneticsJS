@@ -14,7 +14,7 @@ import { NumericIndividual, NumericRange } from '../base';
  * The representation could be a string with
  * the numbers or the array of numbers.
  */
-class FloatingIndividual extends NumericIndividual {
+export class FloatingIndividual extends NumericIndividual {
   /**
    * Constructor of the class.
    * It takes a representation and a range as
@@ -44,5 +44,3 @@ class FloatingIndividual extends NumericIndividual {
     }
   }
 }
-
-export default FloatingIndividual;

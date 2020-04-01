@@ -8,7 +8,7 @@
  * ## Numeric Range
  * Represents a numeric range.
  */
-class NumericRange {
+export class NumericRange {
   public static DEFAULT = new NumericRange();
 
   public static isArrayInRange(array: number[], range: NumericRange) {
@@ -66,5 +66,3 @@ class NumericRange {
     this._highest = highest;
   }
 }
-
-export default NumericRange;

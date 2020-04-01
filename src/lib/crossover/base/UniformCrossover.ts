@@ -6,14 +6,14 @@
 
 import { Generator } from '../../generator/utils';
 import { BaseIndividual } from '../../individual/base';
-import BaseCrossover from './BaseCrossover';
-import Crossover, { CrossoverParams, IndividualConstructor } from './Crossover';
+import { BaseCrossover } from './BaseCrossover';
+import { Crossover, CrossoverParams, IndividualConstructor } from './Crossover';
 
 export interface UniformCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {
   selectionThreshold: number;
 }
 
-class UniformCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, UniformCrossoverParams<I, T>> {
+export class UniformCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, UniformCrossoverParams<I, T>> {
   public cross(
     firstParent: I,
     secondParent: I,
@@ -51,5 +51,3 @@ class UniformCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, 
     }
   }
 }
-
-export default UniformCrossover;

@@ -11,7 +11,7 @@ import { BaseIndividual, Mutable } from './index';
  * Provides a basic implementation of the mutable interface.
  * Also extends BaseIndividual class.
  */
-abstract class MutableIndividual<T> extends BaseIndividual<T> implements Mutable<MutableIndividual<T>, T> {
+export abstract class MutableIndividual<T> extends BaseIndividual<T> implements Mutable<MutableIndividual<T>, T> {
   /**
    * Copy other individual into the current.
    * Creates a shallow copy, with the references
@@ -82,5 +82,3 @@ abstract class MutableIndividual<T> extends BaseIndividual<T> implements Mutable
     this.genotype[geneIndex] = gene;
   }
 }
-
-export default MutableIndividual;

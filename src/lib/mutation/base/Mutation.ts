@@ -11,9 +11,7 @@ export interface MutationParams {
   engine: Engine;
 }
 
-interface Mutation<I extends BaseIndividual<T>, T, Params extends MutationParams> {
+export interface Mutation<I extends BaseIndividual<T>, T, Params extends MutationParams> {
   mutate(individual: I, ...args: any[]): void;
   mutateWith(individual: I, params: Params): void;
 }
-
-export default Mutation;

@@ -4,4 +4,4 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-export { default as NumericGenerator } from './NumericGenerator';
+export * from './NumericGenerator';

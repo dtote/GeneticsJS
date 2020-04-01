@@ -20,7 +20,7 @@ import { BaseIndividualReader, IndividualToken } from '../base/';
  * 0  0 f 1T  // OK (mixed case with spaces)
  * ```
  */
-class BinaryReader extends BaseIndividualReader<BinaryIndividual, boolean> {
+export class BinaryReader extends BaseIndividualReader<BinaryIndividual, boolean> {
   public readonly tokenDefinition: Array<IndividualToken<boolean>> = [
     {
       token: /[0f]/i,
@@ -56,5 +56,3 @@ class BinaryReader extends BaseIndividualReader<BinaryIndividual, boolean> {
     return definition.split(/\s*/).filter(Boolean);
   }
 }
-
-export default BinaryReader;

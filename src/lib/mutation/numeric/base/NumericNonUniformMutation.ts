@@ -13,7 +13,7 @@ export interface NumericNonUniformMutationParams extends MutationParams {
   stepSize: number;
 }
 
-abstract class NumericNonUniformMutation<I extends NumericIndividual> extends MutationBase<
+export abstract class NumericNonUniformMutation<I extends NumericIndividual> extends MutationBase<
   I,
   number,
   NumericNonUniformMutationParams
@@ -31,5 +31,3 @@ abstract class NumericNonUniformMutation<I extends NumericIndividual> extends Mu
 
   protected abstract getDeltaValue(params: NumericNonUniformMutationParams): number;
 }
-
-export default NumericNonUniformMutation;

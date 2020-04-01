@@ -13,7 +13,7 @@ import { NumericGenerator } from './../base';
  * ## Floating generator
  * Generates a [[FloatingIndividual]].
  */
-class FloatingGenerator extends NumericGenerator<FloatingIndividual> {
+export class FloatingGenerator extends NumericGenerator<FloatingIndividual> {
   /**
    * Generates a gene with the specified
    * params.
@@ -35,5 +35,3 @@ class FloatingGenerator extends NumericGenerator<FloatingIndividual> {
     return new FloatingIndividual(genotype, params.range);
   }
 }
-
-export default FloatingGenerator;

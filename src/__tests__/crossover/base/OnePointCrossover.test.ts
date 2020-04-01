@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import OnePointCrossover from '../../../lib/crossover/base/OnePointCrossover';
+import { OnePointCrossover } from '../../../lib/crossover/base/OnePointCrossover';
 import { Generator } from '../../../lib/generator/utils';
 import { BaseIndividual } from '../../../lib/individual/base';
 import { BinaryIndividual } from '../../../lib/individual/binary';

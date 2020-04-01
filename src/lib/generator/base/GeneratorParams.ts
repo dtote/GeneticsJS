@@ -11,7 +11,7 @@ import { Engine } from 'random-js';
  * Interface that defines the params
  * of the individual generator.
  */
-interface GeneratorParams {
+export interface GeneratorParams {
   /**
    * The engine used to generate
    * random values. It used the
@@ -25,5 +25,3 @@ interface GeneratorParams {
    */
   length: number;
 }
-
-export default GeneratorParams;

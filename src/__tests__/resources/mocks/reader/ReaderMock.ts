@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseIndividual from '../../../../lib/individual/base/BaseIndividual';
+import { BaseIndividual } from '../../../../lib/individual/base/BaseIndividual';
 
 interface ReaderMock<I extends BaseIndividual<T>, T> {
   creation: Array<{

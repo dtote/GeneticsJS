@@ -1,1 +1,1 @@
-export { default as FitnessFunction } from './FitnessFunction';
+export * from './FitnessFunction';

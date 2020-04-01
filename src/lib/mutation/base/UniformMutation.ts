@@ -7,13 +7,13 @@
 import { Generator } from '../../generator/utils';
 import { MutableIndividual } from '../../individual/base';
 import { MutationParams } from './Mutation';
-import MutationBase from './MutationBase';
+import { MutationBase } from './MutationBase';
 
 export interface UniformMutationParams extends MutationParams {
   mutationRate: number;
 }
 
-abstract class UniformMutation<I extends MutableIndividual<T>, T> extends MutationBase<I, T, UniformMutationParams> {
+export abstract class UniformMutation<I extends MutableIndividual<T>, T> extends MutationBase<I, T, UniformMutationParams> {
   private static checkMutationRate(mutationRate: number) {
     if (!Generator.probabilityIsValid(mutationRate)) {
       throw new Error(`Error: Mutation rate ${mutationRate} is not in range [0.0 - 1.0]`);
@@ -38,5 +38,3 @@ abstract class UniformMutation<I extends MutableIndividual<T>, T> extends Mutati
 
   protected abstract mutateGeneUniformly(individual: I, index: number, params: UniformMutationParams): void;
 }
-
-export default UniformMutation;

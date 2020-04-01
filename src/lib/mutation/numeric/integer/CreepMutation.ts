@@ -8,11 +8,10 @@ import { Generator } from '../../../generator/utils';
 import { IntegerIndividual } from '../../../individual/numeric/integer';
 import { NumericNonUniformMutation, NumericNonUniformMutationParams as CreepMutationParams } from '../base';
 
-class CreepMutation extends NumericNonUniformMutation<IntegerIndividual> {
+export class CreepMutation extends NumericNonUniformMutation<IntegerIndividual> {
   protected getDeltaValue(params: CreepMutationParams): number {
     return Generator.generateNormalDistributionInteger(0, params.stepSize, params.engine);
   }
 }
 
 export { CreepMutationParams };
-export default CreepMutation;

@@ -13,7 +13,7 @@ import { NumericGenerator } from './../base';
  * ## IntegerGenerator
  * Generates an [[IntegerIndividual]].
  */
-class IntegerGenerator extends NumericGenerator<IntegerIndividual> {
+export class IntegerGenerator extends NumericGenerator<IntegerIndividual> {
   /**
    * Generates a gene with the specified
    * params.
@@ -35,5 +35,3 @@ class IntegerGenerator extends NumericGenerator<IntegerIndividual> {
     return new IntegerIndividual(genotype, params.range);
   }
 }
-
-export default IntegerGenerator;

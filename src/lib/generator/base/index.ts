@@ -4,6 +4,6 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-export { default as BaseGenerator } from './BaseGenerator';
-export { default as IndividualGenerator } from './IndividualGenerator';
-export { default as GeneratorParams } from './GeneratorParams';
+export * from './BaseGenerator';
+export * from './IndividualGenerator';
+export * from './GeneratorParams';

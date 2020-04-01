@@ -24,7 +24,7 @@ export interface NumericParams extends GeneratorParams {
  * ## NumericGenerator
  * Generator of [[NumericIndividuals]]
  */
-abstract class NumericGenerator<I extends NumericIndividual> extends BaseGenerator<I, NumericParams, number> {
+export abstract class NumericGenerator<I extends NumericIndividual> extends BaseGenerator<I, NumericParams, number> {
   /**
    * Generates a [[NumericIndividual]]
    * with the specified params.
@@ -52,5 +52,3 @@ abstract class NumericGenerator<I extends NumericIndividual> extends BaseGenerat
     return super.generateWith(params);
   }
 }
-
-export default NumericGenerator;

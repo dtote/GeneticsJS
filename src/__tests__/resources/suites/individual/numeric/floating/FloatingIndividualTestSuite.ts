@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import FloatingIndividual from '../../../../../../lib/individual/numeric/floating/FloatingIndividual';
+import {FloatingIndividual} from '../../../../../../lib/individual/numeric/floating/FloatingIndividual';
 import FloatingIndividualMock from '../../../../mocks/individual/numeric/floating/FloatingIndividualMock';
 
 const floatingIndividualTestSuite = (floatingIndividualTests: FloatingIndividualMock) => {

@@ -17,7 +17,7 @@ import { NumericReader } from '../base/';
  * -4 -5 -8   // OK (Negative numbers allowed).
  * ```
  */
-class IntegerReader extends NumericReader<IntegerIndividual> {
+export class IntegerReader extends NumericReader<IntegerIndividual> {
   public readonly tokenDefinition: Array<IndividualToken<number>> = [
     {
       token: /^[+-]?\d+$/,
@@ -37,5 +37,3 @@ class IntegerReader extends NumericReader<IntegerIndividual> {
     return new IntegerIndividual(genotype);
   }
 }
-
-export default IntegerReader;

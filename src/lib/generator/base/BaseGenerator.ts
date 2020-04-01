@@ -5,8 +5,8 @@
  */
 
 import { BaseIndividual } from './../../individual/base';
-import GeneratorParams from './GeneratorParams';
-import IndividualGenerator from './IndividualGenerator';
+import { GeneratorParams } from './GeneratorParams';
+import { IndividualGenerator } from './IndividualGenerator';
 
 /**
  * ## BaseIndividualGenerator
@@ -64,4 +64,4 @@ abstract class BaseIndividualGenerator<I extends BaseIndividual<T>, Params exten
   public abstract generateGene(params: Params): T;
 }
 
-export default BaseIndividualGenerator;
+export { BaseIndividualGenerator as BaseGenerator };

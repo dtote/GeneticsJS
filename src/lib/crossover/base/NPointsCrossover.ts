@@ -7,14 +7,14 @@
 import { Generator } from '../../generator/utils';
 import { BaseIndividual } from '../../individual/base';
 import { NumericRange } from '../../individual/numeric/base';
-import BaseCrossover from './BaseCrossover';
+import { BaseCrossover } from './BaseCrossover';
 import { CrossoverParams, IndividualConstructor } from './Crossover';
 
 export interface NPointsCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {
   numberOfCrossoverPoints: number;
 }
 
-class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, NPointsCrossoverParams<I, T>> {
+export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, NPointsCrossoverParams<I, T>> {
   private crossoverPointsRange: NumericRange = NumericRange.DEFAULT;
   private crossoverPoints: number[] = [];
   private crossoverPointIndex = 0;
@@ -84,5 +84,3 @@ class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, 
     this.crossoverPoints.sort();
   }
 }
-
-export default NPointsCrossover;

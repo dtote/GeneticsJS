@@ -4,16 +4,16 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseIndividual from '../../individual/base/BaseIndividual';
-import Population, { PopulationItem } from '../../population/Population';
-import SelectionImplementation from '../implementation/SelectionImplementation';
-import BaseSelection, { BaseSelectionParams } from './BaseSelection';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
+import { Population, PopulationItem } from '../../population/Population';
+import { SelectionImplementation } from '../implementation/SelectionImplementation';
+import { BaseSelection, BaseSelectionParams } from './BaseSelection';
 
-interface FitnessProportionalSelectionParams<I extends BaseIndividual<T>, T> extends BaseSelectionParams {
+export interface FitnessProportionalSelectionParams<I extends BaseIndividual<T>, T> extends BaseSelectionParams {
   subSelection: SelectionImplementation<I, T>;
 }
 
-class FitnessProportionalSelection<I extends BaseIndividual<T>, T> extends BaseSelection<I, T> {
+export class FitnessProportionalSelection<I extends BaseIndividual<T>, T> extends BaseSelection<I, T> {
   private cumulativeProbability: number[] = [];
 
   public selectWith(population: Population<I, T>, params: FitnessProportionalSelectionParams<I, T>): I[] {
@@ -36,6 +36,3 @@ class FitnessProportionalSelection<I extends BaseIndividual<T>, T> extends BaseS
     return this.cumulativeProbability[index];
   };
 }
-
-export { FitnessProportionalSelectionParams };
-export default FitnessProportionalSelection;

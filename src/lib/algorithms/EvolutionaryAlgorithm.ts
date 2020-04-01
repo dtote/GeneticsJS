@@ -5,17 +5,17 @@
  */
 
 import { CrossoverParams } from '../crossover/base';
-import Crossover from '../crossover/base/Crossover';
-import FitnessFunction from '../fitness/FitnessFunction';
+import { Crossover } from '../crossover/base/Crossover';
+import { FitnessFunction } from '../fitness/FitnessFunction';
 import { GeneratorParams, IndividualGenerator } from '../generator/base';
 import { Generator } from '../generator/utils';
-import BaseIndividual from '../individual/base/BaseIndividual';
+import { BaseIndividual } from '../individual/base/BaseIndividual';
 import { NumericRange } from '../individual/numeric/base';
-import Mutation, { MutationParams } from '../mutation/base/Mutation';
-import Population from '../population/Population';
-import IndividualsSelection, { IndividualsSelectionParams } from '../selection/base/IndividualsSelection';
-import PopulationReplacement, { PopulationReplacementParams } from '../selection/replacement/PopulationReplacement';
-import TerminationCondition from '../termination/TerminationCondition';
+import { Mutation, MutationParams } from '../mutation/base/Mutation';
+import { Population } from '../population/Population';
+import { IndividualsSelection, IndividualsSelectionParams } from '../selection/base/IndividualsSelection';
+import { PopulationReplacement, PopulationReplacementParams } from '../selection/replacement/PopulationReplacement';
+import { TerminationCondition } from '../termination/TerminationCondition';
 
 export interface EvolutionaryAlgorithmParams<
   I extends BaseIndividual<T>,
@@ -40,7 +40,7 @@ export interface EvolutionaryAlgorithmParams<
   terminationCondition: TerminationCondition<I, T>;
 }
 
-class EvolutionaryAlgorithm<
+export class EvolutionaryAlgorithm<
   I extends BaseIndividual<T>,
   T,
   GParams extends GeneratorParams,
@@ -95,5 +95,3 @@ class EvolutionaryAlgorithm<
     this.generations += 1;
   }
 }
-
-export default EvolutionaryAlgorithm;

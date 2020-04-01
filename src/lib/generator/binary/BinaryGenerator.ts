@@ -24,7 +24,7 @@ export interface BinaryGeneratorParams extends GeneratorParams {
  * ## BinaryGenerator
  * Generator of binary individuals.
  */
-class BinaryGenerator extends BaseGenerator<BinaryIndividual, BinaryGeneratorParams, boolean> {
+export class BinaryGenerator extends BaseGenerator<BinaryIndividual, BinaryGeneratorParams, boolean> {
   /**
    * Throws an exception if chance is not in
    * range [0.0 - 1.0].
@@ -84,5 +84,3 @@ class BinaryGenerator extends BaseGenerator<BinaryIndividual, BinaryGeneratorPar
     return new BinaryIndividual(genotype);
   }
 }
-
-export default BinaryGenerator;

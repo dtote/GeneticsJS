@@ -18,7 +18,7 @@ import { NumericReader } from '../base/';
  * 3e-2 4E-9    // OK (scientific notation allowed)
  * ```
  */
-class FloatingReader extends NumericReader<FloatingIndividual> {
+export class FloatingReader extends NumericReader<FloatingIndividual> {
   public readonly tokenDefinition: Array<IndividualToken<number>> = [
     {
       token: /^[+-]?\d+(?:(?:\.\d+)?(?:[Ee][+-]?\d+)?)?$/,
@@ -42,5 +42,3 @@ class FloatingReader extends NumericReader<FloatingIndividual> {
     return new FloatingIndividual(genotype);
   }
 }
-
-export default FloatingReader;

@@ -4,5 +4,5 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-export { default as BaseIndividualReader } from './BaseIndividualReader';
-export { default as IndividualReader, IndividualToken } from './IndividualReader';
+export * from './BaseIndividualReader';
+export * from './IndividualReader';

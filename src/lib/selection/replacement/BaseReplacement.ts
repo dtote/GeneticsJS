@@ -4,11 +4,11 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseIndividual from '../../individual/base/BaseIndividual';
-import Population, { PopulationItem } from '../../population/Population';
-import PopulationReplacement, { PopulationReplacementParams } from './PopulationReplacement';
+import { BaseIndividual } from '../../individual/base/BaseIndividual';
+import { Population, PopulationItem } from '../../population/Population';
+import { PopulationReplacement, PopulationReplacementParams } from './PopulationReplacement';
 
-abstract class BaseReplacement<I extends BaseIndividual<T>, T> implements PopulationReplacement<I, T> {
+export abstract class BaseReplacement<I extends BaseIndividual<T>, T> implements PopulationReplacement<I, T> {
   public replace(
     oldPopulation: Population<I, T>,
     newPopulation: Population<I, T>,
@@ -32,5 +32,3 @@ abstract class BaseReplacement<I extends BaseIndividual<T>, T> implements Popula
 
   public abstract sortMethod(a: PopulationItem<I, T>, b: PopulationItem<I, T>): number;
 }
-
-export default BaseReplacement;

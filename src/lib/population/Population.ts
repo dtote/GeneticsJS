@@ -4,10 +4,10 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import FitnessFunction from '../fitness/FitnessFunction';
-import GeneratorParams from '../generator/base/GeneratorParams';
-import IndividualGenerator from '../generator/base/IndividualGenerator';
-import BaseIndividual from '../individual/base/BaseIndividual';
+import { FitnessFunction } from '../fitness/FitnessFunction';
+import { GeneratorParams } from '../generator/base/GeneratorParams';
+import { IndividualGenerator } from '../generator/base/IndividualGenerator';
+import { BaseIndividual } from '../individual/base/BaseIndividual';
 
 export interface PopulationItem<I extends BaseIndividual<T>, T> {
   individual: I;
@@ -22,7 +22,7 @@ export interface PopulationStatistics {
   fittestIndividualIndex: number;
 }
 
-class Population<I extends BaseIndividual<T>, T> {
+export class Population<I extends BaseIndividual<T>, T> {
   public static readonly DEFAULT_FITNESS = 0.0;
   public static readonly DEFAULT_FITTEST_IND_INDEX = -1;
 
@@ -116,5 +116,3 @@ class Population<I extends BaseIndividual<T>, T> {
     this.populationStatistics.averageFitness = this.populationStatistics.fitnessSum / this.getPopulationSize();
   }
 }
-
-export default Population;
