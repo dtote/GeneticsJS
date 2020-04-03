@@ -1,10 +1,12 @@
 {
   "name": "@zfunction/genetics-js",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Genetic and evolutionary algorithms framework for the web",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "start": "node lib/genetics.js",
+    "prestart": "npm run build",
     "test": "jest --config jestconfig.json",
     "test-ci": "jest --config jestconfig.json --coverage && cat ./coverage/lcov.info | coveralls",
     "build": "tsc",
@@ -36,21 +38,21 @@
   },
   "homepage": "https://github.com/cruzelante098/GeneticsJS",
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "coveralls": "^3.0.3",
-    "jest": "^24.8.0",
-    "prettier": "^1.16.4",
+    "@types/jest": "^24.9.1",
+    "coveralls": "^3.0.11",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.3.3"
+    "typescript": "^3.8.3"
   },
   "files": [
     "lib/**/*"
   ],
   "dependencies": {
-    "random-js": "^2.0.0",
-    "ts-gaussian": "^1.2.1"
+    "random-js": "^2.1.0",
+    "ts-gaussian": "^1.2.4"
   }
 }

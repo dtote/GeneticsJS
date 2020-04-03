@@ -6,7 +6,10 @@
     "declaration": true,
     "outDir": "./lib",
     "strict": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]
