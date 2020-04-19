@@ -9,6 +9,7 @@ import { BaseIndividual } from '../../individual/base';
 
 export interface MutationParams {
   engine: Engine;
+  particularValue?(individualIndex: number): number | undefined;
 }
 
 interface Mutation<I extends BaseIndividual<T>, T, Params extends MutationParams> {

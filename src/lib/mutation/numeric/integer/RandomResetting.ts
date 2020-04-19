@@ -10,7 +10,12 @@ import { UniformMutation, UniformMutationParams as RandomResettingParams } from 
 
 class RandomResetting extends UniformMutation<IntegerIndividual, number> {
   protected mutateGeneUniformly(individual: IntegerIndividual, index: number, params: RandomResettingParams): void {
-    individual.set(index, Generator.generateInteger(individual.range, params.engine));
+    const value = params.particularValue?.(index);
+    if (value !== undefined) {
+      individual.set(index, value);
+    } else {
+      individual.set(index, Generator.generateInteger(individual.range, params.engine));
+    }
   }
 }
 
