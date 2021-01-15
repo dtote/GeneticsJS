@@ -21,10 +21,7 @@ export abstract class BaseCrossover<I extends BaseIndividual<T>, T, Params exten
       genotypes[1].push(result.second);
     }
     // @ts-ignore
-    return [
-      new params.individualConstructor(genotypes[0], firstParent.range),
-      new params.individualConstructor(genotypes[1], secondParent.range),
-    ];
+    return [new params.individualConstructor(genotypes[0], firstParent.range), new params.individualConstructor(genotypes[1], secondParent.range)];
   }
 
   protected abstract getGenotypeValues(
