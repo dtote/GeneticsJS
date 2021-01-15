@@ -5,7 +5,7 @@
  */
 
 import { OnePointCrossoverParams } from '../../../../../../crossover/base';
-import {BaseIndividual} from '../../../../../../individual/base/BaseIndividual';
+import { BaseIndividual } from '../../../../../../individual/base/BaseIndividual';
 
 export interface OnePointCrossoverMock<I extends BaseIndividual<T>, T> {
   params: OnePointCrossoverParams<I, T>;

@@ -11,9 +11,7 @@ import NumericGeneratorTestSuite from '../../../resources/suites/generator/numer
 import { FloatingGenerator } from '../../../../index';
 
 FloatingIndividualMock.forEach(testParams => {
-  describe(`test suite with params - ${testParams.length} | [ ${testParams.range.lowest} - ${
-    testParams.range.highest
-  } ]`, () => {
+  describe(`test suite with params - ${testParams.length} | [ ${testParams.range.lowest} - ${testParams.range.highest} ]`, () => {
     const generator = new FloatingGenerator();
     const ind = generator.generateWith(testParams);
     BaseGeneratorTestSuite(generator, ind, testParams);

@@ -13,9 +13,7 @@ import { IntegerGenerator } from '../../../../index';
 const generationTimes = 100;
 
 FloatingIndividualMock.forEach(testParams => {
-  describe(`test suite with params - ${testParams.length} | [ ${testParams.range.lowest} - ${
-    testParams.range.highest
-  } ]`, () => {
+  describe(`test suite with params - ${testParams.length} | [ ${testParams.range.lowest} - ${testParams.range.highest} ]`, () => {
     for (let i = 0; i < generationTimes; i++) {
       const generator = new IntegerGenerator();
       const ind = generator.generateWith(testParams);

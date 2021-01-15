@@ -11,7 +11,10 @@ import BinaryIndividualMock from '../BinaryIndividualMock';
 export const I: BinaryIndividualMock = {
   copy: [
     {
-      change: [{ geneIndex: 1, gene: true }, { geneIndex: 3, gene: true }],
+      change: [
+        { geneIndex: 1, gene: true },
+        { geneIndex: 3, gene: true },
+      ],
       other: new BinaryIndividual('0010'),
     },
   ],
@@ -30,7 +33,10 @@ export const I: BinaryIndividualMock = {
   },
   deepCopy: [
     {
-      change: [{ geneIndex: 1, gene: true }, { geneIndex: 3, gene: true }],
+      change: [
+        { geneIndex: 1, gene: true },
+        { geneIndex: 3, gene: true },
+      ],
       other: new BinaryIndividual('0010'),
     },
   ],

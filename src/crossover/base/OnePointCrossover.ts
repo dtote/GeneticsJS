@@ -11,7 +11,8 @@ import { NPointsCrossover } from './NPointsCrossover';
 
 export interface OnePointCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {}
 
-export class OnePointCrossover<I extends BaseIndividual<T>, T> implements Crossover<I, T, OnePointCrossoverParams<I, T>> {
+export class OnePointCrossover<I extends BaseIndividual<T>, T>
+  implements Crossover<I, T, OnePointCrossoverParams<I, T>> {
   public cross(
     firstParent: I,
     secondParent: I,

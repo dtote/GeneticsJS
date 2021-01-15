@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import {IntegerIndividual} from '../../../../../../individual/numeric/integer/IntegerIndividual';
+import { IntegerIndividual } from '../../../../../../individual/numeric/integer/IntegerIndividual';
 import IntegerIndividualMock from '../../../../mocks/individual/numeric/integer/IntegerIndividualMock';
 
 const integerIndividualTestSuite = (integerIndividualTests: IntegerIndividualMock) => {

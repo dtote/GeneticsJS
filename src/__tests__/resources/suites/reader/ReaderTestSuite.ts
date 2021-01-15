@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import {BaseIndividual} from '../../../../individual/base/BaseIndividual';
-import {BaseIndividualReader} from '../../../../reader/base/BaseIndividualReader';
+import { BaseIndividual } from '../../../../individual/base/BaseIndividual';
+import { BaseIndividualReader } from '../../../../reader/base/BaseIndividualReader';
 import ReaderMock from '../../mocks/reader/ReaderMock';
 
 const readerTestSuite = <R extends BaseIndividualReader<I, T>, I extends BaseIndividual<T>, T>(

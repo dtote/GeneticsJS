@@ -18,4 +18,3 @@ export class FloatingNonuniformMutation extends NumericNonUniformMutation<Floati
 }
 
 export { FloatingNonUniformMutationParams };
-

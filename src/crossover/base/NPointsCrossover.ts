@@ -14,7 +14,11 @@ export interface NPointsCrossoverParams<I extends BaseIndividual<T>, T> extends 
   numberOfCrossoverPoints: number;
 }
 
-export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, NPointsCrossoverParams<I, T>> {
+export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<
+  I,
+  T,
+  NPointsCrossoverParams<I, T>
+> {
   private crossoverPointsRange: NumericRange = NumericRange.DEFAULT;
   private crossoverPoints: number[] = [];
   private crossoverPointIndex = 0;
@@ -66,9 +70,7 @@ export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrosso
   private checkCrossoverParams(params: NPointsCrossoverParams<I, T>) {
     if (!NumericRange.isValueInRange(params.numberOfCrossoverPoints, this.crossoverPointsRange)) {
       throw new Error(
-        `NPointsCrossover: number of crossover points must be in range [${this.crossoverPointsRange.lowest}, ${
-          this.crossoverPointsRange.highest
-        }]`,
+        `NPointsCrossover: number of crossover points must be in range [${this.crossoverPointsRange.lowest}, ${this.crossoverPointsRange.highest}]`,
       );
     }
   }

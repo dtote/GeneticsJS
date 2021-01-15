@@ -5,7 +5,7 @@
  */
 
 import { BaseFloatingCrossoverParams } from '../../../../../crossover/numeric/floating';
-import {FloatingIndividual} from '../../../../../individual/numeric/floating/FloatingIndividual';
+import { FloatingIndividual } from '../../../../../individual/numeric/floating/FloatingIndividual';
 
 export interface FloatingCrossoverMock {
   firstParent: FloatingIndividual;

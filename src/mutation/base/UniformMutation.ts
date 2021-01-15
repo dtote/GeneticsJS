@@ -13,7 +13,11 @@ export interface UniformMutationParams extends MutationParams {
   mutationRate: number;
 }
 
-export abstract class UniformMutation<I extends MutableIndividual<T>, T> extends MutationBase<I, T, UniformMutationParams> {
+export abstract class UniformMutation<I extends MutableIndividual<T>, T> extends MutationBase<
+  I,
+  T,
+  UniformMutationParams
+> {
   private static checkMutationRate(mutationRate: number) {
     if (!Generator.probabilityIsValid(mutationRate)) {
       throw new Error(`Error: Mutation rate ${mutationRate} is not in range [0.0 - 1.0]`);

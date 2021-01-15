@@ -13,7 +13,11 @@ export interface UniformCrossoverParams<I extends BaseIndividual<T>, T> extends 
   selectionThreshold: number;
 }
 
-export class UniformCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<I, T, UniformCrossoverParams<I, T>> {
+export class UniformCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<
+  I,
+  T,
+  UniformCrossoverParams<I, T>
+> {
   public cross(
     firstParent: I,
     secondParent: I,

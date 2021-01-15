@@ -13,7 +13,11 @@ export interface BaseFloatingCrossoverParams extends CrossoverParams<FloatingInd
   alpha: number;
 }
 
-export abstract class BaseFloatingCrossover extends BaseCrossover<FloatingIndividual, number, BaseFloatingCrossoverParams> {
+export abstract class BaseFloatingCrossover extends BaseCrossover<
+  FloatingIndividual,
+  number,
+  BaseFloatingCrossoverParams
+> {
   protected recombinationPoint: number = 0;
 
   public cross(
