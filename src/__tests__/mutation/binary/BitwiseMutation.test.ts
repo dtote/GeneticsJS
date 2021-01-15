@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { BinaryIndividual } from '../../../lib/individual/binary';
-import { BitwiseMutation } from '../../../lib/mutation/binary';
+import { BinaryIndividual } from '../../../individual/binary';
+import { BitwiseMutation } from '../../../mutation/binary';
 
 describe('bitwise mutation tests', () => {
   const mutator = new BitwiseMutation();

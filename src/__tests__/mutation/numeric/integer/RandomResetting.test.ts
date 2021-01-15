@@ -4,9 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../lib/individual/numeric/base';
-import { IntegerIndividual } from '../../../../lib/individual/numeric/integer';
-import { RandomResetting } from '../../../../lib/mutation/numeric/integer';
+import { NumericRange } from '../../../../individual/numeric/base';
+import { IntegerIndividual } from '../../../../individual/numeric/integer';
+import { RandomResetting } from '../../../../mutation/numeric/integer';
 
 describe('RandomResetting tests', () => {
   const mutator = new RandomResetting();

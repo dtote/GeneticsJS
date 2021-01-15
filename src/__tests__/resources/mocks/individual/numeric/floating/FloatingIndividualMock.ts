@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { NumericRange } from '../../../../../../lib/individual/numeric/base';
-import FloatingIndividual from '../../../../../../lib/individual/numeric/floating/FloatingIndividual';
+import { NumericRange } from '../../../../../../individual/numeric/base';
+import { FloatingIndividual } from '../../../../../../individual/numeric/floating/FloatingIndividual';
 import NumericIndividualMock from '../base/NumericIndividualMock';
 
 interface FloatingIndividualMock extends NumericIndividualMock<FloatingIndividual> {

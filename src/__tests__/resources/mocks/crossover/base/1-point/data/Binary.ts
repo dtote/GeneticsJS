@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { Generator } from '../../../../../../../lib/generator/utils';
-import { BinaryIndividual } from '../../../../../../../lib/individual/binary';
+import { Generator } from '../../../../../../../generator/utils';
+import { BinaryIndividual } from '../../../../../../../individual/binary';
 import OnePointCrossoverMock from '../OnePointCrossoverMock';
 
 const mocks: Array<OnePointCrossoverMock<BinaryIndividual, boolean>> = [

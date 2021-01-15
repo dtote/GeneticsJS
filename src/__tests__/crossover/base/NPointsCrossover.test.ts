@@ -5,11 +5,11 @@
  */
 
 import { BaseIndividual, BinaryIndividual, NPointsCrossover } from '../../../index';
-import { Generator } from '../../../lib/generator/utils';
+import { Generator } from '../../../generator/utils';
 import NPointsCrossoverMock from '../../resources/mocks/crossover/base/n-points/NPointsCrossoverMock';
 
 // mocks
-jest.mock('../../../lib/generator/utils/');
+jest.mock('../../../generator/utils/');
 
 // test suites import
 import { Binary } from '../../resources/mocks/crossover/base/n-points/data';

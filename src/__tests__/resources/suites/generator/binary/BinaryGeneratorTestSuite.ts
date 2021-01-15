@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BinaryGenerator, { BinaryGeneratorParams } from '../../../../../lib/generator/binary/BinaryGenerator';
-import { BinaryIndividual } from '../../../../../lib/individual/binary';
+import {BinaryGenerator, BinaryGeneratorParams } from '../../../../../generator/binary/BinaryGenerator';
+import { BinaryIndividual } from '../../../../../individual/binary';
 
 const binaryGeneratorTestSuite = <
   G extends BinaryGenerator,

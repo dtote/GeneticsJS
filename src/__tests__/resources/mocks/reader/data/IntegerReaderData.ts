@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { IntegerIndividual } from '../../../../../lib/individual/numeric/integer/';
+import { IntegerIndividual } from '../../../../../individual/numeric/integer/';
 import ReaderMock from '../ReaderMock';
 
 const creation: ReaderMock<IntegerIndividual, number>['creation'] = [

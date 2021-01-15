@@ -5,8 +5,8 @@
  */
 
 import { MersenneTwister19937 } from 'random-js';
-import { NumericParams } from '../../../../../../lib/generator/numeric/base/NumericGenerator';
-import { NumericRange } from '../../../../../../lib/individual/numeric/base';
+import { NumericParams } from '../../../../../../generator/numeric/base/NumericGenerator';
+import { NumericRange } from '../../../../../../individual/numeric/base';
 
 const floatingMock: NumericParams[] = [
   {

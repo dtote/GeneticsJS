@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { UniformCrossoverParams } from '../../../../../../lib/crossover/base';
-import BaseIndividual from '../../../../../../lib/individual/base/BaseIndividual';
+import { UniformCrossoverParams } from '../../../../../../crossover/base';
+import {BaseIndividual} from '../../../../../../individual/base/BaseIndividual';
 
 export interface UniformCrossoverMock<I extends BaseIndividual<T>, T> {
   firstParent: I;

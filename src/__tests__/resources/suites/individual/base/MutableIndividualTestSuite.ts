@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import MutableIndividual from '../../../../../lib/individual/base/MutableIndividual';
+import {MutableIndividual} from '../../../../../individual/base/MutableIndividual';
 import MutableIndividualMock from '../../../mocks/individual/base/MutableIndividualMock';
 
 type CreationCallback<I extends MutableIndividual<T>, T> = (...params: any[]) => I;

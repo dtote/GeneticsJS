@@ -5,6 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "start": "node lib/genetics.js",
+    "prestart": "npm run build",
     "test": "jest --config jestconfig.json",
     "test-ci": "jest --config jestconfig.json --coverage && cat ./coverage/lcov.info | coveralls",
     "build": "tsc",
@@ -29,28 +31,34 @@
     "optimization",
     "metaheuristic"
   ],
-  "author": "Cristian Abrante",
+  "author": "Cristian Manuel Abrante Dorta <cristian@abrante.me> (https://github.com/CristianAbrante)",
+  "contributors": [
+    "Francisco Arturo Cruz Zelante <cruzelante098@gmail.com> (https://github.com/cruzelante098)",
+    "Cristo Daniel Navarro Rodríguez <alu0101024608@ull.edu.es> (https://github.com/CristoNavarro)",
+    "Casiano Rodríguez-León <crguezl@ull.edu.es> (https://github.com/crguezl)",
+    "Eduardo Manuel Segredo González <esegredo@ull.edu.es> (https://github.com/esegredo)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GeneticsJS/GeneticsJS/issues"
   },
   "homepage": "https://github.com/GeneticsJS/GeneticsJS#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "coveralls": "^3.0.3",
-    "jest": "^24.8.0",
-    "prettier": "^1.16.4",
+    "@types/jest": "^24.9.1",
+    "coveralls": "^3.0.11",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
     "ts-jest": "^23.10.5",
-    "tslint": "^5.12.1",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.3.3"
+    "typescript": "^3.8.3"
   },
   "files": [
     "lib/**/*"
   ],
   "dependencies": {
-    "random-js": "^2.0.0",
-    "ts-gaussian": "^1.2.1"
+    "random-js": "^2.1.0",
+    "ts-gaussian": "^1.2.4"
   }
 }

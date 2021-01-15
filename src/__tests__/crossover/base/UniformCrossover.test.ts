@@ -4,13 +4,13 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { UniformCrossover } from '../../../lib/crossover/base';
-import { BaseIndividual, BinaryIndividual } from '../../../lib/individual/';
+import { UniformCrossover } from '../../../crossover/base';
+import { BaseIndividual, BinaryIndividual } from '../../../individual/';
 import { UniformCrossoverMock } from '../../resources/mocks/crossover/base/uniform/UniformCrossoverMock';
 
-import { Generator } from '../../../lib/generator/utils';
+import { Generator } from '../../../generator/utils';
 // mocks
-jest.mock('../../../lib/generator/utils/');
+jest.mock('../../../generator/utils/');
 
 // data
 import { Binary } from '../../resources/mocks/crossover/base/uniform/data/';

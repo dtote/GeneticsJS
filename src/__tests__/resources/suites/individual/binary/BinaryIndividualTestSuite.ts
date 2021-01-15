@@ -4,7 +4,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BinaryIndividual from '../../../../../lib/individual/binary/BinaryIndividual';
+import {BinaryIndividual} from '../../../../../individual/binary/BinaryIndividual';
 import BinaryIndividualMock from '../../../mocks/individual/binary/BinaryIndividualMock';
 
 const binaryIndividualTestSuite = (binaryIndividualTests: BinaryIndividualMock) => {

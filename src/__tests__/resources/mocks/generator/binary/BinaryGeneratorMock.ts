@@ -5,7 +5,7 @@
  */
 
 import { MersenneTwister19937, nativeMath } from 'random-js';
-import { BinaryGeneratorParams } from '../../../../../lib/generator/binary/BinaryGenerator';
+import { BinaryGeneratorParams } from '../../../../../generator/binary/BinaryGenerator';
 
 const mocks: BinaryGeneratorParams[] = [
   {

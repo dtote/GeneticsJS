@@ -4,15 +4,15 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import BaseFloatingCrossover from '../../../lib/crossover/numeric/floating/BaseFloatingCrossover';
-import SimpleArithmeticRecombination from '../../../lib/crossover/numeric/floating/SimpleArithmeticRecombination';
-import SingleArithmeticRecombination from '../../../lib/crossover/numeric/floating/SingleArithmeticRecombination';
-import WholeArithmeticCrossover from '../../../lib/crossover/numeric/floating/WholeArithmeticCrossover';
-import { Generator } from '../../../lib/generator/utils';
+import {BaseFloatingCrossover} from '../../../crossover/numeric/floating/BaseFloatingCrossover';
+import {SimpleArithmeticRecombination} from '../../../crossover/numeric/floating/SimpleArithmeticRecombination';
+import {SingleArithmeticRecombination} from '../../../crossover/numeric/floating/SingleArithmeticRecombination';
+import {WholeArithmeticCrossover} from '../../../crossover/numeric/floating/WholeArithmeticCrossover';
+import { Generator } from '../../../generator/utils';
 import { FloatingCrossoverMock } from '../../resources/mocks/crossover/floating/FloatingCrossoverMock';
 
 // mocks
-jest.mock('../../../lib/generator/utils/');
+jest.mock('../../../generator/utils/');
 
 // data
 import { Simple, Single, Whole } from '../../resources/mocks/crossover/floating/data';

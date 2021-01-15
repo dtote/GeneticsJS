@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { BaseFloatingCrossoverParams } from '../../../../../lib/crossover/numeric/floating';
-import FloatingIndividual from '../../../../../lib/individual/numeric/floating/FloatingIndividual';
+import { BaseFloatingCrossoverParams } from '../../../../../crossover/numeric/floating';
+import {FloatingIndividual} from '../../../../../individual/numeric/floating/FloatingIndividual';
 
 export interface FloatingCrossoverMock {
   firstParent: FloatingIndividual;
