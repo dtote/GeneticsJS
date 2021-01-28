@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/CristianAbrante/GeneticsJS/raw/master/assets/images/logo.png" alt="genetics.js logo" width="400">
+  <img src="https://github.com/GeneticsJS/GeneticsJS/raw/master/assets/images/logo.png" alt="genetics.js logo" width="400">
 </h1>
 
 <h4 align="center">
@@ -47,7 +47,7 @@ with the basic structure for implementing the most common evolutionary
 algorithms, such as **genetic algorithms**.
 
 <p align="center">
-    <img src="assets/images/ea-structure.jpg" align="center" alt="drawing" width="400"/>
+    <img src="https://github.com/GeneticsJS/GeneticsJS/raw/master/assets/images/ea-structure.jpg" align="center" alt="drawing" width="400"/>
 </p>
 
 > Evolutionary algorithms basic structure
