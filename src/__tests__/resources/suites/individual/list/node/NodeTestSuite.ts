@@ -12,7 +12,7 @@ const nodeNumberTestSuite = (nodeTest: NodeMock<any>) => {
     });
 
     if (nodeTest.newData !== undefined) {
-      test('Update data test', () => {
+      test('Update node data test', () => {
         const { data, next } = nodeTest.creation;
         const newData = nodeTest.newData;
         const node = new Node(data);
