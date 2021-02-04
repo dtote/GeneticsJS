@@ -262,4 +262,13 @@ export class List<T> implements Iterable<T> {
     }
     return false;
   }
+
+  public toString(): string {
+    let result = '{ ';
+    this.forEach((x) => {
+      result += (x + ' ');
+    });
+    result += '}';
+    return result;
+  }
 }

@@ -190,6 +190,12 @@ const listTestSuite = (listTest: ListMock<any>) => {
         expect(list.values).toEqual(listTest.forEach!.expected);
       });
     }
+
+    if (listTest.toStringTest !== undefined) {
+      test('ToString list test', () => {
+        expect(list.toString()).toEqual(listTest.toStringTest);
+      });
+    }
   });
 };
 

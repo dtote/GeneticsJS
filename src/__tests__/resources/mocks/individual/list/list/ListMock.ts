@@ -72,6 +72,7 @@ interface ListMock<T> {
   }>;
   some?: Array<nodeConditionCallback<T, boolean>>;
   forEach?: nodeCallback<T>;
+  toStringTest?: string;
 }
 
 export default ListMock;
