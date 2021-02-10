@@ -95,8 +95,8 @@ implemented:
 ## 👐 Contributing
 You can report a bug, or request a feature with an issue:
 
-* [Report a bug 🐛 with this template.](https://github.com/CristianAbrante/GeneticsJS/issues/new?assignees=&labels=&template=bug-report.md&title=%3Abug%3A).
-* [Request a feature 💡 with this template.](https://github.com/CristianAbrante/GeneticsJS/issues/new?assignees=&labels=&template=feature_request.md&title=)
+* [Report a bug 🐛 with this template.](https://github.com/GeneticsJS/GeneticsJS/issues/new?assignees=&labels=&template=bug-report.md&title=%3Abug%3A)
+* [Request a feature 💡 with this template.](https://github.com/GeneticsJS/GeneticsJS/issues/new?assignees=&labels=&template=feature_request.md&title=)
 
 Any help would be welcome :smile:.
 
