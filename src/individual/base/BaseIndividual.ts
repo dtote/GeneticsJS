@@ -162,7 +162,12 @@ export abstract class BaseIndividual<T> implements Iterable<T> {
    * @return index of the first specified gene or `-1` if not found.
    */
   public indexOf(gene: T, fromIndex: number = 0): number {
-    return this.genotype.indexOf(gene, fromIndex);
+    for (let index = fromIndex; index < this.genotype.length; index++) {
+      if (isEqual(this.genotype[index], gene)) {
+        return index;
+      }
+    }
+    return -1;
   }
 
   /**

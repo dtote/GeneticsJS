@@ -159,6 +159,27 @@ export const I: ListIndividualMock<number> = {
       params: { gene: A, startIndex: 2 },
     },
   ],
+  indexOf: [
+    {
+      expected: 0,
+      params: {
+        gene: A,
+      },
+    },
+    {
+      expected: 2,
+      params: {
+        gene: C,
+      },
+    },
+    {
+      expected: -1,
+      params: {
+        gene: B,
+        startIndex: 2,
+      },
+    },
+  ],
   toStringTest: {
     expected: '{ 1 3 4 } { 0 2 6 } { 2 6 7 }',
   },
