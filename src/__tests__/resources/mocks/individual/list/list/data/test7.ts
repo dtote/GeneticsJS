@@ -1,8 +1,17 @@
+/*
+ * @license
+ * Copyright (c) 2021 Cristo Navarro.
+ * Copyright (c) 2020 Francisco Cruz.
+ * Copyright (c) 2019 Cristian Abrante.
+ * All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ */
+
 import ListMock from '../ListMock';
 
 interface customObject {
-  data: number,
-  toString: () => string
+  data: number;
+  toString: () => string;
 }
 
 class newObject implements customObject {
@@ -26,9 +35,9 @@ const I: ListMock<customObject> = {
     data: undefined,
     expectedLength: 2,
     expectedHead: A,
-    nodes: [A, B]
+    nodes: [A, B],
   },
-  toStringTest: '{ 2 4 }'
+  toStringTest: '{ 2 4 }',
 };
 
 export default I;

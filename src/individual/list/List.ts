@@ -1,3 +1,11 @@
+/*
+ * @license
+ * Copyright (c) 2021 Cristo Navarro.
+ * Copyright (c) 2020 Francisco Cruz.
+ * Copyright (c) 2019 Cristian Abrante.
+ * All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ */
 
 import { Node } from './index';
 
@@ -58,7 +66,7 @@ export class List<T> implements Iterable<T> {
       currentPos++;
       currentNode = currentNode.next;
     }
-    throw(new RangeError(`Given position (${pos}) is out of list range.`));
+    throw new RangeError(`Given position (${pos}) is out of list range.`);
   }
 
   public pushFront(newData: T): void {
@@ -70,7 +78,7 @@ export class List<T> implements Iterable<T> {
 
   public popFront(): void {
     if (this.headNode === null) {
-      throw(new Error('List is empty.'));
+      throw new Error('List is empty.');
     } else {
       this.headNode = this.headNode.next;
       this.listSize--;
@@ -93,7 +101,7 @@ export class List<T> implements Iterable<T> {
 
   public popBack(): void {
     if (this.headNode === null) {
-      throw(new Error('List is empty.'));
+      throw new Error('List is empty.');
     } else {
       if (this.listSize === 1) {
         this.headNode = null;
@@ -115,7 +123,7 @@ export class List<T> implements Iterable<T> {
 
   public insert(pos: number, newData: T): void {
     if (pos > this.listSize || pos < 0) {
-      throw(new RangeError(`Given position (${pos}) is out of list range.`));
+      throw new RangeError(`Given position (${pos}) is out of list range.`);
     }
     const newNode = new Node<T>(newData);
     if (this.headNode === null) {
@@ -138,17 +146,17 @@ export class List<T> implements Iterable<T> {
           currentPos++;
           currentNode = currentNode.next;
         }
-      } 
+      }
     }
     this.listSize++;
   }
 
   public erase(pos: number): void {
     if (pos >= this.listSize || pos < 0) {
-      throw(new RangeError(`Given position (${pos}) is out of list range.`));
+      throw new RangeError(`Given position (${pos}) is out of list range.`);
     }
     if (this.headNode === null) {
-      throw(new Error('List is empty.'));
+      throw new Error('List is empty.');
     } else {
       if (pos === 0) {
         this.headNode = this.headNode.next;
@@ -181,8 +189,8 @@ export class List<T> implements Iterable<T> {
           current = current.next;
           return result;
         }
-      }
-    }
+      },
+    };
   }
 
   public length(): number {
@@ -265,8 +273,8 @@ export class List<T> implements Iterable<T> {
 
   public toString(): string {
     let result = '{ ';
-    this.forEach((x) => {
-      result += (x + ' ');
+    this.forEach(x => {
+      result += x + ' ';
     });
     result += '}';
     return result;

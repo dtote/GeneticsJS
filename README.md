@@ -101,7 +101,9 @@ You can report a bug, or request a feature with an issue:
 Any help would be welcome :smile:.
 
 ## 💪 Authors
-* **Cristian Abrante** - [CristianAbrante](https://github.com/CristianAbrante) - ([cristian@abrante.me])
+* **Cristo Navarro** - [CristoNavarro](https://github.com/CristoNavarro) - ([alu0101024608@ull.edu.es]) - 2021
+* **Francisco Cruz** - [cruzelante098](https://github.com/cruzelante098) - ([cruzelante098@gmail.com]) - 2020
+* **Cristian Abrante** - [CristianAbrante](https://github.com/CristianAbrante) - ([cristian@abrante.me]) - 2019
 
 ## 📝 License
-This project is licensed under the **[MIT License](https://github.com/CristianAbrante/GeneticsJS/blob/master/LICENSE)**
+This project is licensed under the **[MIT License](https://github.com/GeneticsJS/GeneticsJS/blob/master/LICENSE)**

@@ -1,30 +1,38 @@
+/*
+ * @license
+ * Copyright (c) 2021 Cristo Navarro.
+ * Copyright (c) 2020 Francisco Cruz.
+ * Copyright (c) 2019 Cristian Abrante.
+ * All rights reserved.
+ * Licensed under the MIT License. See LICENSE in the project root for license information.
+ */
 
 import { isEqual } from '../../../../../../../index';
 import { List } from '../../../../../../../individual';
-import { ListIndividual } from '../../../../../../../index'
+import { ListIndividual } from '../../../../../../../index';
 import ListIndividualMock from '../ListIndividualMock';
 
 const inputData = {
   data: [
     [1, 3, 4],
     [0, 2, 6],
-    [2, 6, 7]
-  ]
-}
+    [2, 6, 7],
+  ],
+};
 
 const copyExpected = {
   data: [
     [2, 4, 6],
     [0, 3, 7],
-    [2, 6, 7]
-  ]
-}
+    [2, 6, 7],
+  ],
+};
 
 const otherInputData = [
   [2, 4, 6],
   [0, 3, 7],
-  [9, 6, 8]
-]
+  [9, 6, 8],
+];
 
 const A = new List<number>();
 const B = new List<number>();
@@ -80,9 +88,9 @@ export const I: ListIndividualMock<number> = {
   every: [
     {
       callback: (gene: List<number>) => {
-        return gene.every((x) => {
+        return gene.every(x => {
           return Number.isInteger(x);
-        })
+        });
       },
       expected: true,
     },
@@ -183,21 +191,21 @@ export const I: ListIndividualMock<number> = {
   lastIndexOf: [
     {
       expected: 0,
-      params: { 
-        gene: A
+      params: {
+        gene: A,
       },
     },
     {
       expected: 2,
       params: {
-        gene: C
+        gene: C,
       },
     },
     {
       expected: -1,
-      params: { 
+      params: {
         gene: C,
-        fromIndex: 1
+        fromIndex: 1,
       },
     },
   ],
@@ -206,7 +214,7 @@ export const I: ListIndividualMock<number> = {
   },
   map: [
     {
-      callback: (gene: List<number>) => gene = D,
+      callback: (gene: List<number>) => (gene = D),
       expected: [D, D, D],
     },
   ],
@@ -231,7 +239,7 @@ export const I: ListIndividualMock<number> = {
         gene: F,
         geneIndex: 1,
       },
-    }
+    },
   ],
   some: [
     {
