@@ -4,6 +4,9 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
+//import isEqual from '../../../../../../node_modules/lodash/isEqual';
+
+import { isEqual } from '../../../../../index';
 import { BaseIndividual } from '../../../../../individual/base/BaseIndividual';
 import BaseIndividualMock from '../../../mocks/individual/base/BaseIndividualMock';
 
@@ -30,7 +33,8 @@ const baseIndividualTestSuite = <I extends BaseIndividual<T>, T>(
 
     test('naive get test', () => {
       expectedGenotype.forEach((expectedGene, geneIndex) => {
-        expect(individual.get(geneIndex)).toBe(expectedGene);
+        // expect(individual.get(geneIndex)).toBe(expectedGene);
+        expect(individual.get(geneIndex)).toEqual(expectedGene);
       });
     });
 
@@ -73,7 +77,7 @@ const baseIndividualTestSuite = <I extends BaseIndividual<T>, T>(
       let i = 0;
       expect(
         individual.every((gene: any) => {
-          return gene === expectedGenotype[i++];
+          return isEqual(gene, expectedGenotype[i++]);
         }),
       ).toBeTruthy();
     });

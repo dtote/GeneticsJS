@@ -49,7 +49,8 @@ const mutableIndividualTestSuite = <I extends MutableIndividual<T>, T>(
           test.change.forEach(change => {
             individual.set(change.geneIndex, change.gene);
           });
-          expect(individual.genotype).not.toEqual(test.other.genotype);
+          //expect(individual.genotype).not.toEqual(test.other.genotype);
+          expect(individual.genotype).not.toBe(test.other.genotype);
         });
       });
     }

@@ -14,8 +14,8 @@ const creation = (initializationParams: ListIndividualMock<any>) => {
 Object.keys(ListIndividualTestMocks).forEach(key => {
   const test = ListIndividualTestMocks[key];
   describe(`${test.testName} for ListIndividual`, () => {
-    //baseIndividualTestSuite(test, creation);
-    //mutableIndividualTestSuite(test, creation);
+    baseIndividualTestSuite(test, creation);
+    mutableIndividualTestSuite(test, creation);
     listTestSuite(test);
   });
 });

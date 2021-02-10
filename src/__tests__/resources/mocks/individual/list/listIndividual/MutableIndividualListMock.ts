@@ -6,7 +6,7 @@ import BaseIndividualMock from '../../base/BaseIndividualMock';
 interface CopyMethods<I extends MutableIndividual<List<T>>, T> {
   change: Array<{
     geneIndex: number;
-    gene: T;
+    gene: List<T>;
   }>;
   other: I;
 }
@@ -20,27 +20,27 @@ interface MutableIndividualListMock<I extends MutableIndividual<List<T>>, T> ext
       start?: number;
       end?: number;
     };
-    expected: T[];
+    expected: List<T>[];
   }>;
   fill?: Array<{
     params: {
-      gene: T;
+      gene: List<T>;
       start?: number;
       end?: number;
     };
-    expected: T[];
+    expected: List<T>[];
   }>;
   map?: Array<{
-    callback: (gene: T, geneIndex?: number, genotype?: T[]) => T;
-    expected: T[];
+    callback: (gene: List<T>, geneIndex?: number, genotype?: List<T>[]) => List<T>;
+    expected: List<T>[];
   }>;
   reverse?: {
-    expected: T[];
+    expected: List<T>[];
   };
   set?: Array<{
     params: {
       geneIndex: number;
-      gene: T;
+      gene: List<T>;
     };
   }>;
 }

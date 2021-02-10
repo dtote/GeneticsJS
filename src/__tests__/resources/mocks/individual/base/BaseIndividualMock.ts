@@ -21,7 +21,8 @@ interface BaseIndividualMock<I extends BaseIndividual<T>, T> {
     expected: number;
   };
   every?: Array<GeneConditionCallback<T, boolean>>;
-  find?: Array<GeneConditionCallback<T, boolean>>;
+  //find?: Array<GeneConditionCallback<T, boolean>>;
+  find?: Array<GeneConditionCallback<T, T>>;
   findIndex?: Array<GeneConditionCallback<T, number>>;
   includes?: Array<{
     expected: boolean;

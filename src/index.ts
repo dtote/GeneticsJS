@@ -13,3 +13,4 @@ export * from './population';
 export * from './reader';
 export * from './selection';
 export * from './termination';
+export * from './utils';
