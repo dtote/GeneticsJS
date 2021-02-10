@@ -193,7 +193,6 @@ export abstract class BaseIndividual<T> implements Iterable<T> {
       }
     }
     return -1;
-    return this.genotype.lastIndexOf(gene, fromIndex);
   }
 
   /**

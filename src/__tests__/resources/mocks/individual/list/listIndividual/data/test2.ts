@@ -201,6 +201,52 @@ export const I: ListIndividualMock<number> = {
       },
     },
   ],
+  length: {
+    expected: 3,
+  },
+  map: [
+    {
+      callback: (gene: List<number>) => gene = D,
+      expected: [D, D, D],
+    },
+  ],
+  reverse: {
+    expected: [C, B, A],
+  },
+  set: [
+    {
+      params: {
+        gene: D,
+        geneIndex: 0,
+      },
+    },
+    {
+      params: {
+        gene: E,
+        geneIndex: 2,
+      },
+    },
+    {
+      params: {
+        gene: F,
+        geneIndex: 1,
+      },
+    }
+  ],
+  some: [
+    {
+      callback: (gene: List<number>) => isEqual(gene, A),
+      expected: true,
+    },
+    {
+      callback: (gene: List<number>) => isEqual(gene, B),
+      expected: true,
+    },
+    {
+      callback: (gene: List<number>) => isEqual(gene, E),
+      expected: false,
+    },
+  ],
   toStringTest: {
     expected: '{ 1 3 4 } { 0 2 6 } { 2 6 7 }',
   },
