@@ -187,6 +187,12 @@ export abstract class BaseIndividual<T> implements Iterable<T> {
    *        by default is the last index.
    */
   public lastIndexOf(gene: T, fromIndex: number = this.length() - 1): number {
+    for (let index = fromIndex; index >= 0; index--) {
+      if (isEqual(this.genotype[index], gene)) {
+        return index;
+      }
+    }
+    return -1;
     return this.genotype.lastIndexOf(gene, fromIndex);
   }
 

@@ -180,6 +180,27 @@ export const I: ListIndividualMock<number> = {
       },
     },
   ],
+  lastIndexOf: [
+    {
+      expected: 0,
+      params: { 
+        gene: A
+      },
+    },
+    {
+      expected: 2,
+      params: {
+        gene: C
+      },
+    },
+    {
+      expected: -1,
+      params: { 
+        gene: C,
+        fromIndex: 1
+      },
+    },
+  ],
   toStringTest: {
     expected: '{ 1 3 4 } { 0 2 6 } { 2 6 7 }',
   },
