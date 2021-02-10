@@ -4,6 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
+import { isEqual } from '../../utils';
+
 /**
  * Type for callback that express a condition for each element.
  * @typeparam T type of individual genes.
@@ -145,7 +147,12 @@ export abstract class BaseIndividual<T> implements Iterable<T> {
    * @return `true` if gene in genotype or `false` otherwise.
    */
   public includes(gene: T, startIndex: number = 0): boolean {
-    return this.genotype.includes(gene, startIndex);
+    for (let index = startIndex; index < this.genotype.length; index++) {
+      if (isEqual(this.genotype[index], gene)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
