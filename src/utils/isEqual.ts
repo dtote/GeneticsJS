@@ -7,6 +7,14 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
+ /**
+  * Compares to items and return true if they are equal, and false if not. If
+  * both items are objects, then it makes a deep comparison, cheking the
+  * values of each property.
+  * @param firstItem First item to compare
+  * @param secondItem Second item to compare
+  * @return True if they are equal. False if not.
+  */
 export function isEqual(firstItem: any, secondItem: any): boolean {
   if (firstItem === secondItem) {
     return true;
