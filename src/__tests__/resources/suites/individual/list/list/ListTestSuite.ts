@@ -204,6 +204,20 @@ const listTestSuite = (listTest: ListMock<any>) => {
         expect(list.toString()).toEqual(listTest.toStringTest);
       });
     }
+
+    if (listTest.swap !== undefined) {
+      test('Swap list test', () => {
+        for (let i = 0; i < listTest.swap!.length; i++) {
+          const { firstIndex, secondIndex, expected, error } = listTest.swap![i];
+          if (error) {
+            expect(() => list.swap(firstIndex, secondIndex)).toThrow(Error);
+          } else {
+            list.swap(firstIndex, secondIndex);
+            expect(list.values).toEqual(expected);
+          } 
+        }
+      });
+    }
   });
 };
 

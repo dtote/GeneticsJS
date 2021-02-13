@@ -224,7 +224,7 @@ export class List<T> implements Iterable<T> {
           if (currentPos === pos - 1) {
             newNode.next = currentNode.next;
             currentNode.next = newNode;
-            return;
+            break;
           }
           currentPos++;
           currentNode = currentNode.next;
@@ -427,5 +427,14 @@ export class List<T> implements Iterable<T> {
     });
     result += '}';
     return result;
+  }
+
+  public swap(firstIndex: number, secondIndex: number): void {
+    const firstData: T = this.get(firstIndex);
+    const secondData: T = this.get(secondIndex);
+    this.insert(firstIndex, secondData);
+    this.erase(firstIndex + 1);
+    this.insert(secondIndex, firstData);
+    this.erase(secondIndex + 1);
   }
 }
