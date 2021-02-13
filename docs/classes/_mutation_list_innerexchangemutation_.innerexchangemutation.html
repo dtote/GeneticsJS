@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BitwiseMutation | genetics-js</title>
+	<title>InnerExchangeMutation | genetics-js</title>
 	<meta name="description" content="Documentation for genetics-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,27 +56,47 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_mutation_binary_bitwisemutation_.html">&quot;mutation/binary/BitwiseMutation&quot;</a>
+					<a href="../modules/_mutation_list_innerexchangemutation_.html">&quot;mutation/list/InnerExchangeMutation&quot;</a>
 				</li>
 				<li>
-					<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html">BitwiseMutation</a>
+					<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html">InnerExchangeMutation</a>
 				</li>
 			</ul>
-			<h1>Class BitwiseMutation</h1>
+			<h1>Class InnerExchangeMutation&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#inner-exchange-mutation" id="inner-exchange-mutation" style="color: inherit; text-decoration: none;">
+							<h2>Inner Exchange Mutation</h2>
+						</a>
+						<p>Class that implements a mutation operator for List Individuals.</p>
+					</div>
+					<p>This operator is applied to each gene of the genotype and swaps two nodes
+					chosen randomly from the current gene.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_mutation_base_uniformmutation_.uniformmutation.html" class="tsd-signature-type">UniformMutation</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="_mutation_base_uniformmutation_.uniformmutation.html" class="tsd-signature-type">UniformMutation</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">BitwiseMutation</span>
+								<span class="target">InnerExchangeMutation</span>
 							</li>
 						</ul>
 					</li>
@@ -85,7 +105,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_mutation_base_mutation_.mutation.html" class="tsd-signature-type">Mutation</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/_mutation_base_mutation_.mutation.html" class="tsd-signature-type">Mutation</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -95,10 +115,10 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutate" class="tsd-kind-icon">mutate</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutategene" class="tsd-kind-icon">mutate<wbr>Gene</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutategeneuniformly" class="tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutatewith" class="tsd-kind-icon">mutate<wbr>With</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutate" class="tsd-kind-icon">mutate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutategene" class="tsd-kind-icon">mutate<wbr>Gene</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutategeneuniformly" class="tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutatewith" class="tsd-kind-icon">mutate<wbr>With</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,7 +130,7 @@
 					<a name="mutate" class="tsd-anchor"></a>
 					<h3>mutate</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">mutate<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a>, mutationRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, engine<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">mutate<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, mutationRate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, engine<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -124,7 +144,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>individual: <a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a></h5>
+									<h5>individual: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mutationRate: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0.5</span></h5>
@@ -141,7 +161,7 @@
 					<a name="mutategene" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> mutate<wbr>Gene</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">mutate<wbr>Gene<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">mutate<wbr>Gene<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -155,7 +175,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>individual: <a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a></h5>
+									<h5>individual: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>index: <span class="tsd-signature-type">number</span></h5>
@@ -172,26 +192,41 @@
 					<a name="mutategeneuniformly" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> mutate<wbr>Gene<wbr>Uniformly</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">: </span><a href="../modules/_mutation_binary_index_.html#bitwisemutationparams" class="tsd-signature-type">BitwiseMutationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InnerExchangeMutationParams</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_mutation_base_uniformmutation_.uniformmutation.html">UniformMutation</a>.<a href="_mutation_base_uniformmutation_.uniformmutation.html#mutategeneuniformly">mutateGeneUniformly</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/GeneticsJS/GeneticsJS/blob/7ee93a7/src/mutation/binary/BitwiseMutation.ts#L11">mutation/binary/BitwiseMutation.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/GeneticsJS/GeneticsJS/blob/7ee93a7/src/mutation/list/InnerExchangeMutation.ts#L31">mutation/list/InnerExchangeMutation.ts:31</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Mutation operator that is applied to the gene in the specified index.
+									The operator swaps two nodes of the current list.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>individual: <a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a></h5>
+									<h5>individual: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Individual that the operator is applied on</p>
+									</div>
 								</li>
 								<li>
 									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Index of the current gene</p>
+									</div>
 								</li>
 								<li>
-									<h5>params: <a href="../modules/_mutation_binary_index_.html#bitwisemutationparams" class="tsd-signature-type">BitwiseMutationParams</a></h5>
+									<h5>params: <span class="tsd-signature-type">InnerExchangeMutationParams</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Operator parameters</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -202,7 +237,7 @@
 					<a name="mutatewith" class="tsd-anchor"></a>
 					<h3>mutate<wbr>With</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">mutate<wbr>With<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">mutate<wbr>With<span class="tsd-signature-symbol">(</span>individual<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -216,7 +251,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>individual: <a href="_individual_binary_binaryindividual_.binaryindividual.html" class="tsd-signature-type">BinaryIndividual</a></h5>
+									<h5>individual: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>params: <a href="../interfaces/_mutation_base_uniformmutation_.uniformmutationparams.html" class="tsd-signature-type">UniformMutationParams</a></h5>
@@ -235,7 +270,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_mutation_binary_bitwisemutation_.html">&quot;mutation/binary/<wbr>Bitwise<wbr>Mutation&quot;</a>
+						<a href="../modules/_mutation_list_innerexchangemutation_.html">&quot;mutation/list/<wbr>Inner<wbr>Exchange<wbr>Mutation&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -243,20 +278,20 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html" class="tsd-kind-icon">Bitwise<wbr>Mutation</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html" class="tsd-kind-icon">Inner<wbr>Exchange<wbr>Mutation</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutate" class="tsd-kind-icon">mutate</a>
+								<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutate" class="tsd-kind-icon">mutate</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
-								<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutategene" class="tsd-kind-icon">mutate<wbr>Gene</a>
+								<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutategene" class="tsd-kind-icon">mutate<wbr>Gene</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutategeneuniformly" class="tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly</a>
+								<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutategeneuniformly" class="tsd-kind-icon">mutate<wbr>Gene<wbr>Uniformly</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="_mutation_binary_bitwisemutation_.bitwisemutation.html#mutatewith" class="tsd-kind-icon">mutate<wbr>With</a>
+								<a href="_mutation_list_innerexchangemutation_.innerexchangemutation.html#mutatewith" class="tsd-kind-icon">mutate<wbr>With</a>
 							</li>
 						</ul>
 					</li>

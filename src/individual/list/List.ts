@@ -429,6 +429,11 @@ export class List<T> implements Iterable<T> {
     return result;
   }
 
+  /**
+   * Swap two nodes from the list with the specified positions.
+   * @param firstIndex Index of the first node to swap
+   * @param secondIndex Index of the second node to swap
+   */
   public swap(firstIndex: number, secondIndex: number): void {
     const firstData: T = this.get(firstIndex);
     const secondData: T = this.get(secondIndex);
@@ -438,6 +443,12 @@ export class List<T> implements Iterable<T> {
     this.erase(secondIndex + 1);
   }
 
+  /**
+   * Swaps the node in the given position with a new one that has the scpecified
+   * data.
+   * @param index Position of the node to change 
+   * @param data Data for the new node
+   */
   public swapWith(index: number, data: T): void {
     this.insert(index, data);
     this.erase(index + 1);
