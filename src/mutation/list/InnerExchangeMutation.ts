@@ -16,9 +16,12 @@ import { UniformMutation, UniformMutationParams as InnerExchangeMutationParams }
 export class InnerExchangeMutation<T> extends UniformMutation<ListIndividual<T>, List<T>> {
   protected mutateGeneUniformly(individual: ListIndividual<T>, index: number, params: InnerExchangeMutationParams): void {
     const gene = individual.get(index);
-    const range = new NumericRange(0, gene.length() - 1);
+    const range = new NumericRange(1, gene.length() - 1);
     const firstIndex: number = Generator.generateInteger(range);
-    const secondIndex: number = Generator.generateInteger(range);
+    let secondIndex: number = Generator.generateInteger(range);
+    while (secondIndex === firstIndex) {
+      secondIndex = Generator.generateInteger(range);
+    }
     gene.swap(firstIndex, secondIndex);
   }
 }
