@@ -85,6 +85,12 @@ interface ListMock<T> {
     error?: boolean;
     expected: Array<T>;
   }>;
+  swapWith?: Array<{
+    index: number;
+    data: T;
+    error?: boolean;
+    expected: Array<T>;
+  }>;
 }
 
 export default ListMock;

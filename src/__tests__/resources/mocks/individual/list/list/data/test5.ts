@@ -121,6 +121,24 @@ const I: ListMock<number> = {
       error: true,
       expected: []
     }
+  ],
+  swapWith: [
+    {
+      index: 1,
+      data: 4,
+      expected: [3, 4, 5, 7, 9]
+    },
+    {
+      index: 3,
+      data: 2,
+      expected: [3, 4, 5, 2, 9]
+    },
+    {
+      index: -1,
+      data: 4,
+      error: true,
+      expected: []
+    }
   ]
 };
 

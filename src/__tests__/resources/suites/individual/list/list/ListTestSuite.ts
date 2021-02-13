@@ -218,6 +218,20 @@ const listTestSuite = (listTest: ListMock<any>) => {
         }
       });
     }
+
+    if (listTest.swapWith !== undefined) {
+      test('Swap list test', () => {
+        for (let i = 0; i < listTest.swap!.length; i++) {
+          const { index, data, expected, error } = listTest.swapWith![i];
+          if (error) {
+            expect(() => list.swapWith(index, data)).toThrow(Error);
+          } else {
+            list.swapWith(index, data);
+            expect(list.values).toEqual(expected);
+          } 
+        }
+      });
+    }
   });
 };
 

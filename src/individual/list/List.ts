@@ -437,4 +437,9 @@ export class List<T> implements Iterable<T> {
     this.insert(secondIndex, firstData);
     this.erase(secondIndex + 1);
   }
+
+  public swapWith(index: number, data: T): void {
+    this.insert(index, data);
+    this.erase(index + 1);
+  }
 }
