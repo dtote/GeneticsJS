@@ -9,3 +9,4 @@
 
 export * from './InnerExchangeMutation';
 export * from './GeneExchangeMutation';
+export * from './GeneRelocationMutation';

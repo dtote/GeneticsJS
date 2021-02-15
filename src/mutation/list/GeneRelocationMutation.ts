@@ -14,17 +14,17 @@ import { NumericRange } from '../../individual';
 import { UniformMutation, UniformMutationParams as InnerExchangeMutationParams } from './../base';
 
 /**
- * ## Gene Exchange Mutation
+ * ## Gene Relocation Mutation
  * Class that implements a mutation operator for List Individuals.
  * 
- * This operator is applied to each gene of the genotype and changes one node
- * of the list correspondind to the current gene, with another node from a
- * different gene. Both nodes, and the other gene are chosen randomly.
+ * This operator is applied to each gene of the genotype and moves one node
+ * of the list corresponding to the current gene, to a different gene. Both the
+ * node, and the other gene are chosen randomly.
  */
-export class GeneExchangeMutation<T> extends UniformMutation<ListIndividual<T>, List<T>> {
+export class GeneRelocationMutation<T> extends UniformMutation<ListIndividual<T>, List<T>> {
   /**
    * Mutation operator that is applied to the gene in the specified index.
-   * The operator swaps a node of the current list with a node from another one.
+   * The operator moves a node of the current list to another one.
    * @param individual Individual that the operator is applied on
    * @param index Index of the current gene
    * @param params Operator parameters
@@ -44,8 +44,7 @@ export class GeneExchangeMutation<T> extends UniformMutation<ListIndividual<T>, 
     const otherGene: List<T> = individual.get(otherGeneIndex);
     const otherRange: NumericRange = new NumericRange(1, otherGene.length() - 1);
     const otherIndex: number = Generator.generateInteger(otherRange);
-    const otherData: T = otherGene.get(otherIndex);
-    currentGene.swapWith(currentIndex, otherData);
-    otherGene.swapWith(otherIndex, currentData);
+    currentGene.erase(currentIndex);
+    otherGene.insert(otherIndex, currentData);
   }
 }

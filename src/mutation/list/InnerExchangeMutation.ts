@@ -33,8 +33,10 @@ export class InnerExchangeMutation<T> extends UniformMutation<ListIndividual<T>,
     const range: NumericRange = new NumericRange(1, gene.length() - 1);
     const firstIndex: number = Generator.generateInteger(range);
     let secondIndex: number = Generator.generateInteger(range);
-    while (secondIndex === firstIndex) {
-      secondIndex = Generator.generateInteger(range);
+    if (gene.length() > 1) {
+      while (secondIndex === firstIndex) {
+        secondIndex = Generator.generateInteger(range);
+      }
     }
     gene.swap(firstIndex, secondIndex);
   }
