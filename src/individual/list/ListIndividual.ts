@@ -10,21 +10,6 @@
 import { MutableIndividual } from '../base';
 import { List } from './List';
 
-
-/**
- * ## List Individual Params
- * Simple interface that specifies the format of the parameters needed to create
- * a ListIndividual.
- * 
- * The data must be given as an array of arrays. Each of the inner arrays
- * represents the data of a list.
- * 
- * @typeparam T type of the data for the lists of the individual.
- */
-export interface ListIndividualParams<T> {
-  data: Array<Array<T>>;
-}
-
 /**
  * ## List Individual
  * List Individual is a individual where all the genes in the genotype are
@@ -34,18 +19,11 @@ export interface ListIndividualParams<T> {
 export class ListIndividual<T> extends MutableIndividual<List<T>> {
   /**
    * Constructor of the class.
-   * Takes the data given and creates the corresponding lists, inserting the
-   * needed data in each of them.
-   * @param creationParams Initial data for the lists
+   * Initializes the genotype of the individual with the given lists.
+   * @param creationParams Initial genotype for the individual
    */
-  constructor(creationParams: ListIndividualParams<T>) {
-    super([]);
-    for (let currentList = 0; currentList < creationParams.data.length; currentList++) {
-      this.genotype.push(new List<T>());
-      for (let currentNode = 0; currentNode < creationParams.data[currentList].length; currentNode++) {
-        this.genotype[currentList].pushBack(creationParams.data[currentList][currentNode]);
-      }
-    }
+  constructor(genotype: List<T>[]) {
+    super(Array.from(genotype));
   }
 
   /**

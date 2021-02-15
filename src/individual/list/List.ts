@@ -249,6 +249,7 @@ export class List<T> implements Iterable<T> {
     } else {
       if (pos === 0) {
         this.headNode = this.headNode.next;
+        this.listSize--;
       } else {
         let currentPos: number = 0;
         let currentNode: Node<T> | null = this.headNode;

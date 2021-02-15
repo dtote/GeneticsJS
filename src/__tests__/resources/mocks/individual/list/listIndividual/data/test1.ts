@@ -8,30 +8,23 @@
  */
 
 import { List } from '../../../../../../../individual';
+import { createList } from './utils';
 import ListIndividualMock from '../ListIndividualMock';
 
-const inputData = {
-  data: [
-    [1, 3, 4],
-    [0, 2, 6],
-    [2, 6, 7],
-  ],
-};
+const inputData = [
+  [1, 3, 4],
+  [0, 2, 6],
+  [2, 6, 7],
+];
 
-const A = new List<number>();
-const B = new List<number>();
-const C = new List<number>();
-
-for (let i = 0; i < inputData.data[0].length; i++) {
-  A.pushBack(inputData.data[0][i]);
-  B.pushBack(inputData.data[1][i]);
-  C.pushBack(inputData.data[2][i]);
-}
+const A = createList<number>(inputData[0]);
+const B = createList<number>(inputData[1]);
+const C = createList<number>(inputData[2]);
 
 export const I: ListIndividualMock<number> = {
   testName: 'Creation test',
   creation: {
-    data: inputData,
+    data: [A, B, C],
     expected: '{ 1 3 4 } { 0 2 6 } { 2 6 7 }',
   },
   expectedGenotype: [A, B, C],

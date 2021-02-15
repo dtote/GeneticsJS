@@ -7,14 +7,13 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { ListIndividual } from '../../../../../../index';
-import { ListIndividualParams } from '../../../../../../individual';
+import { ListIndividual, List } from '../../../../../../index';
 import MutableIndividualListMock from './MutableIndividualListMock';
 
 interface ListIndividualMock<T> extends MutableIndividualListMock<ListIndividual<T>, T> {
   testName: string;
   creation: {
-    data: ListIndividualParams<T>;
+    data: List<T>[];
     expected: string;
   };
 }

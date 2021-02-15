@@ -9,14 +9,17 @@
 
 import { ListIndividual } from '../../../index';
 import { GeneRelocationMutation } from '../../../mutation/list';
+import { createList } from '../../resources/mocks/individual/list/listIndividual/data/utils';
 
 describe('Gene relocation mutation tests', () => {
   const mutator = new GeneRelocationMutation();
   test('Mutation with 100% probability', () => {
-    const params = {
-      data: [[2, 3, 4, 5], [4, 5, 6, 9], [0, 3, 9, 2]]
-    };
-    const individual = new ListIndividual(params);
+    const data = [
+      createList([2, 3, 4, 5]),
+      createList([4, 5, 6, 9]),
+      createList([0, 3, 9, 2])
+    ];
+    const individual = new ListIndividual(data);
     let initialNodes = 0;
     for (let gene of individual) {
       initialNodes += gene.length();
@@ -31,13 +34,15 @@ describe('Gene relocation mutation tests', () => {
     for (let gene of individual) {
       finalNodes += gene.length();
     }
-    expect(initialNodes).toEqual(finalNodes);
+    expect(finalNodes).toEqual(initialNodes);
   });
-  test('Mutation with 10% probability', () => {
-    const params = {
-      data: [[2, 3, 4, 5], [4, 5, 6, 9], [0, 3, 9, 2]]
-    };
-    const individual = new ListIndividual(params);
+  test('Mutation with 0% probability', () => {
+    const data = [
+      createList([2, 3, 4, 5]),
+      createList([4, 5, 6, 9]),
+      createList([0, 3, 9, 2])
+    ];
+    const individual = new ListIndividual(data);
     const originalValues: number[][] = [];
     individual.forEach((gene) => originalValues.push(gene.values));
     mutator.mutate(individual, 0.0);

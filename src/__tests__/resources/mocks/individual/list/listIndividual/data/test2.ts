@@ -10,23 +10,14 @@
 import { isEqual } from '../../../../../../../index';
 import { List } from '../../../../../../../individual';
 import { ListIndividual } from '../../../../../../../index';
+import { createList } from './utils';
 import ListIndividualMock from '../ListIndividualMock';
 
-const inputData = {
-  data: [
-    [1, 3, 4],
-    [0, 2, 6],
-    [2, 6, 7],
-  ],
-};
-
-const copyExpected = {
-  data: [
-    [2, 4, 6],
-    [0, 3, 7],
-    [2, 6, 7],
-  ],
-};
+const inputData = [
+  [1, 3, 4],
+  [0, 2, 6],
+  [2, 6, 7],
+];
 
 const otherInputData = [
   [2, 4, 6],
@@ -34,26 +25,19 @@ const otherInputData = [
   [9, 6, 8],
 ];
 
-const A = new List<number>();
-const B = new List<number>();
-const C = new List<number>();
-const D = new List<number>();
-const E = new List<number>();
-const F = new List<number>();
+const A = createList<number>(inputData[0]);
+const B = createList<number>(inputData[1]);
+const C = createList<number>(inputData[2]);
+const D = createList<number>(otherInputData[0]);
+const E = createList<number>(otherInputData[1]);
+const F = createList<number>(otherInputData[2]);
 
-for (let i = 0; i < inputData.data[0].length; i++) {
-  A.pushBack(inputData.data[0][i]);
-  B.pushBack(inputData.data[1][i]);
-  C.pushBack(inputData.data[2][i]);
-  D.pushBack(otherInputData[0][i]);
-  E.pushBack(otherInputData[1][i]);
-  F.pushBack(otherInputData[2][i]);
-}
+const copyExpected = [D, E, C];
 
 export const I: ListIndividualMock<number> = {
   testName: 'MutableIndividual methods test',
   creation: {
-    data: inputData,
+    data: [A, B, C],
     expected: '{ 1 3 4 } { 0 2 6 } { 2 6 7 }',
   },
   expectedGenotype: [A, B, C],

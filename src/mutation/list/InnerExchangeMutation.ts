@@ -30,7 +30,7 @@ export class InnerExchangeMutation<T> extends UniformMutation<ListIndividual<T>,
    */
   protected mutateGeneUniformly(individual: ListIndividual<T>, index: number, params: InnerExchangeMutationParams): void {
     const gene: List<T> = individual.get(index);
-    const range: NumericRange = new NumericRange(1, gene.length() - 1);
+    const range: NumericRange = new NumericRange(0, gene.length() - 1);
     const firstIndex: number = Generator.generateInteger(range);
     let secondIndex: number = Generator.generateInteger(range);
     if (gene.length() > 1) {
