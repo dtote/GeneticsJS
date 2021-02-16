@@ -1,0 +1,537 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BaseListCrossover | genetics-js</title>
+	<meta name="description" content="Documentation for genetics-js">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">genetics-js</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_crossover_list_baselistcrossover_.html">&quot;crossover/list/BaseListCrossover&quot;</a>
+				</li>
+				<li>
+					<a href="_crossover_list_baselistcrossover_.baselistcrossover.html">BaseListCrossover</a>
+				</li>
+			</ul>
+			<h1>Class BaseListCrossover&lt;T&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#baselistcrossover" id="baselistcrossover" style="color: inherit; text-decoration: none;">
+							<h2>BaseListCrossover</h2>
+						</a>
+					</div>
+					<p>Abstract class that defines the basic methods for a crossover operation that
+					involves List Individuals.</p>
+					<p>To implement a specific operator, the method getGenotypeValues must be
+					implemented.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_crossover_base_basecrossover_.basecrossover.html" class="tsd-signature-type">BaseCrossover</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">BaseListCrossover</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_crossover_list_nodeexchangecrossover_.nodeexchangecrossover.html" class="tsd-signature-type">NodeExchangeCrossover</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_crossover_base_crossover_.crossover.html" class="tsd-signature-type">Crossover</a><span class="tsd-signature-symbol">&lt;</span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crossoverindexes" class="tsd-kind-icon">crossover<wbr>Indexes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crossoverindexesrange" class="tsd-kind-icon">crossover<wbr>Indexes<wbr>Range</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#checkparents" class="tsd-kind-icon">check<wbr>Parents</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#cross" class="tsd-kind-icon">cross</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crosswith" class="tsd-kind-icon">cross<wbr>With</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#getgenotypevalues" class="tsd-kind-icon">get<wbr>Genotype<wbr>Values</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#parentsarevalid" class="tsd-kind-icon">parents<wbr>Are<wbr>Valid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#setcrossoverindexes" class="tsd-kind-icon">set<wbr>Crossover<wbr>Indexes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_crossover_list_baselistcrossover_.baselistcrossover.html#setcrossoverindexesrange" class="tsd-kind-icon">set<wbr>Crossover<wbr>Indexes<wbr>Range</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="crossoverindexes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> crossover<wbr>Indexes</h3>
+					<div class="tsd-signature tsd-kind-icon">crossover<wbr>Indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in crossover/list/BaseListCrossover.ts:40</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Index for each list of both parents to apply the operator.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="crossoverindexesrange" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> crossover<wbr>Indexes<wbr>Range</h3>
+					<div class="tsd-signature tsd-kind-icon">crossover<wbr>Indexes<wbr>Range<span class="tsd-signature-symbol">:</span> <a href="_individual_numeric_base_numericrange_.numericrange.html" class="tsd-signature-type">NumericRange</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in crossover/list/BaseListCrossover.ts:44</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Range for each list of both parents to generate a random index.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="checkparents" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> check<wbr>Parents</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Parents<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_crossover_base_basecrossover_.basecrossover.html">BaseCrossover</a>.<a href="_crossover_base_basecrossover_.basecrossover.html#checkparents">checkParents</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/GeneticsJS/GeneticsJS/blob/f9488d0/src/crossover/base/BaseCrossover.ts#L39">crossover/base/BaseCrossover.ts:39</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="cross" class="tsd-anchor"></a>
+					<h3>cross</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">cross<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, engine<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_crossover_base_basecrossover_.basecrossover.html">BaseCrossover</a>.<a href="_crossover_base_basecrossover_.basecrossover.html#cross">cross</a></p>
+								<ul>
+									<li>Defined in crossover/list/BaseListCrossover.ts:55</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Apply the crossover operation between the two individuals given, using
+										the specified engine to generate random indexes. It returns the two
+									new individuals obtained.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second individual</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> engine: <span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol"> = Generator.DEFAULT_ENGINE</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Engine to generate random indexes</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>Array with the two new individuals.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="crosswith" class="tsd-anchor"></a>
+					<h3>cross<wbr>With</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">cross<wbr>With<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_crossover_base_basecrossover_.basecrossover.html">BaseCrossover</a>.<a href="_crossover_base_basecrossover_.basecrossover.html#crosswith">crossWith</a></p>
+								<ul>
+									<li>Defined in crossover/list/BaseListCrossover.ts:71</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Apply the crossover operation between the two individuals given, using
+									the specified parameters. It returns the two new individuals obtained.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>params: <a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Parameters for the operator</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>Array with the two new individuals.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="getgenotypevalues" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagAbstract">Abstract</span> get<wbr>Genotype<wbr>Values</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Genotype<wbr>Values<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, params<span class="tsd-signature-symbol">: </span><a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>first<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>second<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_crossover_base_basecrossover_.basecrossover.html">BaseCrossover</a>.<a href="_crossover_base_basecrossover_.basecrossover.html#getgenotypevalues">getGenotypeValues</a></p>
+								<ul>
+									<li>Defined in crossover/list/BaseListCrossover.ts:130</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Calculates the gene of the corresponding index for the new individuals.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>params: <a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-signature-type">NodeExchangeCrossoverParams</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Parameters for the operator</p>
+									</div>
+								</li>
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Gene to apply the operator</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>first<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>second<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></h4>
+							<p>Object containing the gene for the new individuals.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>first<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>second<span class="tsd-signature-symbol">: </span><a href="_individual_list_list_.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="parentsarevalid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> parents<wbr>Are<wbr>Valid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">parents<wbr>Are<wbr>Valid<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_crossover_base_basecrossover_.basecrossover.html">BaseCrossover</a>.<a href="_crossover_base_basecrossover_.basecrossover.html#parentsarevalid">parentsAreValid</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/GeneticsJS/GeneticsJS/blob/f9488d0/src/crossover/base/BaseCrossover.ts#L35">crossover/base/BaseCrossover.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="setcrossoverindexes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> set<wbr>Crossover<wbr>Indexes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Crossover<wbr>Indexes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in crossover/list/BaseListCrossover.ts:114</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For each list of both parents, a random index is generated based on the
+									previously calculated range.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="setcrossoverindexesrange" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> set<wbr>Crossover<wbr>Indexes<wbr>Range</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Crossover<wbr>Indexes<wbr>Range<span class="tsd-signature-symbol">(</span>firstParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, secondParent<span class="tsd-signature-symbol">: </span><a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in crossover/list/BaseListCrossover.ts:89</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>For each list of both individuals creates a numeric range. This range is
+										going to be used to select a random index in each list, so it depends on
+										the length of each of them. If the list is empty, a negative range is
+									assigned to it.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>firstParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First individual</p>
+									</div>
+								</li>
+								<li>
+									<h5>secondParent: <a href="_individual_list_listindividual_.listindividual.html" class="tsd-signature-type">ListIndividual</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second individual</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_crossover_list_baselistcrossover_.html">&quot;crossover/list/<wbr>Base<wbr>List<wbr>Crossover&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_crossover_list_baselistcrossover_.baselistcrossover.html" class="tsd-kind-icon">Base<wbr>List<wbr>Crossover</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crossoverindexes" class="tsd-kind-icon">crossover<wbr>Indexes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crossoverindexesrange" class="tsd-kind-icon">crossover<wbr>Indexes<wbr>Range</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#checkparents" class="tsd-kind-icon">check<wbr>Parents</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#cross" class="tsd-kind-icon">cross</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#crosswith" class="tsd-kind-icon">cross<wbr>With</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#getgenotypevalues" class="tsd-kind-icon">get<wbr>Genotype<wbr>Values</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#parentsarevalid" class="tsd-kind-icon">parents<wbr>Are<wbr>Valid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#setcrossoverindexes" class="tsd-kind-icon">set<wbr>Crossover<wbr>Indexes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_crossover_list_baselistcrossover_.baselistcrossover.html#setcrossoverindexesrange" class="tsd-kind-icon">set<wbr>Crossover<wbr>Indexes<wbr>Range</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/_crossover_list_baselistcrossover_.nodeexchangecrossoverparams.html" class="tsd-kind-icon">Node<wbr>Exchange<wbr>Crossover<wbr>Params</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
