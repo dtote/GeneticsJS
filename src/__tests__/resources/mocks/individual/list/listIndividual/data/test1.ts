@@ -8,7 +8,7 @@
  */
 
 import { List } from '../../../../../../../individual';
-import { createList } from './utils';
+import { createList } from '../../../../../../../utils/createList';
 import ListIndividualMock from '../ListIndividualMock';
 
 const inputData = [

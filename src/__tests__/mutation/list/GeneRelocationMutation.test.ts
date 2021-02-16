@@ -9,7 +9,7 @@
 
 import { ListIndividual } from '../../../index';
 import { GeneRelocationMutation } from '../../../mutation/list';
-import { createList } from '../../resources/mocks/individual/list/listIndividual/data/utils';
+import { createList } from '../../../utils/createList';
 
 describe('Gene relocation mutation tests', () => {
   const mutator = new GeneRelocationMutation();

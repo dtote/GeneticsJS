@@ -10,7 +10,7 @@
 import { ListIndividual } from '../../index';
 import { List } from '../../index';
 import { BaseListCrossover, NodeExchangeCrossoverParams } from './BaseListCrossover';
-import { createList } from '../../__tests__/resources/mocks/individual/list/listIndividual/data/utils';
+import { createList } from '../../utils/createList';
 
 /**
  * ## NodeExchangeCrossover

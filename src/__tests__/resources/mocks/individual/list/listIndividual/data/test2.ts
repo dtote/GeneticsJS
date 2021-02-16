@@ -10,7 +10,7 @@
 import { isEqual } from '../../../../../../../index';
 import { List } from '../../../../../../../individual';
 import { ListIndividual } from '../../../../../../../index';
-import { createList } from './utils';
+import { createList } from '../../../../../../../utils/createList';
 import ListIndividualMock from '../ListIndividualMock';
 
 const inputData = [

@@ -8,7 +8,7 @@
  */
 
 import { ListIndividual } from '../../../../../../index';
-import { createList } from '../../../individual/list/listIndividual/data/utils';
+import { createList } from '../../../../../../utils/createList';
 import { ListCrossoverMock } from '../ListCrossoverMock';
 
 const ind1 = new ListIndividual([createList([1,2]), createList([3,4])]);

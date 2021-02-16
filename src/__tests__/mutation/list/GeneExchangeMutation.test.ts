@@ -9,8 +9,7 @@
 
 import { ListIndividual } from '../../../index';
 import { GeneExchangeMutation } from '../../../mutation/list';
-import { createList } from '../../resources/mocks/individual/list/listIndividual/data/utils';
-import { NodeExchangeCrossover } from '../../../index';
+import { createList } from '../../../utils/createList';
 
 describe('Gene exchange mutation tests', () => {
   const mutator = new GeneExchangeMutation();
