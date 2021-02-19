@@ -92,6 +92,11 @@ implemented:
 - [ ] `v0.6.0`: Implementation of **population and offspring management**.
 - [ ] `v0.7.0`: Implementation of **common evolutionary algorithms** with fixed configurations.
 
+## 🏆 Successes
+The library has been successfully used in the following projects:
+
+* [**Optimized planning of a trafficc light system using evolutionary algorithms**](https://riull.ull.es/xmlui/handle/915/21321) - Francisco Arturo Cruz Zelante
+
 ## 👐 Contributing
 You can report a bug, or request a feature with an issue:
 
