@@ -7,8 +7,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { Node } from './index';
 import { isEqual } from '../../index';
+import { Node } from './index';
 
 /**
  * Type for callback that express a condition for each node of the list.
@@ -107,7 +107,7 @@ export class List<T> implements Iterable<T> {
    * Checks if the list is empty.
    * @return True if it is empty, false if not.
    */
-  public empty(): Boolean {
+  public empty(): boolean {
     return this.listSize === 0;
   }
 

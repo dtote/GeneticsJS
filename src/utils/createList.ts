@@ -16,9 +16,9 @@ import { List } from '../index';
  * @return List with the specified data.
  */
 export function createList<T>(data: T[]): List<T> {
-  let newList = new List<T>();
-  for (let i = 0; i < data.length; i++) {
-    newList.pushBack(data[i]);
+  const newList = new List<T>();
+  for (const currentData of data) {
+    newList.pushBack(currentData);
   }
   return newList;
 }

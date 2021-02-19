@@ -22,7 +22,7 @@ export class ListIndividual<T> extends MutableIndividual<List<T>> {
    * Initializes the genotype of the individual with the given lists.
    * @param creationParams Initial genotype for the individual
    */
-  constructor(genotype: List<T>[]) {
+  constructor(genotype: Array<List<T>>) {
     super(Array.from(genotype));
   }
 

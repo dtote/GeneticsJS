@@ -51,7 +51,7 @@ export abstract class BaseListCrossover<T> extends BaseCrossover<
     firstParent: ListIndividual<T>,
     secondParent: ListIndividual<T>,
     engine = Generator.DEFAULT_ENGINE,
-  ): ListIndividual<T>[] {
+  ): Array<ListIndividual<T>> {
     return this.crossWith(firstParent, secondParent, { engine, individualConstructor: ListIndividual });
   }
 
@@ -67,7 +67,7 @@ export abstract class BaseListCrossover<T> extends BaseCrossover<
     firstParent: ListIndividual<T>,
     secondParent: ListIndividual<T>,
     params: NodeExchangeCrossoverParams<T>,
-  ): ListIndividual<T>[] {
+  ): Array<ListIndividual<T>> {
     this.setCrossoverIndexes(firstParent, secondParent);
     return super.crossWith(firstParent, secondParent, params);
   }

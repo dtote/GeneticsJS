@@ -8,11 +8,11 @@
  */
 
 import { Generator } from '../../generator/utils';
-import { ListIndividual } from '../../index';
 import { List } from '../../index';
-import { BaseListCrossover, NodeExchangeCrossoverParams } from './BaseListCrossover';
-import { createList } from '../../utils/createList';
+import { ListIndividual } from '../../index';
 import { NumericRange } from '../../individual/numeric/base';
+import { createList } from '../../utils/createList';
+import { BaseListCrossover, NodeExchangeCrossoverParams } from './BaseListCrossover';
 
 /**
  * ## NodeExchangeCrossover
@@ -46,7 +46,7 @@ export class NodeExchangeCrossover<T> extends BaseListCrossover<T> {
     const firstValues = firstParent.get(index).values;
     const secondValues = secondParent.get(index).values;
     if (this.crossoverIndexes[index][0] >= 0 && this.crossoverIndexes[index][1] >= 0) {
-      let aux = firstValues[this.crossoverIndexes[index][0]];
+      const aux = firstValues[this.crossoverIndexes[index][0]];
       firstValues[this.crossoverIndexes[index][0]] = secondValues[this.crossoverIndexes[index][1]];
       secondValues[this.crossoverIndexes[index][1]] = aux;
     }
