@@ -108,38 +108,38 @@ const I: ListMock<number> = {
     {
       firstIndex: 1,
       secondIndex: 4,
-      expected: [3, 9, 5, 7, 1]
+      expected: [3, 9, 5, 7, 1],
     },
     {
       firstIndex: 0,
       secondIndex: 2,
-      expected: [5, 9, 3, 7, 1]
+      expected: [5, 9, 3, 7, 1],
     },
     {
       firstIndex: -1,
       secondIndex: 4,
       error: true,
-      expected: []
-    }
+      expected: [],
+    },
   ],
   swapWith: [
     {
       index: 1,
       data: 4,
-      expected: [3, 4, 5, 7, 9]
+      expected: [3, 4, 5, 7, 9],
     },
     {
       index: 3,
       data: 2,
-      expected: [3, 4, 5, 2, 9]
+      expected: [3, 4, 5, 2, 9],
     },
     {
       index: -1,
       data: 4,
       error: true,
-      expected: []
-    }
-  ]
+      expected: [],
+    },
+  ],
 };
 
 export default I;

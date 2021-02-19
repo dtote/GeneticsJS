@@ -38,7 +38,7 @@ export class ListIndividual<T> extends MutableIndividual<List<T>> {
    * Converts a gene into a string. If the gene can't be converted, it throws an
    * error.
    * @param gene Gene to convert into a string
-   * @return String that represents the gene. 
+   * @return String that represents the gene.
    */
   protected geneToString(gene: List<T>): string {
     if (gene.toString !== undefined && typeof gene.toString === 'function') {

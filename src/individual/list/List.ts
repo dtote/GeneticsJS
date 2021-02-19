@@ -25,13 +25,13 @@ type nodeCallback<T> = (nodeData: T) => any;
 /**
  * ## List
  * Class that represents a simple linked list, composed by Nodes.
- * 
+ *
  * Lists provide methods to easily insert and extract nodes in any position
  * requiring only the data that is going to be inserted.
- * 
+ *
  * This class provides some 'array-like' methods for iterating over the nodes
  * and modify or access its data.
- * 
+ *
  * @typeparam T type of data stored in the nodes
  */
 export class List<T> implements Iterable<T> {
@@ -447,7 +447,7 @@ export class List<T> implements Iterable<T> {
   /**
    * Swaps the node in the given position with a new one that has the scpecified
    * data.
-   * @param index Position of the node to change 
+   * @param index Position of the node to change
    * @param data Data for the new node
    */
   public swapWith(index: number, data: T): void {

@@ -214,7 +214,7 @@ const listTestSuite = (listTest: ListMock<any>) => {
           } else {
             list.swap(firstIndex, secondIndex);
             expect(list.values).toEqual(expected);
-          } 
+          }
         }
       });
     }
@@ -228,7 +228,7 @@ const listTestSuite = (listTest: ListMock<any>) => {
           } else {
             list.swapWith(index, data);
             expect(list.values).toEqual(expected);
-          } 
+          }
         }
       });
     }

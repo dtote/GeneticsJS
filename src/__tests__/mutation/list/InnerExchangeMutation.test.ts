@@ -14,17 +14,13 @@ import { createList } from '../../../utils/createList';
 describe('Inner exchange mutation tests', () => {
   const mutator = new InnerExchangeMutation();
   test('Mutation with 100% probability', () => {
-    const data = [
-      createList([2, 3, 4, 5]),
-      createList([4, 5, 6, 9]),
-      createList([0, 3, 9, 2])
-    ];
+    const data = [createList([2, 3, 4, 5]), createList([4, 5, 6, 9]), createList([0, 3, 9, 2])];
     const individual = new ListIndividual(data);
     const originalValues: number[][] = [];
-    individual.forEach((gene) => originalValues.push(gene.values));
+    individual.forEach(gene => originalValues.push(gene.values));
     mutator.mutate(individual, 1.0);
     const newValues: number[][] = [];
-    individual.forEach((gene) => newValues.push(gene.values));
+    individual.forEach(gene => newValues.push(gene.values));
     expect(originalValues).not.toEqual(newValues);
     for (let i = 0; i < originalValues.length; i++) {
       originalValues[i].sort();
@@ -33,17 +29,13 @@ describe('Inner exchange mutation tests', () => {
     }
   });
   test('Mutation with 0% probability', () => {
-    const data = [
-      createList([2, 3, 4, 5]),
-      createList([4, 5, 6, 9]),
-      createList([0, 3, 9, 2])
-    ];
+    const data = [createList([2, 3, 4, 5]), createList([4, 5, 6, 9]), createList([0, 3, 9, 2])];
     const individual = new ListIndividual(data);
     const originalValues: number[][] = [];
-    individual.forEach((gene) => originalValues.push(gene.values));
+    individual.forEach(gene => originalValues.push(gene.values));
     mutator.mutate(individual, 0.0);
     const newValues: number[][] = [];
-    individual.forEach((gene) => newValues.push(gene.values));
+    individual.forEach(gene => newValues.push(gene.values));
     expect(originalValues).toEqual(newValues);
   });
 });

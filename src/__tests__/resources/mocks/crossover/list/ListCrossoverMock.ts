@@ -10,6 +10,7 @@
 import { ListIndividual } from '../../../../../index';
 
 export interface ListCrossoverMock<T> {
-  firstParent: ListIndividual<T>,
-  secondParent: ListIndividual<T>
+  firstParent: ListIndividual<T>;
+  secondParent: ListIndividual<T>;
+  expected?: ListIndividual<T>[];
 }

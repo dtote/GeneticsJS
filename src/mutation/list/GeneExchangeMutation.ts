@@ -16,7 +16,7 @@ import { UniformMutation, UniformMutationParams as InnerExchangeMutationParams }
 /**
  * ## Gene Exchange Mutation
  * Class that implements a mutation operator for List Individuals.
- * 
+ *
  * This operator is applied to each gene of the genotype and changes one node
  * of the list correspondind to the current gene, with another node from a
  * different gene. Both nodes, and the other gene are chosen randomly.
@@ -29,7 +29,11 @@ export class GeneExchangeMutation<T> extends UniformMutation<ListIndividual<T>, 
    * @param index Index of the current gene
    * @param params Operator parameters
    */
-  protected mutateGeneUniformly(individual: ListIndividual<T>, index: number, params: InnerExchangeMutationParams): void {
+  protected mutateGeneUniformly(
+    individual: ListIndividual<T>,
+    index: number,
+    params: InnerExchangeMutationParams,
+  ): void {
     const currentGene: List<T> = individual.get(index);
     const currentRange: NumericRange = new NumericRange(0, currentGene.length() - 1);
     const currentIndex: number = Generator.generateInteger(currentRange);

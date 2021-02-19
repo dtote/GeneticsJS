@@ -7,11 +7,11 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
- /**
-  * ## Node
-  * Node is an element of a simple linked list. It contains some data and a
-  * pointer to the next node in the list.
-  */
+/**
+ * ## Node
+ * Node is an element of a simple linked list. It contains some data and a
+ * pointer to the next node in the list.
+ */
 export class Node<T> {
   /**
    * Data of the node.

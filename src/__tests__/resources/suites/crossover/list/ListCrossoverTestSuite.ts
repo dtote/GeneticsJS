@@ -13,14 +13,20 @@ import { ListCrossoverMock } from '../../../mocks/crossover/list/ListCrossoverMo
 export const listCrossoverTestSuite = <X extends BaseListCrossover<T>, T>(
   mock: ListCrossoverMock<T>[],
   message: string,
-  crossover: X
+  crossover: X,
 ) => {
   describe(message, () => {
     mock.forEach(mockTest => {
       test(`Individuals => ${mockTest.firstParent} x ${mockTest.secondParent}`, () => {
-        const result = crossover.cross(mockTest.firstParent, mockTest.secondParent);
-        console.log(result[0].toString());
-        console.log(result[1].toString());
+        const { firstParent, secondParent, expected } = mockTest;
+        const result = crossover.cross(firstParent, secondParent);
+        for (let i = 0; i < firstParent.length(); i++) {
+          expect(firstParent.get(i).length()).toEqual(result[0].get(i).length());
+          expect(secondParent.get(i).length()).toEqual(result[1].get(i).length());
+        }
+        if (expected !== undefined) {
+          expect(result).toEqual(expected);
+        }
       });
     });
   });
