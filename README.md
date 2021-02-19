@@ -28,6 +28,10 @@
     <a href="https://twitter.com/GeneticsJs">
         <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/GeneticsJS.svg?label=Follow&style=social">
     </a>
+    </a>
+    <a href="https://www.npmjs.com/package/genetics-js">
+        <img alt="npm" src="https://img.shields.io/npm/v/genetics-js">
+    </a>
 </p>
 
 <p align="center">
