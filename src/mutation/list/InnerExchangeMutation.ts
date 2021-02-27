@@ -28,11 +28,7 @@ export class InnerExchangeMutation<T> extends UniformListMutation<T> {
    * @param index Index of the current gene
    * @param params Operator parameters
    */
-  protected mutateGeneUniformly(
-    individual: ListIndividual<T>,
-    index: number,
-    params: ListMutationParams,
-  ): void {
+  protected mutateGeneUniformly(individual: ListIndividual<T>, index: number, params: ListMutationParams): void {
     const gene: List<T> = individual.get(index);
     if (gene.length() > 1 && params.initialIndex < gene.length() - 1) {
       const range: NumericRange = new NumericRange(params.initialIndex, gene.length() - 1);

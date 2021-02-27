@@ -29,11 +29,7 @@ export class GeneExchangeMutation<T> extends UniformListMutation<T> {
    * @param index Index of the current gene
    * @param params Operator parameters
    */
-  protected mutateGeneUniformly(
-    individual: ListIndividual<T>,
-    index: number,
-    params: ListMutationParams,
-  ): void {
+  protected mutateGeneUniformly(individual: ListIndividual<T>, index: number, params: ListMutationParams): void {
     const currentGene: List<T> = individual.get(index);
     const individualRange: NumericRange = new NumericRange(0, individual.length() - 1);
     let otherGeneIndex: number = Generator.generateInteger(individualRange);
