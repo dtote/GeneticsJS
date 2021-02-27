@@ -14,11 +14,11 @@ import { createList } from '../../../utils/createList';
 describe('Gene exchange mutation tests', () => {
   const mutator = new GeneExchangeMutation();
   test('Mutation with 100% probability', () => {
-    const data = [createList([2, 3, 4, 5]), createList([4, 5, 6, 9]), createList([0, 3, 9, 2])];
+    const data = [createList([1, 2, 3, 4]), createList([5, 6, 7, 8]), createList([9, 10, 11, 0])];
     const individual = new ListIndividual(data);
     const originalValues: number[][] = [];
     individual.forEach(gene => originalValues.push(gene.values));
-    mutator.mutate(individual, 1.0);
+    mutator.mutate(individual, 1.0, 2);
     const newValues: number[][] = [];
     individual.forEach(gene => newValues.push(gene.values));
     expect(originalValues).not.toEqual(newValues);

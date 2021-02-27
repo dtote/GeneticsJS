@@ -11,7 +11,7 @@ import { Generator } from '../../generator/utils';
 import { ListIndividual } from '../../index';
 import { List } from '../../index';
 import { NumericRange } from '../../individual';
-import { UniformMutation, UniformMutationParams as InnerExchangeMutationParams } from './../base';
+import { UniformListMutation, ListMutationParams } from './UniformListMutation';
 
 /**
  * ## Inner Exchange Mutation
@@ -20,7 +20,7 @@ import { UniformMutation, UniformMutationParams as InnerExchangeMutationParams }
  * This operator is applied to each gene of the genotype and swaps two nodes
  * chosen randomly from the current gene.
  */
-export class InnerExchangeMutation<T> extends UniformMutation<ListIndividual<T>, List<T>> {
+export class InnerExchangeMutation<T> extends UniformListMutation<T> {
   /**
    * Mutation operator that is applied to the gene in the specified index.
    * The operator swaps two nodes of the current list.
@@ -31,17 +31,19 @@ export class InnerExchangeMutation<T> extends UniformMutation<ListIndividual<T>,
   protected mutateGeneUniformly(
     individual: ListIndividual<T>,
     index: number,
-    params: InnerExchangeMutationParams,
+    params: ListMutationParams,
   ): void {
     const gene: List<T> = individual.get(index);
-    const range: NumericRange = new NumericRange(0, gene.length() - 1);
-    const firstIndex: number = Generator.generateInteger(range);
-    let secondIndex: number = Generator.generateInteger(range);
-    if (gene.length() > 1) {
-      while (secondIndex === firstIndex) {
-        secondIndex = Generator.generateInteger(range);
+    if (gene.length() > 1 && params.initialIndex < gene.length() - 1) {
+      const range: NumericRange = new NumericRange(params.initialIndex, gene.length() - 1);
+      const firstIndex: number = Generator.generateInteger(range);
+      let secondIndex: number = Generator.generateInteger(range);
+      if (gene.length() > 1) {
+        while (secondIndex === firstIndex) {
+          secondIndex = Generator.generateInteger(range);
+        }
       }
+      gene.swap(firstIndex, secondIndex);
     }
-    gene.swap(firstIndex, secondIndex);
   }
 }

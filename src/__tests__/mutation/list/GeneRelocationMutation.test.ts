@@ -22,7 +22,7 @@ describe('Gene relocation mutation tests', () => {
     }
     const originalValues: number[][] = [];
     individual.forEach(gene => originalValues.push(gene.values));
-    mutator.mutate(individual, 1.0);
+    mutator.mutate(individual, 1.0, 3);
     const newValues: number[][] = [];
     individual.forEach(gene => newValues.push(gene.values));
     expect(originalValues).not.toEqual(newValues);

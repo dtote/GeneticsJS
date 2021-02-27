@@ -182,6 +182,7 @@ export class List<T> implements Iterable<T> {
     } else {
       if (this.listSize === 1) {
         this.headNode = null;
+        this.listSize--;
       } else {
         let currentNode: Node<T> | null = this.headNode.next;
         let previousNode: Node<T> | null = this.headNode;
@@ -215,6 +216,7 @@ export class List<T> implements Iterable<T> {
       if (pos === 0) {
         newNode.next = this.headNode;
         this.headNode = newNode;
+        this.listSize++;
       } else if (pos === this.listSize) {
         this.pushBack(newData);
       } else {
@@ -224,14 +226,14 @@ export class List<T> implements Iterable<T> {
           if (currentPos === pos - 1) {
             newNode.next = currentNode.next;
             currentNode.next = newNode;
-            break;
+            this.listSize++;
+            return;
           }
           currentPos++;
           currentNode = currentNode.next;
         }
       }
     }
-    this.listSize++;
   }
 
   /**
@@ -257,8 +259,10 @@ export class List<T> implements Iterable<T> {
           if (currentPos === pos - 1) {
             if (currentNode.next !== null) {
               currentNode.next = currentNode.next.next;
-              this.listSize--;
+            } else {
+              currentNode.next = null;
             }
+            this.listSize--;
             return;
           }
           currentPos++;
