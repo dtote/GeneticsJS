@@ -10,7 +10,7 @@
 import { Generator } from '../../generator/utils';
 import { ListIndividual } from '../../index';
 import { List } from '../../index';
-import { UniformMutationParams, MutationBase } from '../base';
+import { MutationBase, UniformMutationParams } from '../base';
 
 /**
  * ## List Mutation Params

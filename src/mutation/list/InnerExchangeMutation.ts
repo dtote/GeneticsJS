@@ -11,7 +11,7 @@ import { Generator } from '../../generator/utils';
 import { ListIndividual } from '../../index';
 import { List } from '../../index';
 import { NumericRange } from '../../individual';
-import { UniformListMutation, ListMutationParams } from './UniformListMutation';
+import { ListMutationParams, UniformListMutation } from './UniformListMutation';
 
 /**
  * ## Inner Exchange Mutation
