@@ -7,6 +7,7 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
+import { cloneDeep } from 'lodash';
 import { MutableIndividual } from '../base';
 import { List } from './List';
 
@@ -31,7 +32,7 @@ export class ListIndividual<T> extends MutableIndividual<List<T>> {
    * @param other Individual to copy
    */
   public deepCopy(other: MutableIndividual<List<T>>): void {
-    this.setGenotype(Array.from(other.genotype));
+    this.setGenotype(cloneDeep(other.genotype));
   }
 
   /**

@@ -58,6 +58,8 @@
     "lib/**/*"
   ],
   "dependencies": {
+    "@types/lodash": "^4.14.168",
+    "lodash.clonedeep": "^4.5.0",
     "random-js": "^2.1.0",
     "ts-gaussian": "^1.2.4"
   }
