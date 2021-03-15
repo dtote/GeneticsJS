@@ -14,10 +14,10 @@ import { BaseCrossover } from '../index';
 import { CrossoverParams } from '../index';
 
 /**
- * ## NodeExchangeCrossoverParams
+ * ## BaseListCrossoverParams
  * Interface to define the parameters for the crossover operation.
  */
-export interface NodeExchangeCrossoverParams<T> extends CrossoverParams<ListIndividual<T>, List<T>> {}
+export interface BaseListCrossoverParams<T> extends CrossoverParams<ListIndividual<T>, List<T>> {}
 
 /**
  * ## BaseListCrossover
@@ -31,7 +31,7 @@ export interface NodeExchangeCrossoverParams<T> extends CrossoverParams<ListIndi
 export abstract class BaseListCrossover<T> extends BaseCrossover<
   ListIndividual<T>,
   List<T>,
-  NodeExchangeCrossoverParams<T>
+  BaseListCrossoverParams<T>
 > {
   /**
    * Index for each list of both parents to apply the operator.
@@ -66,7 +66,7 @@ export abstract class BaseListCrossover<T> extends BaseCrossover<
   public crossWith(
     firstParent: ListIndividual<T>,
     secondParent: ListIndividual<T>,
-    params: NodeExchangeCrossoverParams<T>,
+    params: BaseListCrossoverParams<T>,
   ): Array<ListIndividual<T>> {
     this.setCrossoverIndexes(firstParent, secondParent);
     return super.crossWith(firstParent, secondParent, params);
@@ -91,7 +91,7 @@ export abstract class BaseListCrossover<T> extends BaseCrossover<
   protected abstract getGenotypeValues(
     firstParent: ListIndividual<T>,
     secondParent: ListIndividual<T>,
-    params: NodeExchangeCrossoverParams<T>,
+    params: BaseListCrossoverParams<T>,
     index: number,
   ): { first: List<T>; second: List<T> };
 }

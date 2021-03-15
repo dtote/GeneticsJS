@@ -12,7 +12,7 @@ import { List } from '../../index';
 import { ListIndividual } from '../../index';
 import { NumericRange } from '../../individual/numeric/base';
 import { createList } from '../../utils/createList';
-import { BaseListCrossover, NodeExchangeCrossoverParams } from './BaseListCrossover';
+import { BaseListCrossover, BaseListCrossoverParams } from './BaseListCrossover';
 
 /**
  * ## NodeExchangeCrossover
@@ -40,7 +40,7 @@ export class NodeExchangeCrossover<T> extends BaseListCrossover<T> {
   protected getGenotypeValues(
     firstParent: ListIndividual<T>,
     secondParent: ListIndividual<T>,
-    params: NodeExchangeCrossoverParams<T>,
+    params: BaseListCrossoverParams<T>,
     index: number,
   ): { first: List<T>; second: List<T> } {
     const firstValues = firstParent.get(index).values;
