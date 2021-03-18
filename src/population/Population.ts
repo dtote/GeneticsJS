@@ -1,6 +1,9 @@
 /*
  * @license
- * Copyright (c) 2019 Cristian Abrante. All rights reserved.
+ * Copyright (c) 2021 Cristo Navarro.
+ * Copyright (c) 2020 Francisco Cruz.
+ * Copyright (c) 2019 Cristian Abrante.
+ * All rights reserved.
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
@@ -22,9 +25,17 @@ export interface PopulationStatistics {
   fittestIndividualIndex: number;
 }
 
+export type BestNewFitnessSelector = (currentBestFitness: number, newElementFitness: number) => boolean;
+
 export class Population<I extends BaseIndividual<T>, T> {
   public static readonly DEFAULT_FITNESS = 0.0;
   public static readonly DEFAULT_FITTEST_IND_INDEX = -1;
+  public static readonly DEFAULT_BEST_NEW_FITNESS_SELECTOR = (
+    currentBestFitness: number,
+    newElementFitness: number,
+  ) => {
+    return newElementFitness > currentBestFitness;
+  };
 
   public populationStatistics: PopulationStatistics = {
     averageAge: 0,
@@ -34,6 +45,14 @@ export class Population<I extends BaseIndividual<T>, T> {
   };
 
   private items: Array<PopulationItem<I, T>> = [];
+
+  private bestNewFitnessSelector: BestNewFitnessSelector;
+
+  constructor(fitnessComparisonFunction?: BestNewFitnessSelector) {
+    this.bestNewFitnessSelector = fitnessComparisonFunction
+      ? fitnessComparisonFunction
+      : Population.DEFAULT_BEST_NEW_FITNESS_SELECTOR;
+  }
 
   public generatePopulationWithOperations<Params extends GeneratorParams>(
     populationSize: number,
@@ -74,7 +93,7 @@ export class Population<I extends BaseIndividual<T>, T> {
     if (fittest === undefined) {
       this.populationStatistics.fittestIndividualIndex = this.items.length - 1;
     } else {
-      if (fittest.fitness < lastItem.fitness) {
+      if (this.bestNewFitnessSelector(fittest.fitness, lastItem.fitness)) {
         this.populationStatistics.fittestIndividualIndex = this.items.length - 1;
       }
     }
