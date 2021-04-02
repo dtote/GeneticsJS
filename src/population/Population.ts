@@ -126,7 +126,7 @@ export class Population<I extends BaseIndividual<T>, T> {
       if (fittest === undefined) {
         this.populationStatistics.fittestIndividualIndex = index;
       } else {
-        if (fittest.fitness < item.fitness) {
+        if (this.bestNewFitnessSelector(fittest.fitness, item.fitness)) {
           this.populationStatistics.fittestIndividualIndex = index;
         }
       }
