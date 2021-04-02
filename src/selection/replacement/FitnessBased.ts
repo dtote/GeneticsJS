@@ -9,7 +9,11 @@ import { PopulationItem } from '../../population/Population';
 import { BaseReplacement } from './BaseReplacement';
 
 export class FitnessBased<I extends BaseIndividual<T>, T> extends BaseReplacement<I, T> {
+  constructor(private minimize = false) {
+    super();
+  }
+
   public sortMethod(a: PopulationItem<I, T>, b: PopulationItem<I, T>): number {
-    return b.fitness - a.fitness;
+    return this.minimize ? a.fitness - b.fitness : b.fitness - a.fitness;
   }
 }

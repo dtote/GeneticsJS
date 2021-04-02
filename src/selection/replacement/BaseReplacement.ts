@@ -18,7 +18,7 @@ export abstract class BaseReplacement<I extends BaseIndividual<T>, T> implements
     oldPopulation
       .getPopulationItems()
       .concat(newPopulation.getPopulationItems())
-      .sort(this.sortMethod)
+      .sort(this.sortMethod.bind(this))
       .slice(0, params.selectionCount)
       .forEach(item => {
         returnPopulation.pushIndividual(item.individual, item.fitness, item.age + 1);
