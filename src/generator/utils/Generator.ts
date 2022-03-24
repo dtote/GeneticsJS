@@ -9,6 +9,7 @@ import { bool, Engine, integer, MersenneTwister19937, real } from 'random-js';
 import { Gaussian } from 'ts-gaussian';
 import { NumericRange } from '../../individual/numeric/base';
 import { IntegerNormalizer } from '../../individual/numeric/integer/utils';
+import { isIntegerRange } from '../../utils/isIntegerRange';
 
 export class Generator {
   public static DEFAULT_ENGINE: Engine = MersenneTwister19937.autoSeed();
@@ -32,6 +33,14 @@ export class Generator {
   }
 
   public static generateFloating(range = NumericRange.DEFAULT, engine: Engine = Generator.DEFAULT_ENGINE) {
+    return real(range.lowest, range.highest, true)(engine);
+  }
+
+  public static generateMixed(range = NumericRange.DEFAULT, engine: Engine = Generator.DEFAULT_ENGINE) {
+    if (isIntegerRange(range)) {
+      return this.generateInteger(range, engine);
+    }
+
     return real(range.lowest, range.highest, true)(engine);
   }
 

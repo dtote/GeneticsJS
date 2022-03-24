@@ -4,7 +4,4 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-export * from './base';
-export * from './floating';
-export * from './integer';
-export * from './mixed';
+export * from './MixedGenerator';
