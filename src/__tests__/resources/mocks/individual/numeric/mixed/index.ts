@@ -4,15 +4,15 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import * as FloatingMock from './data';
-import FloatingIndividualMock from './FloatingIndividualMock';
+import * as MixedMock from './data';
+import MixedIndividualMock from './MixedIndividualMock';
 
 interface Mock {
-  [key: string]: FloatingIndividualMock;
+  [key: string]: MixedIndividualMock;
 }
 
 const mocks: Mock = {
-  ...FloatingMock,
+  ...MixedMock,
 };
 
 export default mocks;
