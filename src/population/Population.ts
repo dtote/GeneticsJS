@@ -34,7 +34,7 @@ export class Population<I extends BaseIndividual<T>, T> {
     currentBestFitness: number,
     newElementFitness: number,
   ) => {
-    return newElementFitness > currentBestFitness;
+    return newElementFitness < currentBestFitness;
   };
 
   public populationStatistics: PopulationStatistics = {
