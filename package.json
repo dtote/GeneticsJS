@@ -17,7 +17,8 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "docs": "typedoc --out docs/ --mode modules --tsconfig tdconfig.json && touch docs/.nojekyll"
+    "docs": "typedoc --out docs/ --mode modules --tsconfig tdconfig.json && touch docs/.nojekyll",
+    "genetic": "tsc && node /home/tote/tfg/GeneticsJS/lib/optimization/algorithm/GeneticAlgorithm.js"
   },
   "repository": {
     "type": "git",
@@ -44,10 +45,10 @@
   },
   "homepage": "https://github.com/GeneticsJS/GeneticsJS#readme",
   "devDependencies": {
-    "@types/jest": "^24.9.1",
+    "@types/jest": "27.4.1",
     "coveralls": "^3.0.11",
     "prettier": "^1.19.1",
-    "ts-jest": "^23.10.5",
+    "ts-jest": "27.1.4",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.17.0",
@@ -58,7 +59,7 @@
   ],
   "dependencies": {
     "@types/lodash": "^4.14.168",
-    "jest": "^24.9.0",
+    "jest": "27.5.1",
     "lodash.clonedeep": "^4.5.0",
     "random-js": "^2.1.0",
     "ts-gaussian": "^1.2.4"
