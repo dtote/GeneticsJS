@@ -5,4 +5,5 @@
  */
 
 export * from './MixedNonuniformMutation';
+export * from './MixedPolynomialMutation';
 export * from './MixedUniformMutation';

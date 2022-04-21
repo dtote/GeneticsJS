@@ -9,6 +9,7 @@ export * from './fitness';
 export * from './generator';
 export * from './individual';
 export * from './mutation';
+// export * from './optimization';
 export * from './population';
 export * from './reader';
 export * from './selection';

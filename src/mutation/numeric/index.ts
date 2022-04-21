@@ -7,3 +7,4 @@
 export * from './base';
 export * from './floating';
 export * from './integer';
+export * from './mixed';
