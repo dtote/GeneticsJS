@@ -13,11 +13,11 @@ const numericIndividualTestSuite = (
   numericIndividualTests: NumericIndividualMock<NumericIndividual>,
   creation: CreationCallback<NumericIndividual>,
 ) => {
+  let individual = creation(numericIndividualTests);
+
+  beforeEach(() => (individual = creation(numericIndividualTests)));
+
   describe('NumericIndividual tests', () => {
-    let individual = creation(numericIndividualTests);
-
-    beforeEach(() => (individual = creation(numericIndividualTests)));
-
     if (numericIndividualTests.setError !== undefined) {
       test('set with range error', () => {
         const setError = numericIndividualTests.setError!;

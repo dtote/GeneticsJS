@@ -13,17 +13,17 @@ const mutableIndividualTestSuite = <I extends MutableIndividual<T>, T>(
   mockIndividualTest: MutableIndividualMock<I, T>,
   creation: CreationCallback<I, T>,
 ) => {
+  let individual = creation(mockIndividualTest);
+
+  const initialize = () => {
+    individual = creation(mockIndividualTest);
+  };
+
+  beforeEach(() => {
+    initialize();
+  });
+
   describe('MutableIndividual tests', () => {
-    let individual = creation(mockIndividualTest);
-
-    const initialize = () => {
-      individual = creation(mockIndividualTest);
-    };
-
-    beforeEach(() => {
-      initialize();
-    });
-
     if (mockIndividualTest.copy !== undefined) {
       test('copy test', () => {
         const copyTest = mockIndividualTest.copy!;
