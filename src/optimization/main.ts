@@ -1,7 +1,16 @@
-import { ExecutionEngine, randomSearch } from './algorithm/RandomSearch';
+import { randomSearch } from './algorithm/RandomSearch';
+import { ExecutionEngine } from './types/enums/ExecutionEngine';
 
-const { candidate: docker } = randomSearch(ExecutionEngine.docker, 1);
-const { candidate: rscript } = randomSearch(ExecutionEngine.rscript, 1);
+const { candidate: docker } = randomSearch({
+  engine: ExecutionEngine.DOCKER,
+  numberOfIterations: 1,
+  numberOfReplics: 3,
+});
+const { candidate: rscript } = randomSearch({
+  engine: ExecutionEngine.RSCRIPT,
+  numberOfIterations: 1,
+  numberOfReplics: 3,
+});
 
 console.log(`Best docker candidate parameters: [${docker.parameters}]`);
 console.log(`Best docker candidate output: ${docker.output}`);

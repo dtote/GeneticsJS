@@ -1,41 +1,57 @@
-import { Execution } from '../execution/Execution';
+import { Calculator } from '../calculator/Calculator';
+import { DockerCommand } from '../commands/DockerCommand';
+import { RscriptCommand } from '../commands/RscriptCommand';
 import { Generator } from '../generators/Generator';
 import { CandidateSolution } from '../interfaces/CandidateSolution';
+import { ExecutionEngine } from '../types/enums/ExecutionEngine';
+import { AlgorithmResponse } from '../types/interfaces/AlgorithmResponse';
+import { RandomSearchParams } from '../types/interfaces/RandomSearchParams';
 import { isLower } from '../utils/isLower';
 
-export enum ExecutionEngine {
-  docker = 'docker',
-  rscript = 'rscript',
-}
+export function randomSearch(params: RandomSearchParams): AlgorithmResponse {
+  const { engine, numberOfIterations, numberOfReplics } = params;
 
-export function randomSearch(executionEngine: ExecutionEngine, iterations = 100): { candidate: CandidateSolution } {
+  const numberOfInstances = numberOfIterations;
+
   const instances =
-    executionEngine === ExecutionEngine.docker
-      ? Generator.generateDockerInstances(iterations)
-      : Generator.generateRscriptInstances(iterations);
+    engine === ExecutionEngine.DOCKER
+      ? DockerCommand.generate(numberOfInstances)
+      : RscriptCommand.generate(numberOfInstances);
 
   let bestCandidate = {
     parameters: [],
     output: Number.MAX_SAFE_INTEGER,
-    seed: undefined,
-    error: undefined,
   } as CandidateSolution;
 
-  for (let index = 0; index < iterations; index++) {
-    const randomNumber = Generator.generateRandomIntegerFromRange({
+  for (let index = 0; index < numberOfIterations; index++) {
+    const randomNumber = Generator.randomIntegerFromRange({
       lower: 0,
       upper: instances.length - 1,
     });
 
-    const selectedCandidate =
-      executionEngine === ExecutionEngine.docker
-        ? Execution.execDockerInstance(instances[randomNumber])
-        : Execution.execRscriptInstance(instances[randomNumber]);
+    const replics = [];
+    for (let j = 0; j < numberOfReplics; j++) {
+      const selectedCandidate =
+        engine === ExecutionEngine.DOCKER
+          ? DockerCommand.run(instances[randomNumber])
+          : RscriptCommand.run(instances[randomNumber]);
+
+      replics.push(selectedCandidate);
+    }
+
+    const replicsOutputs = replics.map(r => r.output);
+    const parameters = replics[0].parameters;
+    const averageValue = Calculator.average(replicsOutputs);
+
+    const selectedCandidate = {
+      output: averageValue,
+      parameters,
+    } as CandidateSolution;
 
     if (isLower(selectedCandidate, bestCandidate)) {
       bestCandidate = selectedCandidate;
     }
   }
 
-  return { candidate: bestCandidate };
+  return { candidate: bestCandidate } as AlgorithmResponse;
 }

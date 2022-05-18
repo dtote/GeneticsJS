@@ -1,4 +1,3 @@
-import { existsSync, mkdirSync, writeFile } from 'fs';
 import path from 'path';
 import { nativeMath } from 'random-js';
 import { EvolutionaryAlgorithm, EvolutionaryAlgorithmParams } from '../../algorithms';
@@ -7,8 +6,9 @@ import { FitnessFunction } from '../../fitness';
 import { MixedGenerator, NumericParams } from '../../generator';
 import { NumericRange } from '../../individual';
 import { MixedIndividual } from '../../individual/numeric/mixed';
-import { MixedPolynomialMutation } from '../../mutation';
-import { PolynomialMutationParams } from '../../mutation/base/PolynomialMutation';
+import { MutationParams } from '../../mutation';
+import { MixedPolynomialMutation } from '../../mutation/numeric/mixed';
+import { Population } from '../../population';
 import {
   FitnessBased,
   FitnessProportionalSelection,
@@ -16,49 +16,68 @@ import {
   RouletteWheel,
 } from '../../selection';
 import { MaxGenerations } from '../../termination';
-import { Builder } from '../builders/Builder';
-import { Execution } from '../execution/Execution';
+import { Calculator } from '../calculator/Calculator';
+import { RscriptCommand } from '../commands/RscriptCommand';
+import { NUMBER_OF_PARAMS } from '../constants/NumberOfParams';
+import { ExecutionData } from '../data/Data';
+import { ExecutionInfo } from '../types/interfaces/ExecutionInfo';
 
 console.time('execution');
 
-interface ExecutionInfo {
-  execution: number;
-  generations: Array<Array<{ id: number; fitness: number; genotype: number[] }>>;
-}
-
 const saveFilePath = path.join(__dirname, '..', '..', '..', 'src', 'optimization', 'data', 'data');
-const executionInfo: ExecutionInfo = {
+
+const experiments = new ExecutionData({
   execution: Number(path.basename(saveFilePath).slice(4)),
   generations: [],
-};
+} as ExecutionInfo);
 
-let iteration = 0;
-// const crossover: Crossover<MixedIndividual, number, CrossoverParams<MixedIndividual, number>> = new OnePointCrossover();
-const maxGenerations = 5; //50;
-const populationSize = 5;
+let logger = false;
+const maxGenerations = 1;
+const populationSize = 2;
+const replics = 1;
+
 const fitnessFunction: FitnessFunction<MixedIndividual, number> = individual => {
   const { genotype: params } = individual;
-  const instance = Builder.rscriptInstance(params);
-  const { output: fitness } = Execution.execRscriptInstance(instance);
 
-  // Simulation information
-  const generation = Math.floor(iteration / populationSize);
-  const individualNumber = Math.abs(populationSize * generation - iteration) + 1;
-  console.log(`FITNESS: Gen ${generation}, Ind ${individualNumber}: ${fitness}\n`);
-  iteration++;
+  const fitnesses = [];
+  for (let index = 0; index < replics; index++) {
+    const instance = RscriptCommand.build(params, index);
+    const { output: fitness } = RscriptCommand.run(instance);
 
-  if (!executionInfo.generations[generation]) {
-    executionInfo.generations[generation] = [];
+    fitnesses.push(fitness);
   }
 
-  executionInfo.generations[generation].push({
-    id: generation,
-    fitness,
-    genotype: individual.genotype,
-  });
+  const averageFitness = Calculator.average(fitnesses);
 
-  return fitness;
+  if (logger) {
+    experiments.store({ fitness: averageFitness, individual, populationSize });
+  }
+
+  return averageFitness;
 };
+
+const createPopulation = () => {
+  const population = new Population<MixedIndividual, number>(
+    (currentBestFitness, newFitness) => newFitness < currentBestFitness,
+  );
+
+  for (let index = 0; index < populationSize; index++) {
+    const mixedGenerator = new MixedGenerator();
+    const individual = mixedGenerator.generateWith({
+      length: NUMBER_OF_PARAMS,
+      engine: nativeMath,
+      range: new NumericRange(),
+    });
+
+    const fitness = fitnessFunction(individual);
+
+    population.pushIndividual(individual, fitness);
+  }
+
+  return population;
+};
+
+logger = true;
 
 const params: EvolutionaryAlgorithmParams<
   MixedIndividual,
@@ -66,13 +85,13 @@ const params: EvolutionaryAlgorithmParams<
   NumericParams,
   FitnessProportionalSelectionParams<MixedIndividual, number>,
   OnePointCrossoverParams<MixedIndividual, number>,
-  PolynomialMutationParams
+  MutationParams
 > = {
   populationSize,
   generator: new MixedGenerator(),
   generatorParams: {
     engine: nativeMath,
-    length: 29,
+    length: NUMBER_OF_PARAMS,
     range: new NumericRange(),
   },
   selection: new FitnessProportionalSelection(),
@@ -86,7 +105,7 @@ const params: EvolutionaryAlgorithmParams<
     engine: nativeMath,
     individualConstructor: MixedIndividual,
   },
-  mutation: new MixedPolynomialMutation(),
+  mutation: new MixedPolynomialMutation(), // TODO: should check if uniform and non uniform mutation are ok
   mutationParams: {
     engine: nativeMath,
   },
@@ -104,8 +123,8 @@ const evolutionaryAlgorithm = new EvolutionaryAlgorithm<
   NumericParams,
   FitnessProportionalSelectionParams<MixedIndividual, number>,
   CrossoverParams<MixedIndividual, number>,
-  PolynomialMutationParams
->(params);
+  MutationParams
+>(params, createPopulation());
 
 evolutionaryAlgorithm.run();
 
@@ -116,33 +135,7 @@ if (bestCandidate === undefined) {
   throw 'Not fittest individual found';
 }
 
-const stringify = (obj: any, indent = 2) =>
-  JSON.stringify(
-    obj,
-    (key, value) => {
-      if (Array.isArray(value) && !value.some(x => x && typeof x === 'object')) {
-        return `\uE000${JSON.stringify(value.map(v => (typeof v === 'string' ? v.replace(/"/g, '\uE001') : v)))}\uE000`;
-      }
-      return value;
-    },
-    indent,
-  ).replace(/"\uE000([^\uE000]+)\uE000"/g, match =>
-    match
-      .slice(2, match.length - 4)
-      .replace(/\\"/g, '"')
-      .replace(/\uE001/g, '\\"'),
-  );
+experiments.write(saveFilePath);
 
-console.log('Checking', saveFilePath);
-if (!existsSync(path.dirname(saveFilePath))) {
-  mkdirSync(path.dirname(saveFilePath), { recursive: true });
-}
-console.log('Writing...');
-writeFile(saveFilePath + '.json', stringify(executionInfo), { encoding: 'utf-8', flag: 'a' }, err => {
-  if (err) return console.log(err);
-  console.log(path.basename(saveFilePath), 'has been saved');
-});
-
-console.log('Fittest candidate located at ', saveFilePath);
 console.log('Best fitness achieved ', fitness);
 console.timeEnd('execution');
