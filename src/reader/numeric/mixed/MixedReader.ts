@@ -5,7 +5,8 @@
  */
 
 import { MixedIndividual } from '../../../individual/numeric/mixed';
-import { FloatingReader } from '../floating';
+import { IndividualToken } from '../../base';
+import { NumericReader } from '../base';
 
 /**
  * ## Mixed Individual reader
@@ -17,7 +18,19 @@ import { FloatingReader } from '../floating';
  * 3e-2 4E-9    // OK (scientific notation allowed)
  * ```
  */
-export class MixedReader extends FloatingReader {
+
+export class MixedReader extends NumericReader<MixedIndividual> {
+  public readonly tokenDefinition: Array<IndividualToken<number>> = [
+    {
+      token: /^[+-]?\d+(?:(?:\.\d+)?(?:[Ee][+-]?\d+)?)?$/,
+      value: (token: string) => Number.parseFloat(token),
+    },
+    {
+      token: /^[+-]?\.\d+(?:[Ee][+-]?\d+)?$/,
+      value: (token: string) => Number.parseFloat(token),
+    },
+  ];
+
   /**
    * Reads a definition and converts
    * into an [[MixedIndividual]].
