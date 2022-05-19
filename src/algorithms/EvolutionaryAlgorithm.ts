@@ -53,15 +53,22 @@ export class EvolutionaryAlgorithm<
 
   private params: EvolutionaryAlgorithmParams<I, T, GParams, SParams, XParams, MParams>;
 
-  constructor(params: EvolutionaryAlgorithmParams<I, T, GParams, SParams, XParams, MParams>) {
+  constructor(
+    params: EvolutionaryAlgorithmParams<I, T, GParams, SParams, XParams, MParams>,
+    existingPopulation?: Population<I, T>,
+  ) {
     this.params = params;
-    this.population = new Population<I, T>();
-    this.population.generatePopulationWithOperations(
-      this.params.populationSize,
-      this.params.generator,
-      this.params.generatorParams,
-      this.params.fitnessFunction,
-    );
+    if (!!existingPopulation) {
+      this.population = existingPopulation;
+    } else {
+      this.population = new Population<I, T>();
+      this.population.generatePopulationWithOperations(
+        this.params.populationSize,
+        this.params.generator,
+        this.params.generatorParams,
+        this.params.fitnessFunction,
+      );
+    }
   }
 
   public run() {

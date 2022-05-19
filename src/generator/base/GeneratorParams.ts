@@ -24,4 +24,9 @@ export interface GeneratorParams {
    * is going to have.
    */
   length: number;
+
+  /**
+   * Index of an individual gene if given
+   */
+  geneIndex?: number;
 }

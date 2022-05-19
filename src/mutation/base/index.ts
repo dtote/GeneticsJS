@@ -6,4 +6,5 @@
 
 export * from './Mutation';
 export * from './MutationBase';
+export * from './PolynomialMutation';
 export * from './UniformMutation';
