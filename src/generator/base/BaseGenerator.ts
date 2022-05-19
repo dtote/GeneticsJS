@@ -42,7 +42,7 @@ abstract class BaseIndividualGenerator<I extends BaseIndividual<T>, Params exten
    * @param params of the generator.
    */
   public generateGenotype(params: Params): T[] {
-    return Array.from(new Array(params.length), () => this.generateGene(params));
+    return Array.from(new Array(params.length), (_, index) => this.generateGene({ ...params, geneIndex: index }));
   }
 
   /**
