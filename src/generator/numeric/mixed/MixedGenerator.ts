@@ -3,12 +3,14 @@
  * Copyright (c) 2019 Cristian Abrante. All rights reserved.
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
-import { NumericRange } from '../../../individual';
+import { NumericRange } from '../../../individual/numeric/base';
 import { MixedIndividual } from '../../../individual/numeric/mixed';
+import { PARAMS_LOWER_BOUNDS } from '../../../optimization/constants/LowerBounds';
+import { PARAMS_UPPER_BOUNDS } from '../../../optimization/constants/UpperBounds';
+import { isDefaultRange } from '../../../optimization/utils/isDefaultRange';
 import { Generator } from '../../utils';
 import { NumericGenerator } from '../base';
 import { NumericParams } from '../base/NumericGenerator';
-import { RANGES } from './../../../optimization/constants/Ranges';
 
 /**
  * ## Mixed generator
@@ -16,6 +18,7 @@ import { RANGES } from './../../../optimization/constants/Ranges';
  */
 export class MixedGenerator extends NumericGenerator<MixedIndividual> {
   static currentGeneIndex = 0;
+
   /**
    * Generates a gene with the specified
    * params.
@@ -23,14 +26,14 @@ export class MixedGenerator extends NumericGenerator<MixedIndividual> {
    * @return the generated gene.
    */
   public generateGene(params: NumericParams): number {
-    const geneRange = RANGES[MixedGenerator.currentGeneIndex % 28];
-    console.log({ geneRange });
+    if (!isDefaultRange(params.range)) {
+      return Generator.generateMixed(params.range, params.engine);
+    }
+
     const generatedIndividual = Generator.generateMixed(
-      new NumericRange(geneRange.lower, geneRange.upper),
+      new NumericRange(PARAMS_LOWER_BOUNDS[params.geneIndex!], PARAMS_UPPER_BOUNDS[params.geneIndex!]),
       params.engine,
     );
-    MixedGenerator.currentGeneIndex++;
-    console.log({ generatedIndividual: generatedIndividual.toFixed() });
 
     return generatedIndividual;
   }

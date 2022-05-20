@@ -6,8 +6,8 @@ import { FitnessFunction } from '../../fitness';
 import { MixedGenerator, NumericParams } from '../../generator';
 import { NumericRange } from '../../individual';
 import { MixedIndividual } from '../../individual/numeric/mixed';
-import { MutationParams } from '../../mutation';
-import { MixedPolynomialMutation } from '../../mutation/numeric/mixed';
+import { MutationParams, NumericNonUniformMutationParams } from '../../mutation';
+import { MixedNonuniformMutation } from '../../mutation/numeric/mixed';
 import { Population } from '../../population';
 import {
   FitnessBased,
@@ -32,9 +32,10 @@ const experiments = new ExecutionData({
 } as ExecutionInfo);
 
 let logger = false;
-const maxGenerations = 1;
-const populationSize = 2;
-const replics = 1;
+
+const maxGenerations = 4;
+const populationSize = 4;
+const replics = 3;
 
 const fitnessFunction: FitnessFunction<MixedIndividual, number> = individual => {
   const { genotype: params } = individual;
@@ -105,10 +106,11 @@ const params: EvolutionaryAlgorithmParams<
     engine: nativeMath,
     individualConstructor: MixedIndividual,
   },
-  mutation: new MixedPolynomialMutation(), // TODO: should check if uniform and non uniform mutation are ok
+  mutation: new MixedNonuniformMutation(),
   mutationParams: {
     engine: nativeMath,
-  },
+    stepSize: 2.0,
+  } as NumericNonUniformMutationParams,
   replacement: new FitnessBased(true),
   replacementParams: {
     selectionCount: populationSize,

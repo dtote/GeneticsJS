@@ -5,8 +5,10 @@
  */
 
 import { Generator } from '../../../generator/utils';
-import { NumericRange } from '../../../individual/numeric/base';
-import { NumericIndividual } from '../../../individual/numeric/base';
+import { NumericIndividual, NumericRange } from '../../../individual/numeric/base';
+import { PARAMS_LOWER_BOUNDS } from '../../../optimization/constants/LowerBounds';
+import { PARAMS_UPPER_BOUNDS } from '../../../optimization/constants/UpperBounds';
+import { isDefaultRange } from '../../../optimization/utils/isDefaultRange';
 import { MutationBase, MutationParams } from '../../base';
 
 export interface NumericNonUniformMutationParams extends MutationParams {
@@ -25,7 +27,12 @@ export abstract class NumericNonUniformMutation<I extends NumericIndividual> ext
   protected mutateGene(individual: I, index: number, params: NumericNonUniformMutationParams): void {
     const gene = individual.get(index);
     const delta = this.getDeltaValue(params);
-    const newGene = NumericRange.normalizeValueToRange(gene + delta, individual.range);
+    const newGene = isDefaultRange(individual.range)
+      ? NumericRange.normalizeValueToRange(
+          gene + delta,
+          new NumericRange(PARAMS_LOWER_BOUNDS[index], PARAMS_UPPER_BOUNDS[index]),
+        )
+      : NumericRange.normalizeValueToRange(gene + delta, individual.range);
     individual.set(index, newGene);
   }
 
