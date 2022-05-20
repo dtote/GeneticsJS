@@ -1,5 +1,5 @@
 import { spawnSync } from 'child_process';
-import { isNumber } from 'lodash';
+import { isNaN, isNumber } from 'lodash';
 import { RSCRIPT_COMMAND } from '../constants/Commands';
 import { Generator } from '../generators/Generator';
 import { CandidateSolution } from '../types/interfaces/CandidateSolution';
@@ -16,6 +16,11 @@ export class RscriptCommand {
         .replace(/^\s+|\s+$|\s+(?=\s)/g, '');
 
       const output = Number(stdout);
+
+      if (isNaN(output)) {
+        throw new Error('Error during execution');
+      }
+
       const candidate = {
         output,
         parameters: RscriptCommand.toParameters(command),
