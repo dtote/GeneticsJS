@@ -17,8 +17,6 @@ import { NumericParams } from '../base/NumericGenerator';
  * Generates a [[MixedIndividual]].
  */
 export class MixedGenerator extends NumericGenerator<MixedIndividual> {
-  static currentGeneIndex = 0;
-
   /**
    * Generates a gene with the specified
    * params.
