@@ -1,4 +1,5 @@
 import { Generator } from '../../../generator/utils';
+import { NumericRange } from '../../../individual';
 import { MixedIndividual } from '../../../individual/numeric/mixed';
 import { PARAMS_LOWER_BOUNDS } from '../../../optimization/constants/LowerBounds';
 import { PARAMS_UPPER_BOUNDS } from '../../../optimization/constants/UpperBounds';
@@ -16,20 +17,20 @@ export class MixedPolynomialMutation extends PolynomialMutation<MixedIndividual,
     const n = 20; // distribution index
     let delta, rnd, deltaq, mu, temp;
 
-    const vmut = Generator.generateProbability(params.engine) / RAND_MAX;
+    const lowerBound = PARAMS_LOWER_BOUNDS[index];
+    const upperBound = PARAMS_UPPER_BOUNDS[index];
 
+    const vmut = Generator.generateProbability(params.engine) / RAND_MAX;
     if (vmut < mutationProbability) {
-      if (individual.get(index) - PARAMS_LOWER_BOUNDS[index] < PARAMS_UPPER_BOUNDS[index] - individual.get(index)) {
-        delta =
-          (individual.get(index) - PARAMS_LOWER_BOUNDS[index]) /
-          (PARAMS_UPPER_BOUNDS[index] - PARAMS_LOWER_BOUNDS[index]);
+      if (individual.get(index) - lowerBound < upperBound - individual.get(index)) {
+        delta = (individual.get(index) - lowerBound) / (upperBound - lowerBound);
       } else {
-        delta =
-          (PARAMS_UPPER_BOUNDS[index] - individual.get(index)) /
-          (PARAMS_UPPER_BOUNDS[index] - PARAMS_LOWER_BOUNDS[index]);
+        delta = (upperBound - individual.get(index)) / (upperBound - lowerBound);
       }
+
       rnd = Generator.generateProbability(params.engine) / RAND_MAX;
       mu = 1.0 / n;
+
       if (rnd <= 0.5) {
         const xy = 1.0 - delta;
         temp = 2 * rnd + (1 - 2 * rnd) * Math.pow(xy, n + 1);
@@ -39,12 +40,18 @@ export class MixedPolynomialMutation extends PolynomialMutation<MixedIndividual,
         temp = 2.0 * (1.0 - rnd) + 2.0 * (rnd - 0.5) * Math.pow(xy, n + 1);
         deltaq = 1.0 - Math.pow(temp, mu);
       }
-      individual.set(index, individual.get(index) + deltaq * (PARAMS_UPPER_BOUNDS[index] - PARAMS_LOWER_BOUNDS[index]));
-      if (individual.get(index) > PARAMS_UPPER_BOUNDS[index]) {
-        individual.set(index, PARAMS_UPPER_BOUNDS[index]);
+
+      const newGene = individual.get(index) + deltaq * (upperBound - lowerBound);
+      const normalizedGene = NumericRange.normalizeValueToRange(newGene, new NumericRange(lowerBound, upperBound));
+
+      individual.set(index, normalizedGene);
+
+      if (individual.get(index) > upperBound) {
+        individual.set(index, upperBound);
       }
-      if (individual.get(index) < PARAMS_LOWER_BOUNDS[index]) {
-        individual.set(index, PARAMS_LOWER_BOUNDS[index]);
+
+      if (individual.get(index) < lowerBound) {
+        individual.set(index, lowerBound);
       }
     }
   }

@@ -27,12 +27,13 @@ export abstract class NumericNonUniformMutation<I extends NumericIndividual> ext
   protected mutateGene(individual: I, index: number, params: NumericNonUniformMutationParams): void {
     const gene = individual.get(index);
     const delta = this.getDeltaValue(params);
-    const newGene = isDefaultRange(individual.range)
-      ? NumericRange.normalizeValueToRange(
-          gene + delta,
-          new NumericRange(PARAMS_LOWER_BOUNDS[index], PARAMS_UPPER_BOUNDS[index]),
-        )
-      : NumericRange.normalizeValueToRange(gene + delta, individual.range);
+
+    const actualRange = isDefaultRange(individual.range)
+      ? new NumericRange(PARAMS_LOWER_BOUNDS[index], PARAMS_UPPER_BOUNDS[index])
+      : individual.range;
+
+    const newGene = NumericRange.normalizeValueToRange(gene + delta, actualRange);
+
     individual.set(index, newGene);
   }
 

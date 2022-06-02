@@ -14,17 +14,12 @@ import { UniformMutation, UniformMutationParams as MixedUniformMutationParams } 
 
 export class MixedUniformMutation extends UniformMutation<MixedIndividual, number> {
   protected mutateGeneUniformly(individual: MixedIndividual, index: number, params: MixedUniformMutationParams): void {
-    if (isDefaultRange(individual.range)) {
-      individual.set(
-        index,
-        Generator.generateMixed(
-          new NumericRange(PARAMS_LOWER_BOUNDS[index], PARAMS_UPPER_BOUNDS[index]),
-          params.engine,
-        ),
-      );
-    } else {
-      individual.set(index, Generator.generateMixed(individual.range, params.engine));
-    }
+    const actualRange = isDefaultRange(individual.range)
+      ? new NumericRange(PARAMS_LOWER_BOUNDS[index], PARAMS_UPPER_BOUNDS[index])
+      : individual.range;
+    const newGene = Generator.generateMixed(actualRange, params.engine);
+
+    individual.set(index, newGene);
   }
 }
 
