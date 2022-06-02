@@ -1,4 +1,4 @@
-import { Calculator } from '../calculator/Calculator';
+import yargs from 'yargs';
 import { DockerCommand } from '../commands/DockerCommand';
 import { RscriptCommand } from '../commands/RscriptCommand';
 import { Generator } from '../generators/Generator';
@@ -9,7 +9,7 @@ import { RandomSearchParams } from '../types/interfaces/RandomSearchParams';
 import { isLower } from '../utils/isLower';
 
 export function randomSearch(params: RandomSearchParams): AlgorithmResponse {
-  const { engine, numberOfIterations, numberOfReplics } = params;
+  const { engine, numberOfIterations } = params;
 
   const numberOfInstances = numberOfIterations;
 
@@ -29,24 +29,10 @@ export function randomSearch(params: RandomSearchParams): AlgorithmResponse {
       upper: instances.length - 1,
     });
 
-    const replics = [];
-    for (let j = 0; j < numberOfReplics; j++) {
-      const selectedCandidate =
-        engine === ExecutionEngine.DOCKER
-          ? DockerCommand.run(instances[randomNumber])
-          : RscriptCommand.run(instances[randomNumber]);
-
-      replics.push(selectedCandidate);
-    }
-
-    const replicsOutputs = replics.map(r => r.output);
-    const parameters = replics[0].parameters;
-    const averageValue = Calculator.average(replicsOutputs);
-
-    const selectedCandidate = {
-      output: averageValue,
-      parameters,
-    } as CandidateSolution;
+    const selectedCandidate =
+      engine === ExecutionEngine.DOCKER
+        ? DockerCommand.run(instances[randomNumber])
+        : RscriptCommand.run(instances[randomNumber]);
 
     if (isLower(selectedCandidate, bestCandidate)) {
       bestCandidate = selectedCandidate;
@@ -55,3 +41,24 @@ export function randomSearch(params: RandomSearchParams): AlgorithmResponse {
 
   return { candidate: bestCandidate } as AlgorithmResponse;
 }
+
+console.time('execution');
+
+const argv = yargs(process.argv.slice(2))
+  .options({
+    i: { type: 'number', default: 5 },
+  })
+  .alias('i', 'iterations')
+  .nargs('i', 1)
+  .example('$0 -i 100', 'Runs the random search with specified iterations')
+  .help('h')
+  .alias('h', 'help')
+  .parseSync();
+
+const { iterations } = argv;
+
+const { candidate } = randomSearch({ engine: ExecutionEngine.RSCRIPT, numberOfIterations: iterations });
+
+console.log('Best fitness achieved ', candidate.output);
+
+console.timeEnd('execution');
