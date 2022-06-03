@@ -18,7 +18,7 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "docs": "typedoc --out docs/ --mode modules --tsconfig tdconfig.json && touch docs/.nojekyll",
-    "genetic": "tsc && node lib/optimization/algorithm/GeneticAlgorithm.js"
+    "genetic": "npx ts-node src/optimization/algorithm/GeneticAlgorithm.ts -f default.ts"
   },
   "repository": {
     "type": "git",
@@ -46,6 +46,7 @@
   "homepage": "https://github.com/GeneticsJS/GeneticsJS#readme",
   "devDependencies": {
     "@types/jest": "27.4.1",
+    "@types/yargs": "^17.0.10",
     "coveralls": "^3.0.11",
     "prettier": "^1.19.1",
     "ts-jest": "27.1.4",
@@ -62,6 +63,7 @@
     "jest": "27.5.1",
     "lodash.clonedeep": "^4.5.0",
     "random-js": "^2.1.0",
-    "ts-gaussian": "^1.2.4"
+    "ts-gaussian": "^1.2.4",
+    "yargs": "^17.5.1"
   }
 }

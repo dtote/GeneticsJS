@@ -1,30 +1,85 @@
+import { readFileSync } from 'fs';
 import path from 'path';
 import { nativeMath } from 'random-js';
-import { EvolutionaryAlgorithm, EvolutionaryAlgorithmParams } from '../../algorithms';
-import { CrossoverParams, OnePointCrossover, OnePointCrossoverParams } from '../../crossover';
+import yargs from 'yargs';
+import { EvolutionaryAlgorithm } from '../../algorithms';
+import { nonUniformMutationParams } from '../../config/nonUniform';
+import { polynomialMutationParams } from '../../config/polynomial';
+import { uniformMutationParams } from '../../config/uniform';
+import { CrossoverParams } from '../../crossover';
 import { FitnessFunction } from '../../fitness';
 import { MixedGenerator, NumericParams } from '../../generator';
 import { NumericRange } from '../../individual';
 import { MixedIndividual } from '../../individual/numeric/mixed';
-import { MutationParams, NumericNonUniformMutationParams } from '../../mutation';
-import { MixedNonuniformMutation } from '../../mutation/numeric/mixed';
+import { MutationParams } from '../../mutation';
 import { Population } from '../../population';
-import {
-  FitnessBased,
-  FitnessProportionalSelection,
-  FitnessProportionalSelectionParams,
-  RouletteWheel,
-} from '../../selection';
+import { FitnessProportionalSelectionParams } from '../../selection';
 import { MaxGenerations } from '../../termination';
 import { Calculator } from '../calculator/Calculator';
-import { RscriptCommand } from '../commands/RscriptCommand';
+import { RscriptCommand, SeedType } from '../commands/RscriptCommand';
 import { NUMBER_OF_PARAMS } from '../constants/NumberOfParams';
 import { ExecutionData } from '../data/Data';
 import { ExecutionInfo } from '../types/interfaces/ExecutionInfo';
 
 console.time('execution');
 
-const saveFilePath = path.join(__dirname, '..', '..', '..', 'src', 'optimization', 'data', 'data');
+const argv = yargs(process.argv.slice(2))
+  .options({
+    f: { type: 'string', requiresArg: true, default: 'nonUniformMutation.ts' },
+    r: { type: 'number', default: 1 },
+    p: { type: 'number', default: 5 },
+    g: { type: 'number', default: 5 },
+    o: { type: 'string', default: 'data' },
+  })
+  .alias('f', 'file')
+  .nargs('f', 1)
+  .demandOption(['f'])
+  .example('$0 -f uniform.ts', 'Uses the given file configuration')
+
+  .alias('r', 'replics')
+  .nargs('r', 1)
+  .example('$0 -r 2', 'Runs genetic with specified number of replics')
+
+  .alias('p', 'populationSize')
+  .alias('p', 'population')
+  .nargs('p', 1)
+  .example('$0 -p 2', 'Runs genetic with specified population size')
+
+  .alias('g', 'maxGenerations')
+  .alias('g', 'generations')
+  .nargs('g', 1)
+  .example('$0 -g 2', 'Runs genetic with specified max number of generations')
+
+  .alias('o', 'outputFile')
+  .alias('o', 'output')
+  .nargs('o', 1)
+  .example('$0 -o output', 'Runs genetic with specified name for output file')
+
+  .help('h')
+  .alias('h', 'help')
+  .parseSync();
+
+const { file, replics, populationSize, maxGenerations, outputFile } = argv;
+
+try {
+  const configurationFilePath = path.join(__dirname, '..', '..', 'config', file);
+
+  readFileSync(configurationFilePath);
+} catch (e) {
+  throw new Error('Error reading configuration file');
+}
+
+const configurations: Record<string, any> = {
+  'polynomial.ts': polynomialMutationParams,
+  'uniform.ts': uniformMutationParams,
+  'nonUniform.ts': nonUniformMutationParams,
+};
+
+const params = configurations[file];
+params.populationSize = populationSize;
+params.terminationCondition = new MaxGenerations(maxGenerations);
+
+const saveFilePath = path.join(__dirname, '..', '..', '..', 'src', 'optimization', 'data', outputFile);
 
 const experiments = new ExecutionData({
   execution: Number(path.basename(saveFilePath).slice(4)),
@@ -33,19 +88,15 @@ const experiments = new ExecutionData({
 
 let logger = false;
 
-const maxGenerations = 4;
-const populationSize = 4;
-const replics = 3;
-
 const fitnessFunction: FitnessFunction<MixedIndividual, number> = individual => {
   const { genotype: params } = individual;
 
   const fitnesses = [];
   for (let index = 0; index < replics; index++) {
-    const instance = RscriptCommand.build(params, index);
+    const instance = RscriptCommand.build(params, { type: SeedType.GENETIC, value: index });
     const { output: fitness } = RscriptCommand.run(instance);
-
     fitnesses.push(fitness);
+    if (!logger) break;
   }
 
   const averageFitness = Calculator.average(fitnesses);
@@ -56,6 +107,8 @@ const fitnessFunction: FitnessFunction<MixedIndividual, number> = individual => 
 
   return averageFitness;
 };
+
+params.fitnessFunction = fitnessFunction;
 
 const createPopulation = () => {
   const population = new Population<MixedIndividual, number>(
@@ -78,47 +131,6 @@ const createPopulation = () => {
   return population;
 };
 
-logger = true;
-
-const params: EvolutionaryAlgorithmParams<
-  MixedIndividual,
-  number,
-  NumericParams,
-  FitnessProportionalSelectionParams<MixedIndividual, number>,
-  OnePointCrossoverParams<MixedIndividual, number>,
-  MutationParams
-> = {
-  populationSize,
-  generator: new MixedGenerator(),
-  generatorParams: {
-    engine: nativeMath,
-    length: NUMBER_OF_PARAMS,
-    range: new NumericRange(),
-  },
-  selection: new FitnessProportionalSelection(),
-  selectionParams: {
-    engine: nativeMath,
-    selectionCount: populationSize,
-    subSelection: new RouletteWheel(),
-  },
-  crossover: new OnePointCrossover<MixedIndividual, number>(),
-  crossoverParams: {
-    engine: nativeMath,
-    individualConstructor: MixedIndividual,
-  },
-  mutation: new MixedNonuniformMutation(),
-  mutationParams: {
-    engine: nativeMath,
-    stepSize: 2.0,
-  } as NumericNonUniformMutationParams,
-  replacement: new FitnessBased(true),
-  replacementParams: {
-    selectionCount: populationSize,
-  },
-  fitnessFunction,
-  terminationCondition: new MaxGenerations(maxGenerations),
-};
-
 const evolutionaryAlgorithm = new EvolutionaryAlgorithm<
   MixedIndividual,
   number,
@@ -127,6 +139,8 @@ const evolutionaryAlgorithm = new EvolutionaryAlgorithm<
   CrossoverParams<MixedIndividual, number>,
   MutationParams
 >(params, createPopulation());
+
+logger = true;
 
 evolutionaryAlgorithm.run();
 

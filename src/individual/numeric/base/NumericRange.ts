@@ -4,6 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
+import { isIntegerRange } from '../../../utils/isIntegerRange';
+
 /**
  * ## Numeric Range
  * Represents a numeric range.
@@ -23,7 +25,7 @@ export class NumericRange {
     if (!this.isValueInRange(value, range)) {
       return value < range.lowest ? range.lowest : range.highest;
     } else {
-      return value;
+      return isIntegerRange(range) ? Math.round(value) : value;
     }
   }
 
