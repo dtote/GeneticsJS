@@ -25,7 +25,7 @@ console.time('execution');
 
 const argv = yargs(process.argv.slice(2))
   .options({
-    f: { type: 'string', requiresArg: true, default: 'nonUniformMutation.ts' },
+    f: { type: 'string', requiresArg: true, default: 'nonUniform.ts' },
     r: { type: 'number', default: 1 },
     p: { type: 'number', default: 5 },
     g: { type: 'number', default: 5 },
@@ -66,7 +66,7 @@ try {
 
   readFileSync(configurationFilePath);
 } catch (e) {
-  throw new Error('Error reading configuration file');
+  throw new Error(`Error reading configuration file: ${e}`);
 }
 
 const configurations: Record<string, any> = {
