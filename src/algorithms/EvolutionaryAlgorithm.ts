@@ -55,11 +55,11 @@ export class EvolutionaryAlgorithm<
 
   constructor(
     params: EvolutionaryAlgorithmParams<I, T, GParams, SParams, XParams, MParams>,
-    existingPopulation?: Population<I, T>,
+    population?: Population<I, T>,
   ) {
     this.params = params;
-    if (!!existingPopulation) {
-      this.population = existingPopulation;
+    if (population) {
+      this.population = population;
     } else {
       this.population = new Population<I, T>();
       this.population.generatePopulationWithOperations(

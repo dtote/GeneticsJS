@@ -136,6 +136,8 @@ const createPopulation = () => {
   return population;
 };
 
+logger = true;
+
 const evolutionaryAlgorithm = new EvolutionaryAlgorithm<
   MixedIndividual,
   number,
@@ -144,8 +146,6 @@ const evolutionaryAlgorithm = new EvolutionaryAlgorithm<
   CrossoverParams<MixedIndividual, number>,
   MutationParams
 >(params, createPopulation());
-
-logger = true;
 
 evolutionaryAlgorithm.run();
 
