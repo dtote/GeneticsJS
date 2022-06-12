@@ -29,7 +29,6 @@ export class ExecutionData {
     }
 
     this.executionInfo.generations[generation].push({ id: generation, fitness, genotype: individual.genotype });
-    // TODO: re-think how data is being stored
   }
 
   write(saveFilePath: string) {
