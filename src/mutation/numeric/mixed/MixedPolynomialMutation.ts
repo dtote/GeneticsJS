@@ -8,7 +8,7 @@ import { MutationParams, PolynomialMutation } from '../../base';
 const RAND_MAX = 2 ** 53;
 
 export class MixedPolynomialMutation extends PolynomialMutation<MixedIndividual, number> {
-  protected mutateGenePolinomially(
+  protected mutateGenePolynomially(
     individual: MixedIndividual,
     index: number,
     mutationProbability: number,

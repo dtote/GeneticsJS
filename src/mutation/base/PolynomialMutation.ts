@@ -10,10 +10,10 @@ export abstract class PolynomialMutation<I extends MutableIndividual<T>, T> exte
 
   protected mutateGene(individual: I, index: number, params: MutationParams): void {
     const mutationProbability = Generator.generateProbability(params.engine);
-    this.mutateGenePolinomially(individual, index, mutationProbability, params);
+    this.mutateGenePolynomially(individual, index, mutationProbability, params);
   }
 
-  protected abstract mutateGenePolinomially(
+  protected abstract mutateGenePolynomially(
     individual: I,
     index: number,
     mutationProbability: number,
