@@ -1,0 +1,608 @@
+[
+  {
+    "generationIndex": 0,
+    "minGenerationFitness": 30.13342666666667,
+    "maxGenerationFitness": 190.80280000000002,
+    "averageGenerationFitness": 89.60661413333331
+  },
+  {
+    "generationIndex": 1,
+    "minGenerationFitness": 25.95044,
+    "maxGenerationFitness": 174.8542,
+    "averageGenerationFitness": 84.95407233333333
+  },
+  {
+    "generationIndex": 2,
+    "minGenerationFitness": 27.648569999999996,
+    "maxGenerationFitness": 187.24349999999995,
+    "averageGenerationFitness": 66.11378986666665
+  },
+  {
+    "generationIndex": 3,
+    "minGenerationFitness": 28.05356333333333,
+    "maxGenerationFitness": 180.98426666666668,
+    "averageGenerationFitness": 80.68841553333334
+  },
+  {
+    "generationIndex": 4,
+    "minGenerationFitness": 26.98334,
+    "maxGenerationFitness": 160.06313333333333,
+    "averageGenerationFitness": 69.51094406666667
+  },
+  {
+    "generationIndex": 5,
+    "minGenerationFitness": 26.139313333333334,
+    "maxGenerationFitness": 195.83183333333332,
+    "averageGenerationFitness": 72.71080826666667
+  },
+  {
+    "generationIndex": 6,
+    "minGenerationFitness": 26.80420666666667,
+    "maxGenerationFitness": 207.13750000000002,
+    "averageGenerationFitness": 73.49831459999997
+  },
+  {
+    "generationIndex": 7,
+    "minGenerationFitness": 28.37801333333333,
+    "maxGenerationFitness": 149.58163333333334,
+    "averageGenerationFitness": 68.16300066666668
+  },
+  {
+    "generationIndex": 8,
+    "minGenerationFitness": 25.10045,
+    "maxGenerationFitness": 177.44673333333333,
+    "averageGenerationFitness": 68.70571126666667
+  },
+  {
+    "generationIndex": 9,
+    "minGenerationFitness": 26.23772333333333,
+    "maxGenerationFitness": 151.99686666666665,
+    "averageGenerationFitness": 62.68897720000002
+  },
+  {
+    "generationIndex": 10,
+    "minGenerationFitness": 25.604896666666665,
+    "maxGenerationFitness": 194.3628666666667,
+    "averageGenerationFitness": 73.34014053333334
+  },
+  {
+    "generationIndex": 11,
+    "minGenerationFitness": 24.923703333333332,
+    "maxGenerationFitness": 191.84810000000002,
+    "averageGenerationFitness": 83.2170568
+  },
+  {
+    "generationIndex": 12,
+    "minGenerationFitness": 25.29563,
+    "maxGenerationFitness": 174.12016666666668,
+    "averageGenerationFitness": 60.531842399999995
+  },
+  {
+    "generationIndex": 13,
+    "minGenerationFitness": 26.25622,
+    "maxGenerationFitness": 162.20596666666665,
+    "averageGenerationFitness": 60.80337526666668
+  },
+  {
+    "generationIndex": 14,
+    "minGenerationFitness": 25.709363333333332,
+    "maxGenerationFitness": 168.68973333333335,
+    "averageGenerationFitness": 70.8681052
+  },
+  {
+    "generationIndex": 15,
+    "minGenerationFitness": 25.265793333333335,
+    "maxGenerationFitness": 179.2127,
+    "averageGenerationFitness": 59.52998113333334
+  },
+  {
+    "generationIndex": 16,
+    "minGenerationFitness": 27.43474333333333,
+    "maxGenerationFitness": 199.33393333333333,
+    "averageGenerationFitness": 72.7459794
+  },
+  {
+    "generationIndex": 17,
+    "minGenerationFitness": 23.82932333333333,
+    "maxGenerationFitness": 188.18140000000002,
+    "averageGenerationFitness": 68.50929786666667
+  },
+  {
+    "generationIndex": 18,
+    "minGenerationFitness": 26.562123333333336,
+    "maxGenerationFitness": 185.3133,
+    "averageGenerationFitness": 69.51183726666667
+  },
+  {
+    "generationIndex": 19,
+    "minGenerationFitness": 25.381256666666662,
+    "maxGenerationFitness": 181.17153333333331,
+    "averageGenerationFitness": 75.23685959999999
+  },
+  {
+    "generationIndex": 20,
+    "minGenerationFitness": 27.664473333333333,
+    "maxGenerationFitness": 173.43173333333334,
+    "averageGenerationFitness": 60.09055006666667
+  },
+  {
+    "generationIndex": 21,
+    "minGenerationFitness": 26.09732,
+    "maxGenerationFitness": 178.13906666666665,
+    "averageGenerationFitness": 67.27675526666667
+  },
+  {
+    "generationIndex": 22,
+    "minGenerationFitness": 29.058426666666666,
+    "maxGenerationFitness": 192.53803333333335,
+    "averageGenerationFitness": 78.73794326666668
+  },
+  {
+    "generationIndex": 23,
+    "minGenerationFitness": 26.166043333333334,
+    "maxGenerationFitness": 168.6726,
+    "averageGenerationFitness": 79.75820053333332
+  },
+  {
+    "generationIndex": 24,
+    "minGenerationFitness": 24.633516666666665,
+    "maxGenerationFitness": 166.97603333333333,
+    "averageGenerationFitness": 57.69514233333334
+  },
+  {
+    "generationIndex": 25,
+    "minGenerationFitness": 25.1906,
+    "maxGenerationFitness": 178.2324,
+    "averageGenerationFitness": 63.99670899999999
+  },
+  {
+    "generationIndex": 26,
+    "minGenerationFitness": 24.27722,
+    "maxGenerationFitness": 197.59096666666665,
+    "averageGenerationFitness": 57.58160686666668
+  },
+  {
+    "generationIndex": 27,
+    "minGenerationFitness": 24.863376666666664,
+    "maxGenerationFitness": 170.2688,
+    "averageGenerationFitness": 70.65181760000002
+  },
+  {
+    "generationIndex": 28,
+    "minGenerationFitness": 24.681720000000002,
+    "maxGenerationFitness": 173.30143333333334,
+    "averageGenerationFitness": 63.561718133333336
+  },
+  {
+    "generationIndex": 29,
+    "minGenerationFitness": 26.339063333333332,
+    "maxGenerationFitness": 171.3311,
+    "averageGenerationFitness": 64.47144686666667
+  },
+  {
+    "generationIndex": 30,
+    "minGenerationFitness": 24.079806666666666,
+    "maxGenerationFitness": 189.41416666666666,
+    "averageGenerationFitness": 66.74943966666666
+  },
+  {
+    "generationIndex": 31,
+    "minGenerationFitness": 26.12115,
+    "maxGenerationFitness": 175.77796666666669,
+    "averageGenerationFitness": 71.83468066666667
+  },
+  {
+    "generationIndex": 32,
+    "minGenerationFitness": 24.19701333333333,
+    "maxGenerationFitness": 178.14226666666664,
+    "averageGenerationFitness": 67.61242620000002
+  },
+  {
+    "generationIndex": 33,
+    "minGenerationFitness": 25.763183333333334,
+    "maxGenerationFitness": 168.97136666666665,
+    "averageGenerationFitness": 65.96677853333335
+  },
+  {
+    "generationIndex": 34,
+    "minGenerationFitness": 24.770053333333333,
+    "maxGenerationFitness": 181.66503333333335,
+    "averageGenerationFitness": 68.53943040000001
+  },
+  {
+    "generationIndex": 35,
+    "minGenerationFitness": 24.790363333333335,
+    "maxGenerationFitness": 171.3054,
+    "averageGenerationFitness": 70.81393793333332
+  },
+  {
+    "generationIndex": 36,
+    "minGenerationFitness": 26.142913333333336,
+    "maxGenerationFitness": 184.65886666666665,
+    "averageGenerationFitness": 67.34083133333333
+  },
+  {
+    "generationIndex": 37,
+    "minGenerationFitness": 24.58545666666667,
+    "maxGenerationFitness": 181.90393333333336,
+    "averageGenerationFitness": 69.76368586666668
+  },
+  {
+    "generationIndex": 38,
+    "minGenerationFitness": 26.09427666666667,
+    "maxGenerationFitness": 189.15213333333335,
+    "averageGenerationFitness": 64.46177333333335
+  },
+  {
+    "generationIndex": 39,
+    "minGenerationFitness": 24.233113333333336,
+    "maxGenerationFitness": 177.12333333333333,
+    "averageGenerationFitness": 68.82030973333332
+  },
+  {
+    "generationIndex": 40,
+    "minGenerationFitness": 24.17516,
+    "maxGenerationFitness": 178.35653333333335,
+    "averageGenerationFitness": 73.59026539999998
+  },
+  {
+    "generationIndex": 41,
+    "minGenerationFitness": 25.34060666666667,
+    "maxGenerationFitness": 197.734,
+    "averageGenerationFitness": 73.15033026666669
+  },
+  {
+    "generationIndex": 42,
+    "minGenerationFitness": 24.66175,
+    "maxGenerationFitness": 179.5236,
+    "averageGenerationFitness": 74.45409926666667
+  },
+  {
+    "generationIndex": 43,
+    "minGenerationFitness": 25.407443333333333,
+    "maxGenerationFitness": 172.8782,
+    "averageGenerationFitness": 65.29811786666669
+  },
+  {
+    "generationIndex": 44,
+    "minGenerationFitness": 24.248126666666668,
+    "maxGenerationFitness": 177.80803333333333,
+    "averageGenerationFitness": 73.43131479999998
+  },
+  {
+    "generationIndex": 45,
+    "minGenerationFitness": 26.00050333333333,
+    "maxGenerationFitness": 214.71463333333335,
+    "averageGenerationFitness": 77.16845819999999
+  },
+  {
+    "generationIndex": 46,
+    "minGenerationFitness": 24.520946666666664,
+    "maxGenerationFitness": 189.51879999999997,
+    "averageGenerationFitness": 63.01266326666666
+  },
+  {
+    "generationIndex": 47,
+    "minGenerationFitness": 25.005463333333335,
+    "maxGenerationFitness": 171.98950000000002,
+    "averageGenerationFitness": 67.10561186666666
+  },
+  {
+    "generationIndex": 48,
+    "minGenerationFitness": 24.447423333333337,
+    "maxGenerationFitness": 137.78473333333332,
+    "averageGenerationFitness": 64.81892813333333
+  },
+  {
+    "generationIndex": 49,
+    "minGenerationFitness": 24.07759333333333,
+    "maxGenerationFitness": 194.9358333333333,
+    "averageGenerationFitness": 69.21013580000002
+  },
+  {
+    "generationIndex": 50,
+    "minGenerationFitness": 24.389280000000003,
+    "maxGenerationFitness": 160.5218,
+    "averageGenerationFitness": 65.00015946666669
+  },
+  {
+    "generationIndex": 51,
+    "minGenerationFitness": 25.48148,
+    "maxGenerationFitness": 198.95843333333335,
+    "averageGenerationFitness": 69.67852473333335
+  },
+  {
+    "generationIndex": 52,
+    "minGenerationFitness": 25.77749,
+    "maxGenerationFitness": 152.5104,
+    "averageGenerationFitness": 61.04359626666666
+  },
+  {
+    "generationIndex": 53,
+    "minGenerationFitness": 23.9793,
+    "maxGenerationFitness": 184.08553333333336,
+    "averageGenerationFitness": 77.16210653333334
+  },
+  {
+    "generationIndex": 54,
+    "minGenerationFitness": 24.41843,
+    "maxGenerationFitness": 168.94523333333333,
+    "averageGenerationFitness": 61.718030533333334
+  },
+  {
+    "generationIndex": 55,
+    "minGenerationFitness": 25.13136666666667,
+    "maxGenerationFitness": 196.66953333333333,
+    "averageGenerationFitness": 70.14118806666664
+  },
+  {
+    "generationIndex": 56,
+    "minGenerationFitness": 27.970783333333333,
+    "maxGenerationFitness": 184.00133333333335,
+    "averageGenerationFitness": 76.285096
+  },
+  {
+    "generationIndex": 57,
+    "minGenerationFitness": 24.867739999999998,
+    "maxGenerationFitness": 178.81923333333336,
+    "averageGenerationFitness": 54.84065206666669
+  },
+  {
+    "generationIndex": 58,
+    "minGenerationFitness": 25.18782,
+    "maxGenerationFitness": 160.03793333333334,
+    "averageGenerationFitness": 60.7630264
+  },
+  {
+    "generationIndex": 59,
+    "minGenerationFitness": 24.777239999999995,
+    "maxGenerationFitness": 183.1036,
+    "averageGenerationFitness": 74.35562993333335
+  },
+  {
+    "generationIndex": 60,
+    "minGenerationFitness": 28.342560000000002,
+    "maxGenerationFitness": 177.42796666666666,
+    "averageGenerationFitness": 73.08029926666666
+  },
+  {
+    "generationIndex": 61,
+    "minGenerationFitness": 24.868080000000003,
+    "maxGenerationFitness": 193.07649999999998,
+    "averageGenerationFitness": 68.89149580000002
+  },
+  {
+    "generationIndex": 62,
+    "minGenerationFitness": 24.542156666666667,
+    "maxGenerationFitness": 192.23396666666667,
+    "averageGenerationFitness": 69.56761539999998
+  },
+  {
+    "generationIndex": 63,
+    "minGenerationFitness": 24.578233333333333,
+    "maxGenerationFitness": 189.26113333333333,
+    "averageGenerationFitness": 63.030914999999986
+  },
+  {
+    "generationIndex": 64,
+    "minGenerationFitness": 28.37767,
+    "maxGenerationFitness": 181.97933333333333,
+    "averageGenerationFitness": 65.2168912
+  },
+  {
+    "generationIndex": 65,
+    "minGenerationFitness": 24.490636666666664,
+    "maxGenerationFitness": 169.07920000000001,
+    "averageGenerationFitness": 68.37455119999998
+  },
+  {
+    "generationIndex": 66,
+    "minGenerationFitness": 26.23425333333333,
+    "maxGenerationFitness": 189.2686,
+    "averageGenerationFitness": 68.47390866666666
+  },
+  {
+    "generationIndex": 67,
+    "minGenerationFitness": 25.65720333333333,
+    "maxGenerationFitness": 193.66183333333333,
+    "averageGenerationFitness": 66.65240373333332
+  },
+  {
+    "generationIndex": 68,
+    "minGenerationFitness": 24.650320000000004,
+    "maxGenerationFitness": 188.27246666666667,
+    "averageGenerationFitness": 68.36056626666668
+  },
+  {
+    "generationIndex": 69,
+    "minGenerationFitness": 24.548246666666667,
+    "maxGenerationFitness": 172.7046,
+    "averageGenerationFitness": 73.71980473333333
+  },
+  {
+    "generationIndex": 70,
+    "minGenerationFitness": 25.36763666666667,
+    "maxGenerationFitness": 162.10296666666667,
+    "averageGenerationFitness": 68.46066273333334
+  },
+  {
+    "generationIndex": 71,
+    "minGenerationFitness": 24.64843,
+    "maxGenerationFitness": 197.24243333333334,
+    "averageGenerationFitness": 70.07052486666667
+  },
+  {
+    "generationIndex": 72,
+    "minGenerationFitness": 25.791206666666664,
+    "maxGenerationFitness": 199.5525,
+    "averageGenerationFitness": 65.76315806666666
+  },
+  {
+    "generationIndex": 73,
+    "minGenerationFitness": 26.114936666666665,
+    "maxGenerationFitness": 174.10680000000002,
+    "averageGenerationFitness": 60.56833386666667
+  },
+  {
+    "generationIndex": 74,
+    "minGenerationFitness": 26.20088,
+    "maxGenerationFitness": 184.8645,
+    "averageGenerationFitness": 81.39612093333332
+  },
+  {
+    "generationIndex": 75,
+    "minGenerationFitness": 28.600083333333334,
+    "maxGenerationFitness": 195.39096666666669,
+    "averageGenerationFitness": 78.26298566666671
+  },
+  {
+    "generationIndex": 76,
+    "minGenerationFitness": 27.141323333333332,
+    "maxGenerationFitness": 177.1101,
+    "averageGenerationFitness": 65.13633746666669
+  },
+  {
+    "generationIndex": 77,
+    "minGenerationFitness": 24.951800000000002,
+    "maxGenerationFitness": 181.39726666666664,
+    "averageGenerationFitness": 61.58965366666664
+  },
+  {
+    "generationIndex": 78,
+    "minGenerationFitness": 25.0427,
+    "maxGenerationFitness": 175.55983333333333,
+    "averageGenerationFitness": 68.20202433333334
+  },
+  {
+    "generationIndex": 79,
+    "minGenerationFitness": 24.19517666666667,
+    "maxGenerationFitness": 134.65711,
+    "averageGenerationFitness": 65.73918806666664
+  },
+  {
+    "generationIndex": 80,
+    "minGenerationFitness": 25.18267,
+    "maxGenerationFitness": 173.81753333333336,
+    "averageGenerationFitness": 69.87886913333332
+  },
+  {
+    "generationIndex": 81,
+    "minGenerationFitness": 24.993506666666672,
+    "maxGenerationFitness": 184.88673333333335,
+    "averageGenerationFitness": 74.21120906666664
+  },
+  {
+    "generationIndex": 82,
+    "minGenerationFitness": 26.94653333333333,
+    "maxGenerationFitness": 179.3583,
+    "averageGenerationFitness": 80.76027266666668
+  },
+  {
+    "generationIndex": 83,
+    "minGenerationFitness": 25.070000000000004,
+    "maxGenerationFitness": 187.32006666666666,
+    "averageGenerationFitness": 63.36534193333334
+  },
+  {
+    "generationIndex": 84,
+    "minGenerationFitness": 24.858623333333338,
+    "maxGenerationFitness": 173.71286666666666,
+    "averageGenerationFitness": 62.49653073333331
+  },
+  {
+    "generationIndex": 85,
+    "minGenerationFitness": 26.029566666666668,
+    "maxGenerationFitness": 195.43280000000001,
+    "averageGenerationFitness": 75.04221846666667
+  },
+  {
+    "generationIndex": 86,
+    "minGenerationFitness": 23.98068333333333,
+    "maxGenerationFitness": 201.27020000000002,
+    "averageGenerationFitness": 72.3235100666667
+  },
+  {
+    "generationIndex": 87,
+    "minGenerationFitness": 24.24025333333333,
+    "maxGenerationFitness": 182.19773333333333,
+    "averageGenerationFitness": 67.30509386666667
+  },
+  {
+    "generationIndex": 88,
+    "minGenerationFitness": 24.076463333333333,
+    "maxGenerationFitness": 135.18362666666667,
+    "averageGenerationFitness": 52.29941059999998
+  },
+  {
+    "generationIndex": 89,
+    "minGenerationFitness": 24.834833333333336,
+    "maxGenerationFitness": 200.94633333333334,
+    "averageGenerationFitness": 76.93954620000004
+  },
+  {
+    "generationIndex": 90,
+    "minGenerationFitness": 24.33396,
+    "maxGenerationFitness": 187.11656666666667,
+    "averageGenerationFitness": 74.29528086666666
+  },
+  {
+    "generationIndex": 91,
+    "minGenerationFitness": 24.34433,
+    "maxGenerationFitness": 154.13683333333333,
+    "averageGenerationFitness": 65.19342499999999
+  },
+  {
+    "generationIndex": 92,
+    "minGenerationFitness": 24.964853333333334,
+    "maxGenerationFitness": 176.38743333333332,
+    "averageGenerationFitness": 73.37815206666666
+  },
+  {
+    "generationIndex": 93,
+    "minGenerationFitness": 24.71392333333333,
+    "maxGenerationFitness": 191.1864333333333,
+    "averageGenerationFitness": 77.656544
+  },
+  {
+    "generationIndex": 94,
+    "minGenerationFitness": 24.52434333333333,
+    "maxGenerationFitness": 171.56506666666667,
+    "averageGenerationFitness": 69.11602726666668
+  },
+  {
+    "generationIndex": 95,
+    "minGenerationFitness": 25.313596666666665,
+    "maxGenerationFitness": 195.74033333333333,
+    "averageGenerationFitness": 62.193041466666685
+  },
+  {
+    "generationIndex": 96,
+    "minGenerationFitness": 25.08636,
+    "maxGenerationFitness": 196.49913333333333,
+    "averageGenerationFitness": 69.71750459999997
+  },
+  {
+    "generationIndex": 97,
+    "minGenerationFitness": 24.53404333333333,
+    "maxGenerationFitness": 151.8053,
+    "averageGenerationFitness": 62.5699834
+  },
+  {
+    "generationIndex": 98,
+    "minGenerationFitness": 25.54189,
+    "maxGenerationFitness": 185.77053333333333,
+    "averageGenerationFitness": 65.04509579999998
+  },
+  {
+    "generationIndex": 99,
+    "minGenerationFitness": 25.423316666666665,
+    "maxGenerationFitness": 191.4647666666667,
+    "averageGenerationFitness": 73.44127066666667
+  },
+  {
+    "generationIndex": 100,
+    "minGenerationFitness": 23.830120000000004,
+    "maxGenerationFitness": 174.00993333333335,
+    "averageGenerationFitness": 67.0895818
+  }
+]

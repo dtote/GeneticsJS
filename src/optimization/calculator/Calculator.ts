@@ -16,4 +16,12 @@ export class Calculator {
       return (curr += prev);
     }, 0);
   }
+
+  static min(values: number[]): number {
+    return Math.min(...values);
+  }
+
+  static max(values: number[]): number {
+    return Math.max(...values);
+  }
 }
