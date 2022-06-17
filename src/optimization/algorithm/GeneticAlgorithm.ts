@@ -82,8 +82,9 @@ const configurations: Record<string, any> = {
 
 const params = configurations[file];
 params.populationSize = populationSize;
+params.selectionParams.selectionCount = populationSize;
+params.replacementParams.selectionCount = populationSize;
 params.terminationCondition = new MaxGenerations(maxGenerations);
-
 const saveFilePath = path.join(__dirname, '..', '..', '..', 'src', 'optimization', 'data', outputFile);
 
 const experiments = new ExecutionData({
