@@ -15,7 +15,7 @@ seed = floor(runif(1, min= 1, max = .Machine$integer.max))
 
 # if a seed is provided for the genetic, we modify the seed value with the received seed
 if (args[30:30] == "--genetic-seed" && !is.na(as.numeric(args[31:31]))) {
-  seed = (seed * (as.numeric(args[31:31]) + 1)) / 2
+  seed = (as.numeric(args[31:31]) + 1) / 2
 }
 
 # if a seed is provided for the random search, we re-assign the seed value
