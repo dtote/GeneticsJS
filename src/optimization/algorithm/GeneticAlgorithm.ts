@@ -34,6 +34,7 @@ const argv = yargs(process.argv.slice(2))
     r: { type: 'number', default: 1 },
     p: { type: 'number', default: 5 },
     g: { type: 'number', default: 5 },
+    c: { type: 'number', default: 0.8 },
     o: { type: 'string', default: 'data' },
   })
   .alias('f', 'file')
@@ -50,6 +51,10 @@ const argv = yargs(process.argv.slice(2))
   .nargs('p', 1)
   .example('$0 -p 2', 'Runs genetic with specified population size')
 
+  .alias('c', 'crossoverRate')
+  .nargs('c', 1)
+  .example('$0 -c 0.8', 'Runs genetic with specified crossover rate')
+
   .alias('g', 'maxGenerations')
   .alias('g', 'generations')
   .nargs('g', 1)
@@ -64,7 +69,7 @@ const argv = yargs(process.argv.slice(2))
   .alias('h', 'help')
   .parseSync();
 
-const { file, replics, populationSize, maxGenerations, outputFile } = argv;
+const { file, replics, populationSize, crossoverRate, maxGenerations, outputFile } = argv;
 
 try {
   const configurationFilePath = path.join(__dirname, '..', '..', 'config', file);
@@ -83,6 +88,7 @@ const configurations: Record<string, any> = {
 const params = configurations[file];
 params.populationSize = populationSize;
 params.selectionParams.selectionCount = populationSize;
+params.crossoverParams.crossoverThreshold = crossoverRate;
 params.replacementParams.selectionCount = populationSize;
 params.terminationCondition = new MaxGenerations(maxGenerations);
 const saveFilePath = path.join(__dirname, '..', '..', '..', 'src', 'optimization', 'data', outputFile);
