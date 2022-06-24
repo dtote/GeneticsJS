@@ -12,10 +12,11 @@ const mocks: Array<OnePointCrossoverMock<BinaryIndividual, boolean>> = [
   {
     crossoverPoint: 3,
     firstParent: new BinaryIndividual('100010'),
-    offspring: [new BinaryIndividual('100100'), new BinaryIndividual('000010')],
+    offspring: [new BinaryIndividual('100010'), new BinaryIndividual('000100')],
     params: {
       engine: Generator.DEFAULT_ENGINE,
       individualConstructor: BinaryIndividual,
+      crossoverThreshold: 1.0,
     },
     secondParent: new BinaryIndividual('000100'),
   },
@@ -26,6 +27,7 @@ const mocks: Array<OnePointCrossoverMock<BinaryIndividual, boolean>> = [
     params: {
       engine: Generator.DEFAULT_ENGINE,
       individualConstructor: BinaryIndividual,
+      crossoverThreshold: 1.0,
     },
     secondParent: new BinaryIndividual('00'),
   },

@@ -4,8 +4,8 @@
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
 
-import { BaseIndividual, BinaryIndividual, NPointsCrossover } from '../../../index';
 import { Generator } from '../../../generator/utils';
+import { BaseIndividual, BinaryIndividual, NPointsCrossover } from '../../../index';
 import NPointsCrossoverMock from '../../resources/mocks/crossover/base/n-points/NPointsCrossoverMock';
 
 // mocks
@@ -23,6 +23,7 @@ const nPointsTestSuite = <I extends BaseIndividual<T>, T>(
     mock.forEach(mockTest => {
       test(`Individuals => ${mockTest.firstParent} x ${mockTest.secondParent}`, () => {
         const mockedGenerator = Generator as jest.Mocked<typeof Generator>;
+        mockedGenerator.probabilityIsValid.mockReturnValue(true);
         mockTest.crossoverPoints.forEach(point => {
           mockedGenerator.generateInteger.mockReturnValueOnce(point);
         });
@@ -31,6 +32,7 @@ const nPointsTestSuite = <I extends BaseIndividual<T>, T>(
           mockTest.secondParent,
           mockTest.params.numberOfCrossoverPoints,
           mockTest.params.individualConstructor,
+          mockTest.params.crossoverThreshold,
           mockTest.params.engine,
         );
         expect(result[0]).toEqual(mockTest.offspring[0]);

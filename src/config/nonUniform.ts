@@ -39,6 +39,7 @@ export const nonUniformMutationParams: EvolutionaryAlgorithmParams<
   crossoverParams: {
     engine: nativeMath,
     individualConstructor: MixedIndividual,
+    crossoverThreshold: 0.8,
   },
   mutation: new MixedNonuniformMutation(),
   mutationParams: {

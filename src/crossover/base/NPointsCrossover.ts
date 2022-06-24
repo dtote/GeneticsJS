@@ -12,6 +12,7 @@ import { CrossoverParams, IndividualConstructor } from './Crossover';
 
 export interface NPointsCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {
   numberOfCrossoverPoints: number;
+  crossoverThreshold: number;
 }
 
 export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrossover<
@@ -28,11 +29,13 @@ export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrosso
     secondParent: I,
     numberOfCrossoverPoints: number,
     individualConstructor: IndividualConstructor<I, T>,
+    crossoverThreshold = 0.5,
     engine = Generator.DEFAULT_ENGINE,
   ): I[] {
     return this.crossWith(firstParent, secondParent, {
       engine,
       individualConstructor,
+      crossoverThreshold,
       numberOfCrossoverPoints,
     });
   }
@@ -43,6 +46,12 @@ export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrosso
     this.checkCrossoverParams(params);
     this.generateCrossoverPoints(params);
     this.crossoverPointIndex = 0;
+
+    const probability = Generator.generateProbability(params.engine);
+    const generateCrossover: boolean = probability <= params.crossoverThreshold;
+    if (!generateCrossover) {
+      return [firstParent, secondParent];
+    }
     return super.crossWith(firstParent, secondParent, params);
   }
 
@@ -72,6 +81,9 @@ export class NPointsCrossover<I extends BaseIndividual<T>, T> extends BaseCrosso
       throw new Error(
         `NPointsCrossover: number of crossover points must be in range [${this.crossoverPointsRange.lowest}, ${this.crossoverPointsRange.highest}]`,
       );
+    }
+    if (!Generator.probabilityIsValid(params.crossoverThreshold)) {
+      throw new Error(`NPointsCrossover: crossover threshold ${params.crossoverThreshold} must be in range [0.0, 1.0]`);
     }
   }
 

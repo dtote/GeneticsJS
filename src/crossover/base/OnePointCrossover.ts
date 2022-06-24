@@ -9,7 +9,9 @@ import { BaseIndividual } from '../../individual/base';
 import { Crossover, CrossoverParams, IndividualConstructor } from './Crossover';
 import { NPointsCrossover } from './NPointsCrossover';
 
-export interface OnePointCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {}
+export interface OnePointCrossoverParams<I extends BaseIndividual<T>, T> extends CrossoverParams<I, T> {
+  crossoverThreshold: number;
+}
 
 export class OnePointCrossover<I extends BaseIndividual<T>, T>
   implements Crossover<I, T, OnePointCrossoverParams<I, T>> {
@@ -17,9 +19,14 @@ export class OnePointCrossover<I extends BaseIndividual<T>, T>
     firstParent: I,
     secondParent: I,
     individualConstructor: IndividualConstructor<I, T>,
+    crossoverThreshold = 0.5,
     engine = Generator.DEFAULT_ENGINE,
   ): I[] {
-    return this.crossWith(firstParent, secondParent, { individualConstructor, engine });
+    return this.crossWith(firstParent, secondParent, {
+      individualConstructor,
+      crossoverThreshold,
+      engine,
+    });
   }
 
   public crossWith(firstParent: I, secondParent: I, params: OnePointCrossoverParams<I, T>) {
@@ -28,6 +35,7 @@ export class OnePointCrossover<I extends BaseIndividual<T>, T>
       engine: params.engine,
       individualConstructor: params.individualConstructor,
       numberOfCrossoverPoints: 1,
+      crossoverThreshold: params.crossoverThreshold,
     });
   }
 }

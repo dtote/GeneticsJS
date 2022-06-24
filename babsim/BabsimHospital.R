@@ -15,13 +15,16 @@ seed = floor(runif(1, min= 1, max = .Machine$integer.max))
 
 # if a seed is provided for the genetic, we modify the seed value with the received seed
 if (args[30:30] == "--genetic-seed" && !is.na(as.numeric(args[31:31]))) {
-  seed = (as.numeric(args[31:31]) + 1) / 2
+  # seed =  (as.numeric(args[31:31]) + 1) / 2 # not stochastic
+  seed = seed * (as.numeric(args[31:31]) + 1) / 2 # stochastic
 }
 
 # if a seed is provided for the random search, we re-assign the seed value
 if (args[30:30] == "--random-seed" && !is.na(as.numeric(args[31:31]))) {
   seed = as.numeric(args[31:31])
 }
+
+# write(seed, file = "my_seeds.txt", sep = '\n', append = TRUE)
 
 region = 5315 #5374 Germany, 5315 is Cologne, 5 is NRW
 simrepeats = 1

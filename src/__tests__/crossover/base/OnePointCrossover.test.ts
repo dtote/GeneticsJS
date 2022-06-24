@@ -25,11 +25,13 @@ const onePointTestSuite = <I extends BaseIndividual<T>, T>(
     mock.forEach(mockTest => {
       test(`Individuals => ${mockTest.firstParent} x ${mockTest.secondParent}`, () => {
         const mockedGenerator = Generator as jest.Mocked<typeof Generator>;
+        mockedGenerator.probabilityIsValid.mockReturnValue(true);
         mockedGenerator.generateInteger.mockReturnValueOnce(mockTest.crossoverPoint);
         const result = cross.cross(
           mockTest.firstParent,
           mockTest.secondParent,
           mockTest.params.individualConstructor,
+          mockTest.params.crossoverThreshold,
           mockTest.params.engine,
         );
         expect(result[0]).toEqual(mockTest.offspring[0]);
