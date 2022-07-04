@@ -3,11 +3,11 @@
  * Copyright (c) 2019 Cristian Abrante. All rights reserved.
  * Licensed under the MIT License. See LICENSE in the project root for license information.
  */
+import { PARAMS_LOWER_BOUNDS } from '../../../../../constants/LowerBounds';
+import { PARAMS_UPPER_BOUNDS } from '../../../../../constants/UpperBounds';
+import { isDefaultRange } from '../../../../../utils/isDefaultRange';
 import { NumericRange } from '../../../individual/numeric/base';
 import { MixedIndividual } from '../../../individual/numeric/mixed';
-import { PARAMS_LOWER_BOUNDS } from '../../../optimization/constants/LowerBounds';
-import { PARAMS_UPPER_BOUNDS } from '../../../optimization/constants/UpperBounds';
-import { isDefaultRange } from '../../../optimization/utils/isDefaultRange';
 import { Generator } from '../../utils';
 import { NumericGenerator } from '../base';
 import { NumericParams } from '../base/NumericGenerator';

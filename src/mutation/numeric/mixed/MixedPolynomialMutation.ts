@@ -1,8 +1,8 @@
+import { PARAMS_LOWER_BOUNDS } from '../../../../../constants/LowerBounds';
+import { PARAMS_UPPER_BOUNDS } from '../../../../../constants/UpperBounds';
 import { Generator } from '../../../generator/utils';
 import { NumericRange } from '../../../individual';
 import { MixedIndividual } from '../../../individual/numeric/mixed';
-import { PARAMS_LOWER_BOUNDS } from '../../../optimization/constants/LowerBounds';
-import { PARAMS_UPPER_BOUNDS } from '../../../optimization/constants/UpperBounds';
 import { MutationParams, PolynomialMutation } from '../../base';
 
 const RAND_MAX = 2 ** 53;
